@@ -103,7 +103,7 @@ endif
 	@echo "$(BLUE)*** [$(YELLOW)COMMIT$(BLUE)] ./$(COMMIT) $(BLANK)"
 	@git commit -m "$(COMMIT)"
 	@echo "$(BLUE)*** [$(YELLOW)PUSH$(BLUE)] ./$(COMMIT) $(BLANK)"
-	@git push && @echo "$(BLUE)*** [$(YELLOW)STATUS$(BLUE)] $(BLANK)" && git status
+	@git push && echo "$(BLUE)*** [$(YELLOW)STATUS$(BLUE)] $(BLANK)" && git status
 
 #RE-CLONE A REPO
 clone:
