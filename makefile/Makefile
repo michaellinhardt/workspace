@@ -15,8 +15,11 @@ FAIL				= $(BLANK)[ $(RED)FAIL $(BLANK)]
 #VERSION
 VERSION = v0.7
 
-#DOCS
 all:
+
+
+#DOCS
+help:
 	@echo "$(BLUE)*** [$(YELLOW)MAKEFILE VARIABLE$(BLUE)] $(BLANK)"
 	@echo "$(RED)- PATH_ROOT = $(YELLOW)$(PATH_ROOT)"
 	@echo "$(RED)- PATH_GITHUB = $(YELLOW)$(PATH_GITHUB)"
