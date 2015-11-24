@@ -37,9 +37,9 @@ maj-makefile:
 	@echo "$(BLUE)*** [$(YELLOW)SAVE TO$(BLUE)] ~/42/env_lib/Makefile$(BLANK)"
 	@cp ~/42/Makefile ~/42/env_lib/Makefile
 
-save-makefile: -save-makefile status-env
+save-makefile: -save-makefile -status-env
 
-status-env:
+-status-env:
 	@echo "$(BLUE)*** [$(YELLOW)STATUS$(BLUE)] ~/42/env_lib/Makefile$(BLANK)"
 	@cd ~/42/env_lib/ && git status
 	@echo cd ~/42/env_lib
