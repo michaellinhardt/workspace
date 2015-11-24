@@ -35,6 +35,7 @@ all:
 
 
 -save-env:
+	@mkdir -p ~/42/env_lib/tild_hidden_conf
 	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.vimrc$(BLANK)"
 	cp ~/.vimrc ~/42/env_lib/tild_hidden_conf/vimrc
 save-env: -save-env -save-makefile -status-env
