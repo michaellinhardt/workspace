@@ -3,17 +3,29 @@
 PATH_ROOT		=	~/42/
 PATH_GITHUB		=	https://github.com/nesthub/
 
-# COLOR VAR aaa
+# COLOR VAR
 RED				=	\033[0;31m
-GREEN				=	\033[0;32m
+GREEN			=	\033[0;32m
 YELLOW			=	\033[0;33m
-BLUE				=	\033[0;34m
-BLANK				=	\033[0;38m
-OK				= $(BLANK)[ $(GREEN)OK $(BLANK)]
-FAIL				= $(BLANK)[ $(RED)FAIL $(BLANK)]
+BLUE			=	\033[0;34m
+BLANK			=	\033[0;38m
+OK				=	$(BLANK)[ $(GREEN)OK $(BLANK)]
+FAIL			=	$(BLANK)[ $(RED)FAIL $(BLANK)]
 
 #VERSION
-VERSION = v0.7
+VERSION 		=	v0.7
+
+#COMPILATION
+CC				=	gcc
+CFLAGS			=	-Wall -Werror -Wextra
+
+#FOLDER
+SRCS			=	./src
+OBJS			=	./obj
+INCS			=	./inc
+
+#PROJET VAR
+EXEC			=	libft
 
 all:
 
@@ -87,7 +99,7 @@ endif
 	@mkdir -p $(PATH_ROOT)$(LOCAL)/inc
 	@echo "$(OK) mkdir $(PATH_ROOT)$(LOCAL)/inc"
 	@mkdir -p $(PATH_ROOT)$(LOCAL)/docs
-	@echo "$(OK) mkdir $(PATH_ROOT)$(LOCAL)/docs"
+	@echo "$(OK) mkdir $(PATH_ROOT)$(LOCAL)/doc"
 	@mkdir -p $(PATH_ROOT)$(LOCAL)/src
 	@echo "$(OK) mkdir $(PATH_ROOT)$(LOCAL)/src"
 	@mkdir -p $(PATH_ROOT)$(LOCAL)/lib
