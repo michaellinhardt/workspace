@@ -20,23 +20,34 @@ all:
 	@echo "$(RED)- LOCAL=\"projets/libft\"\n\t$(YELLOW)Path to PATH_ROOT/LOCAL"
 	@echo "$(RED)- GIT=\"projet_libft\"\n\t$(YELLOW)Path to PATH_GITHUB/GIT.git"
 	@echo "$(BLUE)*** [$(YELLOW)MAKEFILE COMMAND$(BLUE)] $(BLANK)"
-	@echo "$(RED)- maj-makefile"
-	@echo "$(YELLOW)- \tCopy Makefile from ~/42 to ./"
+	@echo "$(RED)- load-makefile"
+	@echo "$(YELLOW)- \tLoad Makefile from ~/42 to ./"
 	@echo "$(RED)- save-makefile"
 	@echo "$(YELLOW)- \tSave from ~/42/ to ~/42/env_lib/"
+	@echo "$(RED)- load-env"
+	@echo "$(YELLOW)- \tLoad git env file (~/.vimrc, etc)"
+	@echo "$(RED)- save-env"
+	@echo "$(YELLOW)- \tSave actual env file (~/.vimrc, etc)"
 	@echo "$(RED)- clone LOCAL=\"www\" GIT=\"www\""
 	@echo "$(YELLOW)- \tClear PATH_ROOT/LOCAL and clone GIT inside"
 	@echo "$(RED)- init-projet LOCAL=\"projets/libft\""
 	@echo "$(YELLOW)- \tCopy new projet file to PATH_ROOT/LOCAL"
 
-maj-makefile:
-	@echo "$(BLUE)*** [$(YELLOW)COPY FROM$(BLUE)] ~/42/Makefile$(BLANK)"
-	@cp ~/42/Makefile ./Makefile
 
+-save-env:
+	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.vimrc$(BLANK)"
+	cp ~/.vimrc ~/42/env_lib/tild_hidden_conf/vimrc
+save-env: -save-env -save-makefile -status-env
+load-env: load-makefile
+	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] tild_hidden_conf/vimrc$(BLANK)"
+	cp ~/42/env_lib/tild_hidden_conf/vimrc ~/.vimrc
+
+load-makefile:
+	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] env_lib/Makefile$(BLANK)"
+	cp ~/42/Makefile ./Makefile
 -save-makefile:
-	@echo "$(BLUE)*** [$(YELLOW)SAVE TO$(BLUE)] ~/42/env_lib/Makefile$(BLANK)"
-	@cp ~/42/Makefile ~/42/env_lib/Makefile
-
+	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/42/Makefile$(BLANK)"
+	cp ~/42/Makefile ~/42/env_lib/Makefile
 save-makefile: -save-makefile -status-env
 
 -status-env:
