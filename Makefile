@@ -1,3 +1,4 @@
+# https://github.com/nesthub/
 # PATH VAR 
 PATH_ROOT		=	~/42/
 PATH_GITHUB		=	https://github.com/nesthub/
@@ -11,8 +12,10 @@ BLANK				=	\033[0;38m
 OK				= $(BLANK)[ $(GREEN)OK $(BLANK)]
 FAIL				= $(BLANK)[ $(RED)FAIL $(BLANK)]
 
-VERSION = v0.5
+#VERSION
+VERSION = v0.7
 
+#DOCS
 all:
 	@echo "$(BLUE)*** [$(YELLOW)MAKEFILE VARIABLE$(BLUE)] $(BLANK)"
 	@echo "$(RED)- PATH_ROOT = $(YELLOW)$(PATH_ROOT)"
@@ -33,29 +36,35 @@ all:
 	@echo "$(RED)- init-projet LOCAL=\"projets/libft\""
 	@echo "$(YELLOW)- \tCopy new projet file to PATH_ROOT/LOCAL"
 
-
--save-env:
-	@mkdir -p ~/42/env_lib/tild_hidden_conf
-	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.vimrc$(BLANK)"
-	cp ~/.vimrc ~/42/env_lib/tild_hidden_conf/vimrc
-save-env: -save-env -save-makefile -status-env
-load-env: load-makefile
-	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] tild_hidden_conf/vimrc$(BLANK)"
-	cp ~/42/env_lib/tild_hidden_conf/vimrc ~/.vimrc
-
-load-makefile:
-	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] env_lib/Makefile$(BLANK)"
-	cp ~/42/Makefile ./Makefile
--save-makefile:
-	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/42/Makefile$(BLANK)"
-	cp ~/42/Makefile ~/42/env_lib/Makefile
-save-makefile: -save-makefile -status-env
-
+#DISPLAY GIT STATUS ON env_lib FOLDER
 -status-env:
 	@echo "$(BLUE)*** [$(YELLOW)STATUS$(BLUE)] ~/42/env_lib/Makefile$(BLANK)"
 	@cd ~/42/env_lib/ && git status
 	@echo cd ~/42/env_lib
 
+#ROUTINE FOR SAVE ENV CONFIG (Makefile, vimrc, etc)
+save-env: -save-env -save-makefile -status-env
+-save-env:
+	@mkdir -p ~/42/env_lib/tild_hidden_conf
+	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.vimrc$(BLANK)"
+	cp ~/.vimrc ~/42/env_lib/tild_hidden_conf/vimrc
+
+#ROUTINE FOR SAVE MAKEFILE
+save-makefile: -save-makefile -status-env
+-save-makefile:
+	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/42/Makefile$(BLANK)"
+	cp ~/42/Makefile ~/42/env_lib/Makefile
+
+#LOAD ENV CONFIG FILE FROM env_lib
+load-env: load-makefile
+	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] tild_hidden_conf/vimrc$(BLANK)"
+	cp ~/42/env_lib/tild_hidden_conf/vimrc ~/.vimrc
+#LOAD MAKEFILE FROM ~/42/ TO CURRENT FOLDER
+load-makefile:
+	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] env_lib/Makefile$(BLANK)"
+	cp ~/42/Makefile ./Makefile
+
+#COPY DEFAULT FILE FOR NEW PROJECT
 init-projet:
 ifeq ($(LOCAL), )
 	$(error Syntaxe ex: init-projet LOCAL="projets/libft")
@@ -75,7 +84,7 @@ endif
 	@cp $(PATH_ROOT)/Makefile $(PATH_ROOT)$(LOCAL)/Makefile
 	@echo "$(OK) cp $(PATH_ROOT)/Makefile $(PATH_ROOT)$(LOCAL)/Makefile"
 
-
+#RE-CLONE A REPO
 clone:
 ifeq ($(LOCAL), )
 	$(error Syntaxe ex: clone LOCAL="projets/libft" GIT="projet_libft")
