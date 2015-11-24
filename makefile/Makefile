@@ -34,6 +34,8 @@ help:
 	@echo "$(YELLOW)- \tLoad git env file (~/.vimrc, etc)"
 	@echo "$(RED)- save-env"
 	@echo "$(YELLOW)- \tSave actual env file (~/.vimrc, etc)"
+	@echo "$(RED)- push ADD=main.c COMMIT=\"commit message\""
+	@echo "$(YELLOW)- \tAdd, commit and push file"
 	@echo "$(RED)- clone LOCAL=\"www\" GIT=\"www\""
 	@echo "$(YELLOW)- \tClear PATH_ROOT/LOCAL and clone GIT inside"
 	@echo "$(RED)- init-projet LOCAL=\"projets/libft\""
@@ -87,6 +89,21 @@ endif
 	@echo "$(BLUE)*** [$(YELLOW)COPY$(BLUE)] $(BLANK)"
 	@cp $(PATH_ROOT)/Makefile $(PATH_ROOT)$(LOCAL)/Makefile
 	@echo "$(OK) cp $(PATH_ROOT)/Makefile $(PATH_ROOT)$(LOCAL)/Makefile"
+
+#ADD, COMMUT PUSH A SINGLE FILE
+push:
+ifeq ($(ADD), )
+	$(error Syntaxe ex: push ADD="main.c" COMMIT="commit message")
+endif
+ifeq ($(COMMIT), )
+	$(error Syntaxe ex: push ADD="main.c" COMMIT="commit message")
+endif
+	@echo "$(BLUE)*** [$(YELLOW)ADD$(BLUE)] ./$(ADD) $(BLANK)"
+	@git add ./$(ADD)
+	@echo "$(BLUE)*** [$(YELLOW)COMMIT$(BLUE)] ./$(COMMIT) $(BLANK)"
+	@git commit -m "$(COMMIT)"
+	@echo "$(BLUE)*** [$(YELLOW)PUSH$(BLUE)] ./$(COMMIT) $(BLANK)"
+	@git push
 
 #RE-CLONE A REPO
 clone:
