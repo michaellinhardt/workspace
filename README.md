@@ -5,6 +5,7 @@ My config files and some stuff
 | repo path  | local path | description |
 | ------------- | ------------- | ------------- |
 | ./Makefile        | ~/42/Makefile | big guy |
+| ./new/c/gitignore | ~/projet/.gitignore | prevent file from pushing |
 | ./conf_file/zshrc | ~/.zshrc | backup zsh conf |
 | ./conf_file/vimrc | ~/.vimrc | backup vim conf |
 | ./conf_file/tmux.conf | ~/.tmux.conf | force use zsh at tmux start |
