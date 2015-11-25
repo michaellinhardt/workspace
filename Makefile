@@ -1,34 +1,58 @@
 # https://github.com/nesthub/
-# PATH VAR 
-PATH_ROOT		=	~/42/
-PATH_GITHUB		=	https://github.com/nesthub/
+# PATH VAR & VERSION 
+VERSION 		= v0.8
+PATH_ROOT		= ~/42/
+PATH_GITHUB		= https://github.com/nesthub/
 
 # COLOR VAR
-RED				=	\033[0;31m
-GREEN			=	\033[0;32m
-YELLOW			=	\033[0;33m
-BLUE			=	\033[0;34m
-BLANK			=	\033[0;38m
-OK				=	$(BLANK)[ $(GREEN)OK $(BLANK)]
-FAIL			=	$(BLANK)[ $(RED)FAIL $(BLANK)]
+RED				= \033[0;31m
+GREEN			= \033[0;32m
+YELLOW			= \033[0;33m
+BLUE			= \033[0;34m
+BLANK			= \033[0;38m
+OK				= $(BLANK)[ $(GREEN)OK $(BLANK)]
+FAIL			= $(BLANK)[ $(RED)FAIL $(BLANK)]
 
-#VERSION
-VERSION 		=	v0.7
+#COMPILATION VAR
+CC				= gcc
+CFLAGS			= -Wall -Werror -Wextra
 
-#COMPILATION
-CC				=	gcc
-CFLAGS			=	-Wall -Werror -Wextra
-
-#FOLDER
-SRCS			=	./src
-OBJS			=	./obj
-INCS			=	./inc
+#FOLDER PATH
+FOLDER_SRC		= ./src/
+FOLDER_OBJ		= ./obj/
+FOLDER_INC		= ./inc/
 
 #PROJET VAR
-EXEC			=	libft
+NAME			= libft.a
+LIST_HEADER		= libft.h
+LIST_SRC		= ft_strlen.c ft_putchar.c
 
-all:
+#BUILD LIST
+LIST_OBJ		= $(subst .c,.o,$(LIST_SRC))
+SRCS			= $(addprefix $(FOLDER_SRC), $(LIST_SRC))
+OBJS			= $(addprefix $(FOLDER_OBJ), $(LIST_OBJ))
 
+all: $(NAME)
+
+#TRANSFORM .c FILE INTO .o
+$(OBJS): $(SRCS)
+	@mkdir -p $(FOLDER_OBJ)
+	$(CC) $(CFLAGS) -I$(FOLDER_INC) -c -o $@ $<
+
+$(NAME): $(OBJS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
+	@echo "$(OK) $(NAME)"
+
+clean:
+	@rm -rf $(FOLDER_OBJ)
+
+fclean: clean
+	@rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: clean fclean re help push clone
 
 #DOCS
 help:
