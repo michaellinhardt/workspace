@@ -10,7 +10,7 @@ My config files and some stuff
 | ./conf_file/tmux.conf | ~/.tmux.conf | force use zsh at tmux start |
 
 
-###new session package
+###usefull package
 - zsh, terminal config
 - ohmyzsh, improve zsh, install:
 	- ```sudo sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"```
