@@ -20,3 +20,5 @@ My config files and some stuff
 - Sublivim, improve vim, install:
 	- ```sudo curl -L http://install.ohmyz.sh | sh```
 	- ```sudo curl https://raw.githubusercontent.com/reversTeam/Sublivim/master/installer.sh | sh```
+- Skype install:
+	- ```sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner" && sudo apt-get update && sudo apt-get install skype```
