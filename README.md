@@ -2,17 +2,12 @@
 My config files and some stuff
 
 ##files list
-- Makefile
-	- all-in-one Makefile with command for save, load, push, etc..
-- conf_file/zshrc is ~/.zshrc backup
-- conf_file/vimrc is ~/.vimrc backup
-- conf_file/tmux.conf is ~/.tmux.conf (force use zsh)
-
 | repo path  | local path | description |
 | ------------- | ------------- | ------------- |
-| conf_file/zshrc | ~/.zshrc | backup zsh |
-| conf_file/vimrc | ~/.vimrc | backup vim |
-| conf_file/tmux.conf | ~/.tmux.conf | for use zsh at start |
+| ./Makefile        | ~/42/Makefile | big guy |
+| ./conf_file/zshrc | ~/.zshrc | backup zsh conf |
+| ./conf_file/vimrc | ~/.vimrc | backup vim conf |
+| ./conf_file/tmux.conf | ~/.tmux.conf | force use zsh at tmux start |
 
 
 ###new session package
