@@ -82,6 +82,11 @@ help:
 	@echo "$(YELLOW)- \tClear PATH_ROOT/LOCAL and clone GIT inside"
 	@echo "$(RED)- init-projet LOCAL=\"projets/libft\""
 	@echo "$(YELLOW)- \tCopy new projet file to PATH_ROOT/LOCAL"
+	@echo "$(RED)- screen-mono"
+	@echo "$(YELLOW)- \tTurn off second screen (disper -s)"
+	@echo "$(RED)- screen-duo"
+	@echo "$(YELLOW)- \tTurn on second screen (disper -e)"
+
 
 #DISPLAY GIT STATUS ON env_lib FOLDER
 -status-env:
@@ -172,3 +177,8 @@ endif
 	@ls -la $(PATH_ROOT)$(LOCAL)
 	@echo -n "$(BLANK)"
 	@pwd
+
+screen-mono:
+	disper -s
+screen-duo:
+	disper -e
