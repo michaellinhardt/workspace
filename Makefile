@@ -21,6 +21,7 @@ CFLAGS			= -Wall -Werror -Wextra
 FOLDER_SRC		= ./src/
 FOLDER_OBJ		= ./obj/
 FOLDER_INC		= ./inc/
+FOLDER_LIB		= ./lib/
 
 #PROJET VAR
 NAME			= libft.a
@@ -53,6 +54,11 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean fclean re help push clone
+
+test: re
+	clear
+	cp ./libft.a ./lib/libft.a
+	$(CC) $(CFLAGS) -I$(FOLDER_INC) -L$(FOLDER_LIB) main.c -lft
 
 #DOCS
 help:
