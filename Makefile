@@ -1,6 +1,6 @@
 # https://github.com/nesthub/
 # PATH VAR & VERSION 
-VERSION 		= v0.8
+VERSION 		= v0.9
 PATH_ROOT		= ~/42/
 PATH_GITHUB		= https://github.com/nesthub/
 
@@ -80,9 +80,9 @@ help:
 	@echo "$(YELLOW)- \tLoad Makefile from ~/42 to ./"
 	@echo "$(RED)- save-makefile"
 	@echo "$(YELLOW)- \tSave from ~/42/ to ~/42/config_workspace/"
-	@echo "$(RED)- load-env"
+	@echo "$(RED)- load-workspace"
 	@echo "$(YELLOW)- \tLoad git env file (~/.vimrc, etc)"
-	@echo "$(RED)- save-env"
+	@echo "$(RED)- save-workspace"
 	@echo "$(YELLOW)- \tSave actual env file (~/.vimrc, etc)"
 	@echo "$(RED)- push ADD=main.c COMMIT=\"commit message\""
 	@echo "$(YELLOW)- \tAdd, commit and push file"
@@ -100,8 +100,8 @@ help:
 
 #ROUTINE FOR SAVE ENV CONFIG
 # - zshrc, vimrc, Makefile
-save-env: -save-env -save-makefile -status-env
--save-env:
+save-workspace: -save-workspace -save-makefile -status-env
+-save-workspace:
 	@mkdir -p ~/42/config_workspace/conf_file
 	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.zshrc$(BLANK)"
 	cp ~/.zshrc ~/42/config_workspace/conf_file/zshrc
@@ -116,7 +116,7 @@ save-makefile: -save-makefile -status-env
 
 #LOAD ENV CONFIG FILE FROM config_workspacei
 # -zshrc, vimrc, Makefile
-load-env:
+load-workspace:
 	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/zshrc$(BLANK)"
 	cp ~/42/config_workspace/conf_file/zshrc ~/.zshrc
 	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/vimrc$(BLANK)"
