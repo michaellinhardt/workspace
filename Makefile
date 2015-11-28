@@ -26,7 +26,11 @@ FOLDER_LIB		= ./lib/
 #PROJET VAR
 NAME			= libft.a
 LIST_HEADER		= libft.h
-LIST_SRC		= ft_strlen.c ft_putchar.c
+LIST_SRC		= ft_strlen.c ft_strcmp.c \
+				ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c \
+				ft_putnbr_fd.c ft_putnbr.c \
+				ft_islower.c ft_isupper.c ft_toupper.c ft_tolower.c \
+				ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c
 
 #BUILD LIST
 LIST_OBJ		= $(subst .c,.o,$(LIST_SRC))
@@ -36,7 +40,7 @@ OBJS			= $(addprefix $(FOLDER_OBJ), $(LIST_OBJ))
 all: $(NAME)
 
 #TRANSFORM .c FILE INTO .o
-$(OBJS): $(SRCS)
+$(FOLDER_OBJ)%.o: $(FOLDER_SRC)%.c
 	@mkdir -p $(FOLDER_OBJ)
 	$(CC) $(CFLAGS) -I$(FOLDER_INC) -c -o $@ $<
 
@@ -46,19 +50,23 @@ $(NAME): $(OBJS)
 	@echo "$(OK) $(NAME)"
 
 clean:
-	@rm -rf $(FOLDER_OBJ)
+	rm -rf $(FOLDER_OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
+clear:
+	clear
+
 .PHONY: clean fclean re help push clone
 
-test: re
-	clear
+test: clear re
+	rm -f a.out
 	cp ./libft.a ./lib/libft.a
 	$(CC) $(CFLAGS) -I$(FOLDER_INC) -L$(FOLDER_LIB) main.c -lft
+	./a.out
 
 #DOCS
 help:
@@ -71,7 +79,7 @@ help:
 	@echo "$(RED)- load-makefile"
 	@echo "$(YELLOW)- \tLoad Makefile from ~/42 to ./"
 	@echo "$(RED)- save-makefile"
-	@echo "$(YELLOW)- \tSave from ~/42/ to ~/42/env_lib/"
+	@echo "$(YELLOW)- \tSave from ~/42/ to ~/42/config_workspace/"
 	@echo "$(RED)- load-env"
 	@echo "$(YELLOW)- \tLoad git env file (~/.vimrc, etc)"
 	@echo "$(RED)- save-env"
@@ -82,45 +90,41 @@ help:
 	@echo "$(YELLOW)- \tClear PATH_ROOT/LOCAL and clone GIT inside"
 	@echo "$(RED)- init-projet LOCAL=\"projets/libft\""
 	@echo "$(YELLOW)- \tCopy new projet file to PATH_ROOT/LOCAL"
-	@echo "$(RED)- screen-mono"
-	@echo "$(YELLOW)- \tTurn off second screen (disper -s)"
-	@echo "$(RED)- screen-duo"
-	@echo "$(YELLOW)- \tTurn on second screen (disper -e)"
 
 
-#DISPLAY GIT STATUS ON env_lib FOLDER
+#DISPLAY GIT STATUS ON config_workspace FOLDER
 -status-env:
-	@echo "$(BLUE)*** [$(YELLOW)STATUS$(BLUE)] ~/42/env_lib$(BLANK)"
-	@cd ~/42/env_lib/ && git status
-	@echo cd ~/42/env_lib
+	@echo "$(BLUE)*** [$(YELLOW)STATUS$(BLUE)] ~/42/config_workspace$(BLANK)"
+	@cd ~/42/config_workspace/ && git status
+	@echo cd ~/42/config_workspace
 
 #ROUTINE FOR SAVE ENV CONFIG
 # - zshrc, vimrc, Makefile
 save-env: -save-env -save-makefile -status-env
 -save-env:
-	@mkdir -p ~/42/env_lib/conf_file
+	@mkdir -p ~/42/config_workspace/conf_file
 	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.zshrc$(BLANK)"
-	cp ~/.zshrc ~/42/env_lib/conf_file/zshrc
+	cp ~/.zshrc ~/42/config_workspace/conf_file/zshrc
 	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.vimrc$(BLANK)"
-	cp ~/.vimrc ~/42/env_lib/conf_file/vimrc
+	cp ~/.vimrc ~/42/config_workspace/conf_file/vimrc
 
 #ROUTINE FOR SAVE MAKEFILE
 save-makefile: -save-makefile -status-env
 -save-makefile:
 	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/42/Makefile$(BLANK)"
-	cp ~/42/Makefile ~/42/env_lib/Makefile
+	cp ~/42/Makefile ~/42/config_workspace/Makefile
 
-#LOAD ENV CONFIG FILE FROM env_libi
+#LOAD ENV CONFIG FILE FROM config_workspacei
 # -zshrc, vimrc, Makefile
 load-env:
 	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/zshrc$(BLANK)"
-	cp ~/42/env_lib/conf_file/zshrc ~/.zshrc
+	cp ~/42/config_workspace/conf_file/zshrc ~/.zshrc
 	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/vimrc$(BLANK)"
-	cp ~/42/env_lib/conf_file/vimrc ~/.vimrc
+	cp ~/42/config_workspace/conf_file/vimrc ~/.vimrc
 
 #LOAD MAKEFILE FROM ~/42/ TO CURRENT FOLDER
 load-makefile:
-	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] env_lib/Makefile$(BLANK)"
+	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] ~/42/Makefile$(BLANK)"
 	cp ~/42/Makefile ./Makefile
 
 #COPY DEFAULT FILE FOR NEW PROJECT
@@ -177,8 +181,3 @@ endif
 	@ls -la $(PATH_ROOT)$(LOCAL)
 	@echo -n "$(BLANK)"
 	@pwd
-
-screen-mono:
-	disper -s
-screen-duo:
-	disper -e
