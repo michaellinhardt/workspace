@@ -30,6 +30,7 @@ LIST_SRC		= ft_strlen.c ft_strcmp.c \
 				ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c \
 				ft_putnbr_fd.c ft_putnbr.c \
 				ft_islower.c ft_isupper.c ft_toupper.c ft_tolower.c \
+				ft_isalpha.c \
 				ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c
 
 #BUILD LIST
