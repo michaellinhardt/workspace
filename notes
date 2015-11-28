@@ -1,0 +1,5 @@
+- config_workspace/c_project
+	- folder ready to be copy past as a new c project by the Makefile
+	- with ready folder lib, inc, src, doc & Makefile
+	- lib folder already get last libft.a (saving here each new version)
+	- + auteur file, README.md (layout at least) and .gitignore
