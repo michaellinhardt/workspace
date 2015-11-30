@@ -77,14 +77,26 @@ ifeq ($(wildcard $(PATH_CURR)/.path_root), )
 else
 	$(eval PATH_PROJET := $(PATH_CURR))
 endif
+#ifeq ($(wildcard $(PATH_PROJET)/.path_root), )
+#	$(error Not in a project directory.)
+#endif
 
 vardump: -projet-build-path 
 	@echo PATH_CURR: $(PATH_CURR)
 	@echo PATH_PROJET: $(PATH_PROJET)
 
 status: -projet-build-path
-	@cd $(PATH_PROJET)/42 && echo "$(YELLOW)git status $(PATH_PROJET)/42" && git status -s
-	@cd $(PATH_PROJET)/github && echo "$(YELLOW)git status $(PATH_PROJET)/github" && git status -s
+ifeq ($(wildcard $(PATH_PROJET)/42/.git/config), )
+	@echo "$(RED)*$(YELLOW) $(PATH_PROJET)/42/ is not a git repository.$(BLANK)"
+else
+	@cd $(PATH_PROJET)/42 && echo "$(YELLOW)git status $(PATH_PROJET)/42/ git status $(BLANK)" && git status -s
+endif
+ifeq ($(wildcard $(PATH_PROJET)/github/.gitignore), )
+	@echo "$(RED)*$(YELLOW) $(PATH_PROJET)/github/ is not a git repository.$(BLANK)"
+else
+	@cd $(PATH_PROJET)/github && echo "$(YELLOW)$(PATH_PROJET)/github/ git status$(BLANK)" && git status -s
+endif
+	@cd $(PATH_CURR)
 
 #DOCS
 help:
