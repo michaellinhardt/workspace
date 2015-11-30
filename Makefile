@@ -3,6 +3,8 @@
 VERSION 		= v0.9
 PATH_ROOT		= ~/42/
 PATH_GITHUB		= https://github.com/nesthub/
+PATH_CURR		= $(shell pwd)
+PATH_PROJET		= auto-detected
 
 # COLOR VAR
 RED				= \033[0;31m
@@ -68,6 +70,21 @@ test: clear re
 	cp ./libft.a ./lib/libft.a
 	$(CC) $(CFLAGS) -I$(FOLDER_INC) -L$(FOLDER_LIB) main.c -lft
 	./a.out
+
+-projet-build-path:
+ifeq ($(wildcard $(PATH_CURR)/.path_root), )
+	$(eval PATH_PROJET := $(PATH_CURR)/..)
+else
+	$(eval PATH_PROJET := $(PATH_CURR))
+endif
+
+vardump: -projet-build-path 
+	@echo PATH_CURR: $(PATH_CURR)
+	@echo PATH_PROJET: $(PATH_PROJET)
+
+status: -projet-build-path
+	@cd $(PATH_PROJET)/42 && echo "$(YELLOW)git status $(PATH_PROJET)/42" && git status -s
+	@cd $(PATH_PROJET)/github && echo "$(YELLOW)git status $(PATH_PROJET)/github" && git status -s
 
 #DOCS
 help:
