@@ -53,6 +53,8 @@ set noswapfile
 
 set splitright
 
+set list listchars=tab:»·,trail:·
+
 noremap <Space><Space>		:tabedit ~/.vimrc<CR>
 
 noremap <C-h> :GundoToggle<CR>

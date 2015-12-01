@@ -3,3 +3,10 @@
 	- with ready folder lib, inc, src, doc & Makefile
 	- lib folder already get last libft.a (saving here each new version)
 	- + auteur file, README.md (layout at least) and .gitignore
+
+- config_workspace/Makefile
+	- rule for create project
+	- m push ADD COMMIT - push project to git42 and github
+	- m push-git42 ADD COMMIT - push project only to git42
+	- m push-github ADD COMMIT - push project only to github
+	- NO RULE FOR CLONE !

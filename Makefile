@@ -2,9 +2,16 @@
 # PATH VAR & VERSION 
 VERSION 		= v0.9
 PATH_ROOT		= ~/42/
-PATH_GITHUB		= https://github.com/nesthub/
 PATH_CURR		= $(shell pwd)
-PATH_PROJET		= auto-detected
+ifneq ($(wildcard $(PATH_CURR)/.path_root), )
+	PATH_PROJET = $(PATH_CURR)
+else
+ifneq ($(wildcard $(PATH_CURR)/../.path_root), )
+	PATH_PROJET = $(PATH_CURR)/..
+else
+	PATH_PROJET = 0
+endif
+endif
 
 # COLOR VAR
 RED				= \033[0;31m
@@ -29,11 +36,11 @@ FOLDER_LIB		= ./lib/
 NAME			= libft.a
 LIST_HEADER		= libft.h
 LIST_SRC		= ft_strlen.c ft_strcmp.c \
-				ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c \
-				ft_putnbr_fd.c ft_putnbr.c \
-				ft_islower.c ft_isupper.c ft_toupper.c ft_tolower.c \
-				ft_isalpha.c \
-				ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c
+				  ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c \
+				  ft_putnbr_fd.c ft_putnbr.c \
+				  ft_islower.c ft_isupper.c ft_toupper.c ft_tolower.c \
+				  ft_isalpha.c \
+				  ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c
 
 #BUILD LIST
 LIST_OBJ		= $(subst .c,.o,$(LIST_SRC))
@@ -50,7 +57,6 @@ $(FOLDER_OBJ)%.o: $(FOLDER_SRC)%.c
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
-	@echo "$(OK) $(NAME)"
 
 clean:
 	rm -rf $(FOLDER_OBJ)
@@ -65,149 +71,112 @@ clear:
 
 .PHONY: clean fclean re help push clone
 
+vardump:
+	@echo PATH_CURR: $(PATH_CURR)
+	@echo PATH_PROJET: $(PATH_PROJET)
+
 test: clear re
 	rm -f a.out
+	mkdir -p lib
 	cp ./libft.a ./lib/libft.a
 	$(CC) $(CFLAGS) -I$(FOLDER_INC) -L$(FOLDER_LIB) main.c -lft
 	./a.out
 
--projet-build-path:
-ifeq ($(wildcard $(PATH_CURR)/.path_root), )
-	$(eval PATH_PROJET := $(PATH_CURR)/..)
+# display status for both git42 and github in the current project
+status: -is-project-folder save-dev -status
+-status:
+ifeq ($(wildcard $(PATH_PROJET)/git42/.git), )
+	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/git42/ is not a git repository.$(BLANK)"
 else
-	$(eval PATH_PROJET := $(PATH_CURR))
+	@cd $(PATH_PROJET)/git42 && echo "$(OK) $(YELLOW)$(PATH_PROJET)/git42/ git status $(BLANK)" && git status -s
 endif
-#ifeq ($(wildcard $(PATH_PROJET)/.path_root), )
-#	$(error Not in a project directory.)
-#endif
-
-vardump: -projet-build-path 
-	@echo PATH_CURR: $(PATH_CURR)
-	@echo PATH_PROJET: $(PATH_PROJET)
-
-status: -projet-build-path
-ifeq ($(wildcard $(PATH_PROJET)/42/.git/config), )
-	@echo "$(RED)*$(YELLOW) $(PATH_PROJET)/42/ is not a git repository.$(BLANK)"
+ifeq ($(wildcard $(PATH_PROJET)/github/.git), )
+	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/github/ is not a git repository.$(BLANK)"
 else
-	@cd $(PATH_PROJET)/42 && echo "$(YELLOW)git status $(PATH_PROJET)/42/ git status $(BLANK)" && git status -s
+	@cd $(PATH_PROJET)/github && echo "$(OK) $(YELLOW)$(PATH_PROJET)/github/ git status$(BLANK)" && git status -s
 endif
-ifeq ($(wildcard $(PATH_PROJET)/github/.gitignore), )
-	@echo "$(RED)*$(YELLOW) $(PATH_PROJET)/github/ is not a git repository.$(BLANK)"
+
+#VERIF IS THE CURRENT VAR PATH_PROJET RETURN TO A PROJECT FOLDER
+-is-project-folder:
+ifeq ($(PATH_PROJET),0)
+	$(error Cant find .path_root file to define folder project)
+endif
+
+#PUSH TO BOTH GIT42 AND GItHUB
+push: -is-project-folder -push-var-verif push-git42 push-github -status
+
+#PUSH TO GITHUB
+push-github: -is-project-folder -push-var-verif
+ifeq ($(wildcard $(PATH_PROJET)/github/.git), )
+	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/github/ is not a git repository.$(BLANK)"
 else
-	@cd $(PATH_PROJET)/github && echo "$(YELLOW)$(PATH_PROJET)/github/ git status$(BLANK)" && git status -s
+	@echo "$(OK)$(YELLOW) $(PATH_PROJET)/github/ push$(BLANK)"
+	@cd $(PATH_PROJET)/github && git add $(ADD) && git commit -m "$(COMMIT)" && git push
 endif
-	@cd $(PATH_CURR)
 
-#DOCS
-help:
-	@echo "$(BLUE)*** [$(YELLOW)MAKEFILE VARIABLE$(BLUE)] $(BLANK)"
-	@echo "$(RED)- PATH_ROOT = $(YELLOW)$(PATH_ROOT)"
-	@echo "$(RED)- PATH_GITHUB = $(YELLOW)$(PATH_GITHUB)"
-	@echo "$(RED)- LOCAL=\"projets/libft\"\n\t$(YELLOW)Path to PATH_ROOT/LOCAL"
-	@echo "$(RED)- GIT=\"projet_libft\"\n\t$(YELLOW)Path to PATH_GITHUB/GIT.git"
-	@echo "$(BLUE)*** [$(YELLOW)MAKEFILE COMMAND$(BLUE)] $(BLANK)"
-	@echo "$(RED)- load-makefile"
-	@echo "$(YELLOW)- \tLoad Makefile from ~/42 to ./"
-	@echo "$(RED)- save-makefile"
-	@echo "$(YELLOW)- \tSave from ~/42/ to ~/42/config_workspace/"
-	@echo "$(RED)- load-workspace"
-	@echo "$(YELLOW)- \tLoad git env file (~/.vimrc, etc)"
-	@echo "$(RED)- save-workspace"
-	@echo "$(YELLOW)- \tSave actual env file (~/.vimrc, etc)"
-	@echo "$(RED)- push ADD=main.c COMMIT=\"commit message\""
-	@echo "$(YELLOW)- \tAdd, commit and push file"
-	@echo "$(RED)- clone LOCAL=\"www\" GIT=\"www\""
-	@echo "$(YELLOW)- \tClear PATH_ROOT/LOCAL and clone GIT inside"
-	@echo "$(RED)- init-projet LOCAL=\"projets/libft\""
-	@echo "$(YELLOW)- \tCopy new projet file to PATH_ROOT/LOCAL"
-
-
-#DISPLAY GIT STATUS ON config_workspace FOLDER
--status-env:
-	@echo "$(BLUE)*** [$(YELLOW)STATUS$(BLUE)] ~/42/config_workspace$(BLANK)"
-	@cd ~/42/config_workspace/ && git status
-	@echo cd ~/42/config_workspace
-
-#ROUTINE FOR SAVE ENV CONFIG
-# - zshrc, vimrc, Makefile
-save-workspace: -save-workspace -save-makefile -status-env
--save-workspace:
-	@mkdir -p ~/42/config_workspace/conf_file
-	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.zshrc$(BLANK)"
-	cp ~/.zshrc ~/42/config_workspace/conf_file/zshrc
-	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.vimrc$(BLANK)"
-	cp ~/.vimrc ~/42/config_workspace/conf_file/vimrc
-
-#ROUTINE FOR SAVE MAKEFILE
-save-makefile: -save-makefile -status-env
--save-makefile:
-	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/42/Makefile$(BLANK)"
-	cp ~/42/Makefile ~/42/config_workspace/Makefile
-
-#LOAD ENV CONFIG FILE FROM config_workspacei
-# -zshrc, vimrc, Makefile
-load-workspace:
-	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/zshrc$(BLANK)"
-	cp ~/42/config_workspace/conf_file/zshrc ~/.zshrc
-	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/vimrc$(BLANK)"
-	cp ~/42/config_workspace/conf_file/vimrc ~/.vimrc
-
-#LOAD MAKEFILE FROM ~/42/ TO CURRENT FOLDER
-load-makefile:
-	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] ~/42/Makefile$(BLANK)"
-	cp ~/42/Makefile ./Makefile
-
-#COPY DEFAULT FILE FOR NEW PROJECT
-init-projet:
-ifeq ($(LOCAL), )
-	$(error Syntaxe ex: init-projet LOCAL="projets/libft")
+#PUSH TO GIT42
+push-git42: -is-project-folder -push-var-verif
+ifeq ($(wildcard $(PATH_PROJET)/git42/.git), )
+	@echo "$(FAIL)$(YELLOW) $(PATH_PROJET)/git42/ is not a git repository.$(BLANK)"
+else
+	@echo "$(OK)$(YELLOW) $(PATH_PROJET)/git42/ push$(BLANK)"
+	@cd $(PATH_PROJET)/git42 && git add $(ADD) && git commit -m "$(COMMIT)" && git push
 endif
-	@echo "$(BLUE)*** [$(YELLOW)PATH VAR$(BLUE)] $(BLANK)"
-	@echo "$(OK) LOCAL = $(PATH_ROOT)$(LOCAL)"
-	@echo "$(BLUE)*** [$(YELLOW)MKDIR$(BLUE)] inc, src, lib, docs $(BLANK)"
-	@mkdir -p $(PATH_ROOT)$(LOCAL)/inc
-	@echo "$(OK) mkdir $(PATH_ROOT)$(LOCAL)/inc"
-	@mkdir -p $(PATH_ROOT)$(LOCAL)/docs
-	@echo "$(OK) mkdir $(PATH_ROOT)$(LOCAL)/doc"
-	@mkdir -p $(PATH_ROOT)$(LOCAL)/src
-	@echo "$(OK) mkdir $(PATH_ROOT)$(LOCAL)/src"
-	@mkdir -p $(PATH_ROOT)$(LOCAL)/lib
-	@echo "$(OK) mkdir $(PATH_ROOT)$(LOCAL)/lib"
-	@echo "$(BLUE)*** [$(YELLOW)COPY$(BLUE)] $(BLANK)"
-	@cp $(PATH_ROOT)/Makefile $(PATH_ROOT)$(LOCAL)/Makefile
-	@echo "$(OK) cp $(PATH_ROOT)/Makefile $(PATH_ROOT)$(LOCAL)/Makefile"
 
-#ADD, COMMUT PUSH A SINGLE FILE
-push:
+#VERIF IF CORRECT VAR ARE GIVIN TO THE PUSH RULE
+-push-var-verif:
 ifeq ($(ADD), )
 	$(error Syntaxe ex: push ADD="main.c" COMMIT="commit message")
 endif
 ifeq ($(COMMIT), )
 	$(error Syntaxe ex: push ADD="main.c" COMMIT="commit message")
 endif
-	@echo "$(BLUE)*** [$(YELLOW)ADD$(BLUE)] ./$(ADD) $(BLANK)"
-	@git add ./$(ADD)
-	@echo "$(BLUE)*** [$(YELLOW)COMMIT$(BLUE)] ./$(COMMIT) $(BLANK)"
-	@git commit -m "$(COMMIT)"
-	@echo "$(BLUE)*** [$(YELLOW)PUSH$(BLUE)] ./$(COMMIT) $(BLANK)"
-	@git push && echo "$(BLUE)*** [$(YELLOW)STATUS$(BLUE)] $(BLANK)" && git status
 
-#RE-CLONE A REPO
-clone:
-ifeq ($(LOCAL), )
-	$(error Syntaxe ex: clone LOCAL="projets/libft" GIT="projet_libft")
-endif
-ifeq ($(GIT), )
-	$(error Syntaxe ex: clone LOCAL="projets/libft" GIT="projet_libft")
-endif
-	@echo "$(BLUE)*** [$(YELLOW)PATH VAR$(BLUE)] $(BLANK)"
-	@echo "$(OK) LOCAL = $(PATH_ROOT)$(LOCAL)"
-	@echo "$(OK) GIT = $(PATH_GITHUB)$(GIT).git"
-	@echo "$(BLUE)*** [$(YELLOW)REMOVE$(BLUE)] $(PATH_ROOT)$(LOCAL)$(BLANK)"
-	@rm -rf $(PATH_ROOT)$(LOCAL)	
-	@echo "$(BLUE)*** [$(YELLOW)CLONE$(BLUE)] $(PATH_GITHUB)$(GIT).git$(BLANK)"
-	@git clone $(PATH_GITHUB)$(GIT).git $(PATH_ROOT)$(LOCAL)
-	@echo "$(BLUE)*** [$(YELLOW)DONE$(BLUE)] LS $(PATH_ROOT)$(LOCAL)$(BLUE)"
-	@ls -la $(PATH_ROOT)$(LOCAL)
-	@echo -n "$(BLANK)"
-	@pwd
+#SAVE CONTENT OF DEV FOLDER TO GIT42 AND GITHUB FOLDER
+save-dev: -is-project-folder
+	@echo "$(OK)$(YELLOW) Reseting swap folder..$(BLANK)"
+	@rm -rf $(PATH_PROJET)/swap
+	@mkdir -p $(PATH_PROJET)/swap
+	@echo "$(OK)$(YELLOW) Clear git42 folder..$(BLANK)"
+	@touch $(PATH_PROJET)/git42/prevent_mv_bug
+	@mv $(PATH_PROJET)/git42/* $(PATH_PROJET)/swap/
+	@rm -rf $(PATH_PROJET)/swap
+	@mkdir -p $(PATH_PROJET)/swap
+	@echo "$(OK)$(YELLOW) Clear github folder..$(BLANK)"
+	@touch $(PATH_PROJET)/github/prevent_mv_bug
+	@mv $(PATH_PROJET)/github/* $(PATH_PROJET)/swap/
+	@rm -rf $(PATH_PROJET)/swap
+	@echo "$(OK)$(YELLOW) Copy dev folder to both git42 and github..$(BLANK)"
+	@cp -r $(PATH_PROJET)/dev/* $(PATH_PROJET)/git42/
+	@cp -r $(PATH_PROJET)/dev/* $(PATH_PROJET)/github/
+
+#DOCS
+help:
+	@echo "$(RED)* $(YELLOWW) Comming soon..."
+
+#DISPLAY GIT STATUS ON config_workspace FOLDER
+-status-workspace:
+	@echo "$(BLUE)*** [$(YELLOW)STATUS$(BLUE)] ~/42/config_workspace$(BLANK)"
+	@cd ~/42/config_workspace/ && git status -s
+
+#ROUTINE FOR SAVE ENV CONFIG
+save-workspace: -save-workspace -save-makefile -status-workspace
+-save-workspace:
+	@mkdir -p ~/42/config_workspace/conf_file
+	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.zshrc$(BLANK)"
+	cp ~/.zshrc ~/42/config_workspace/conf_file/zshrc
+	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.vimrc$(BLANK)"
+	cp ~/.vimrc ~/42/config_workspace/conf_file/vimrc
+#ROUTINE FOR SAVE MAKEFILE
+save-makefile: -save-makefile
+-save-makefile:
+	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/42/Makefile$(BLANK)"
+	cp ~/42/Makefile ~/42/config_workspace/Makefile
+#LOAD ENV CONFIG FILE FROM config_workspace
+load-workspace:
+	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/zshrc$(BLANK)"
+	cp ~/42/config_workspace/conf_file/zshrc ~/.zshrc
+	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/vimrc$(BLANK)"
+	cp ~/42/config_workspace/conf_file/vimrc ~/.vimrc
+
+
