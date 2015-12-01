@@ -35,12 +35,13 @@ FOLDER_LIB		= ./lib/
 #PROJET VAR
 NAME			= libft.a
 LIST_HEADER		= libft.h
-LIST_SRC		= ft_strlen.c ft_strcmp.c \
+LIST_SRC		= ft_strlen.c ft_strcmp.c ft_strdup.c ft_strcpy.c \
 				  ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c \
-				  ft_putnbr_fd.c ft_putnbr.c \
+				  ft_putnbr_fd.c ft_putnbr.c ft_stralloc.c \
 				  ft_islower.c ft_isupper.c ft_toupper.c ft_tolower.c \
 				  ft_isalpha.c \
-				  ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c
+				  ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+				  ft_memchr.c ft_memcmp.c
 
 #BUILD LIST
 LIST_OBJ		= $(subst .c,.o,$(LIST_SRC))
@@ -156,22 +157,27 @@ help:
 
 #DISPLAY GIT STATUS ON config_workspace FOLDER
 -status-workspace:
-	@echo "$(BLUE)*** [$(YELLOW)STATUS$(BLUE)] ~/42/config_workspace$(BLANK)"
+	@echo "$(OK)$(YELLOW) ~/42/config_workspace git status$(BLANK)"
 	@cd ~/42/config_workspace/ && git status -s
 
 #ROUTINE FOR SAVE ENV CONFIG
-save-workspace: -save-workspace -save-makefile -status-workspace
+save-workspace: -save-workspace -save-makefile -push-workspace -status-workspace
 -save-workspace:
 	@mkdir -p ~/42/config_workspace/conf_file
-	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.zshrc$(BLANK)"
-	cp ~/.zshrc ~/42/config_workspace/conf_file/zshrc
-	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/.vimrc$(BLANK)"
-	cp ~/.vimrc ~/42/config_workspace/conf_file/vimrc
+	@echo "$(OK)$(YELLOW) copy ~/.zshrc$(BLANK)"
+	@cp ~/.zshrc ~/42/config_workspace/conf_file/zshrc
+	@echo "$(OK)$(YELLOW) copy ~/.vimrc$(BLANK)"
+	@cp ~/.vimrc ~/42/config_workspace/conf_file/vimrc
 #ROUTINE FOR SAVE MAKEFILE
 save-makefile: -save-makefile
 -save-makefile:
-	@echo "$(BLUE)*** [$(YELLOW)SAVE$(BLUE)] ~/42/Makefile$(BLANK)"
+	@echo "$(OK)$(YELLOW) copy ~/42/Makefile$(BLANK)"
 	cp ~/42/Makefile ~/42/config_workspace/Makefile
+#PUSH THE WORKSPACE SAVE
+-push-workspace:
+	@echo "$(OK)$(YELLOW) push ~/42/config_workspace/$(BLANK)"
+	@cd ~/42/config_workspace/ && git add --all && git commit -m "save config" && git push
+
 #LOAD ENV CONFIG FILE FROM config_workspace
 load-workspace:
 	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/zshrc$(BLANK)"
