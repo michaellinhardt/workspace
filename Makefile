@@ -172,7 +172,7 @@ save-workspace: -save-workspace -save-makefile -push-workspace -status-workspace
 save-makefile: -save-makefile
 -save-makefile:
 	@echo "$(OK)$(YELLOW) copy ~/42/Makefile$(BLANK)"
-	cp ~/42/Makefile ~/42/config_workspace/Makefile
+	@cp ~/42/Makefile ~/42/config_workspace/Makefile
 #PUSH THE WORKSPACE SAVE
 -push-workspace:
 	@echo "$(OK)$(YELLOW) push ~/42/config_workspace/$(BLANK)"
