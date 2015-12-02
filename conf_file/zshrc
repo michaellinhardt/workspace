@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/nfs/zfs-student-3/users/2015_paris/mlinhard/.oh-my-zsh
+export ZSH=/nfs/zfs-student-7/users/mlinhard/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /nfs/zfs-student-3/users/2015_paris/mlinhard/.Sublivim/sublivimrc.sh
+source /nfs/zfs-student-7/users/mlinhard/.Sublivim/sublivimrc.sh
 
 alias cc="gcc -Wall -Wextra -Werror"
 alias l="ls -la"
