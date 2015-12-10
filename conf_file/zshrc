@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/nfs/zfs-student-3/users/mlinhard/.oh-my-zsh
+export MAIL=$USER@student.42.fr
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

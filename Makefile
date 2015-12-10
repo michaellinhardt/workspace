@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/08 03:40:52 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/08 19:22:06 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/10 04:56:54 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,6 +89,10 @@ re: fclean all
 
 clear:
 	clear
+
+test: clear
+	$(CC) $(CFLAGS) -I./ main.c libft.a
+	./a.out
 
 .PHONY: clean fclean re help push clone
 

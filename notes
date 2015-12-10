@@ -11,6 +11,9 @@
 	- m push-github ADD COMMIT - push project only to github
 	- NO RULE FOR CLONE !
 
+- libft
+	- retirer les include libft.h inutile.
+
 - libft bonus
 	- ft_strtolower
 	- ft_strtoupper
@@ -18,4 +21,4 @@
 	- ft_arrfree
 	- ft_arrcpy
 	- ft_putcolor
-
+	- ft_countwords
