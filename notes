@@ -13,6 +13,7 @@
 
 - libft
 	- retirer les include libft.h inutile.
+	- lstdelone -> utiliser ft_memdel pour free le maillon 
 
 - libft bonus
 	- ft_strtolower

@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/08 03:40:52 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/10 04:56:54 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/10 09:22:16 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,8 @@ LIST_SRC		= ft_strlen.c ft_strcmp.c ft_strdup.c ft_strcpy.c ft_strncpy.c \
 				  ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				  ft_memchr.c ft_memcmp.c ft_memalloc.c ft_memdel.c ft_strnew.c \
 				  ft_atoi.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c \
-				  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c
+				  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
+				  ft_strtolower.c ft_strtoupper.c
 
 #BUILD LIST
 LIST_OBJ		= $(subst .c,.o,$(LIST_SRC))
@@ -90,7 +91,7 @@ re: fclean all
 clear:
 	clear
 
-test: clear
+test: clear fclean re
 	$(CC) $(CFLAGS) -I./ main.c libft.a
 	./a.out
 
