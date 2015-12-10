@@ -1,6 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2015/12/08 03:40:52 by mlinhard          #+#    #+#              #
+#    Updated: 2015/12/08 19:22:06 by mlinhard         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # https://github.com/nesthub/
-# PATH VAR & VERSION 
-VERSION 		= v0.9
+# PATH VAR
 PATH_ROOT		= ~/42/
 PATH_CURR		= $(shell pwd)
 ifneq ($(wildcard $(PATH_CURR)/.path_root), )
@@ -35,32 +46,41 @@ FOLDER_LIB		= ./lib/
 #PROJET VAR
 NAME			= libft.a
 LIST_HEADER		= libft.h
-LIST_SRC		= ft_strlen.c ft_strcmp.c ft_strdup.c ft_strcpy.c \
+LIST_SRC		= ft_strlen.c ft_strcmp.c ft_strdup.c ft_strcpy.c ft_strncpy.c \
+				  ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c ft_strrchr.c \
+				  ft_strstr.c ft_strnstr.c ft_strncmp.c ft_putendl.c ft_itoa.c \
 				  ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c \
-				  ft_putnbr_fd.c ft_putnbr.c ft_stralloc.c \
+				  ft_putnbr_fd.c ft_putnbr.c ft_stralloc.c ft_putendl_fd.c \
 				  ft_islower.c ft_isupper.c ft_toupper.c ft_tolower.c \
-				  ft_isalpha.c \
+				  ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_lstmap.c \
+				  ft_isprint.c ft_isspace.c ft_strdel.c ft_strclr.c ft_striter.c \
+				  ft_striteri.c ft_strmap.c ft_strmapi.c ft_strequ.c ft_strnequ.c \
 				  ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
-				  ft_memchr.c ft_memcmp.c
+				  ft_memchr.c ft_memcmp.c ft_memalloc.c ft_memdel.c ft_strnew.c \
+				  ft_atoi.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c \
+				  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c
 
 #BUILD LIST
 LIST_OBJ		= $(subst .c,.o,$(LIST_SRC))
-SRCS			= $(addprefix $(FOLDER_SRC), $(LIST_SRC))
-OBJS			= $(addprefix $(FOLDER_OBJ), $(LIST_OBJ))
+#SRCS			= $(addprefix $(FOLDER_SRC), $(LIST_SRC))
+#OBJS			= $(addprefix $(FOLDER_OBJ), $(LIST_OBJ))
 
 all: $(NAME)
 
-#TRANSFORM .c FILE INTO .o
-$(FOLDER_OBJ)%.o: $(FOLDER_SRC)%.c
-	@mkdir -p $(FOLDER_OBJ)
-	$(CC) $(CFLAGS) -I$(FOLDER_INC) -c -o $@ $<
+#TRANSFORM .c FILE INTO .o WITH OBJ FOLDER
+#$(FOLDER_OBJ)%.o: $(FOLDER_SRC)%.c
+#@mkdir -p $(FOLDER_OBJ)
+#$(CC) $(CFLAGS) -I$(FOLDER_INC) -c -o $@ $<
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+%.o: %.c
+	$(CC) $(CFLAGS) -I./ -c -o $@ $<
+
+$(NAME): $(LIST_OBJ)
+	ar rc $(NAME) $(LIST_OBJ)
 	ranlib $(NAME)
 
 clean:
-	rm -rf $(FOLDER_OBJ)
+	rm -rf $(LIST_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
@@ -76,13 +96,6 @@ vardump:
 	@echo PATH_CURR: $(PATH_CURR)
 	@echo PATH_PROJET: $(PATH_PROJET)
 
-test: clear re
-	rm -f a.out
-	mkdir -p lib
-	cp ./libft.a ./lib/libft.a
-	$(CC) $(CFLAGS) -I$(FOLDER_INC) -L$(FOLDER_LIB) main.c -lft
-	./a.out
-
 # display status for both git42 and github in the current project
 status: -is-project-folder save-dev -status
 -status:
@@ -97,7 +110,7 @@ else
 	@cd $(PATH_PROJET)/github && echo "$(OK) $(YELLOW)$(PATH_PROJET)/github/ git status$(BLANK)" && git status -s
 endif
 
-#VERIF IS THE CURRENT VAR PATH_PROJET RETURN TO A PROJECT FOLDER
+#VERIF IF THE CURRENT VAR PATH_PROJET RETURN TO A PROJECT FOLDER
 -is-project-folder:
 ifeq ($(PATH_PROJET),0)
 	$(error Cant find .path_root file to define folder project)
@@ -184,5 +197,3 @@ load-workspace:
 	cp ~/42/config_workspace/conf_file/zshrc ~/.zshrc
 	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/vimrc$(BLANK)"
 	cp ~/42/config_workspace/conf_file/vimrc ~/.vimrc
-
-

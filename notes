@@ -10,3 +10,12 @@
 	- m push-git42 ADD COMMIT - push project only to git42
 	- m push-github ADD COMMIT - push project only to github
 	- NO RULE FOR CLONE !
+
+- libft bonus
+	- ft_strtolower
+	- ft_strtoupper
+	- ft_arrlen
+	- ft_arrfree
+	- ft_arrcpy
+	- ft_putcolor
+
