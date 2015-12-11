@@ -56,6 +56,10 @@ set splitright
 set list listchars=tab:»·,trail:·
 
 noremap <Space><Space>		:tabedit ~/.vimrc<CR>
+noremap <S-F12>				:!make test<CR>
+noremap <F2>				:NERDTree ~/42<CR>
+noremap <F12>				:e ~/42/Makefile<CR>
+noremap <F11>				:e ~/42/config_workspace/notes<CR>
 
 noremap <C-h> :GundoToggle<CR>
 
