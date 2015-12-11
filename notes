@@ -17,10 +17,7 @@
 	- lstdelone -> utiliser ft_memdel pour free le maillon 
 
 - libft bonus
-	- ft_strtolower
-	- ft_strtoupper
 	- ft_arrlen
 	- ft_arrfree
 	- ft_arrcpy
-	- ft_putcolor
-	- ft_countwords
+	- ft_putcol
