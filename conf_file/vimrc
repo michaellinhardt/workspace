@@ -59,7 +59,7 @@ noremap <Space><Space>		:tabedit ~/.vimrc<CR>
 noremap <S-F12>				:!make test<CR>
 noremap <F2>				:NERDTree ~/42<CR>
 noremap <F12>				:e ~/42/Makefile<CR>
-noremap <F11>				:e ~/42/config_workspace/notes<CR>
+noremap <F10>				:e ~/42/config_workspace/notes<CR>
 
 inoremap <Esc>Oq 1
 inoremap <Esc>Or 2

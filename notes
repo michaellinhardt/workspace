@@ -12,7 +12,8 @@
 	- NO RULE FOR CLONE !
 
 - libft
-	- retirer les include libft.h inutile.
+	- retirer les include libft.h inutile dans les .c.
+	- sup les includes de bibli dans libft.h et les mettre dans les .c
 	- lstdelone -> utiliser ft_memdel pour free le maillon 
 
 - libft bonus
