@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/08 03:40:52 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/10 14:45:53 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/11 10:41:13 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,10 +99,12 @@ test: clear re
 	@./a.out
 	@echo "$(BLANK)"
 
-moulitest: clear re
+# TEST FOR LIBFT
+moulitest: -is-project-folder -is-dev-folder clear re moulitest-
+unitest: -is-project-folder -is-dev-folder clear re unitest-
+moulitest-:
 	@cd $(PATH_PROJET)/moulitest && make libft_bonus
-
-unitest: clear re
+unitest-:
 	rm -rf $(PATH_PROJET)/unit-test/libft
 	cp -R $(PATH_PROJET)/dev/ $(PATH_PROJET)/unit-test/libft
 	@cd $(PATH_PROJET)/unit-test/libft-unit-test && make re && make f
@@ -131,6 +133,11 @@ endif
 -is-project-folder:
 ifeq ($(PATH_PROJET),0)
 	$(error Cant find .path_root file to define folder project)
+endif
+# VERIF IS CURRENT FOLDER IS DEV FOLDER
+-is-dev-folder:
+ifneq ($(wildcard $(PATH_CURR)/.path_root), )
+	$(error You are not in dev folder!)
 endif
 
 #PUSH TO BOTH GIT42 AND GItHUB
