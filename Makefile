@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/08 03:40:52 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/11 14:49:37 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/11 14:50:40 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -205,7 +205,7 @@ save-workspace: -save-workspace -save-makefile -push-workspace -status-workspace
 	@mkdir -p ~/42/config_workspace/conf_file
 	@echo "$(OK)$(YELLOW) copy ~/.zshrc$(BLANK)"
 	@cp ~/.zshrc ~/42/config_workspace/conf_file/zshrc
-	@echo "$(OK)$(YELLOW) copy ~/.vimrc$(BLANK)"
+	@echo "$(OK)$(YELLOW) copy ~/.Sublivim/config_perso$(BLANK)"
 	@cp ~/.Sublivim/config_perso ~/42/config_workspace/conf_file/sublivim_config_perso
 #ROUTINE FOR SAVE MAKEFILE
 save-makefile: -save-makefile
@@ -221,5 +221,5 @@ save-makefile: -save-makefile
 load-workspace:
 	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/zshrc$(BLANK)"
 	cp ~/42/config_workspace/conf_file/zshrc ~/.zshrc
-	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/vimrc$(BLANK)"
+	@echo "$(BLUE)*** [$(YELLOW)LOAD$(BLUE)] conf_file/sublivim_config_perso$(BLANK)"
 	cp ~/42/config_workspace/conf_file/sublivim_config_perso ~/.Sublivim/config_perso
