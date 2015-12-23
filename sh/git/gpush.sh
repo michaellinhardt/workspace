@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/23 15:29:16 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/23 18:36:47 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/23 18:37:26 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -30,7 +30,7 @@ then
 	# recupere la liste des fichiers a push
 	echo $CW8 $CYE"Enter file list or leave blank for all.."$CWH
 	read -r file
-	if [ ! $file ]
+	if [ ! "$file" ]
 	then
 		file="--all"
 	fi
