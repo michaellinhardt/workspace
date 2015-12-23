@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/23 15:29:16 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/23 18:36:10 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/23 18:36:47 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -22,7 +22,7 @@ then
 	echo $CW8 $CYE"Enter commit description or leave blank for cancel.."$CWH
 	read -r commit
 	# cancel si aucune raison
-	if [ ! $commit ]
+	if [ ! "$commit" ]
 	then
 		echo $CKO $CRE"Canceled!"$CWH
 		exit 0
