@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/23 15:29:16 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/23 18:19:30 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/23 18:19:51 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -49,11 +49,11 @@ else
 	file="--all"
 fi
 # Execute l'operation
-echo $CW8 $CYEL"git add "$file$CWH
+echo $CW8 $CYE"git add "$file$CWH
 git add $file
-echo $CW8 $CYEL"git commit -m \""$commit"\""$CWH
+echo $CW8 $CYE"git commit -m \""$commit"\""$CWH
 git commit -m "$commit"
-echo $CW8 $CYEL"git push"$CWH
+echo $CW8 $CYE"git push"$CWH
 git push
 echo $COK $CGR"Done!"$CWH
 exit 0
