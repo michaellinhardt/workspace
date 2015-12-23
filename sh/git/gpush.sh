@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/23 15:29:16 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/23 18:02:05 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/23 18:02:56 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -19,6 +19,7 @@ then
 		echo $CKO $CRE "not a git repository... tard!"
 		exit 0
 fi
+echo $?
 [[ -z $(git status) ]] && echo $CKO $CRE "this branch is clean, no need to push... tard!" && exit 0;
 #is_git=$( git status -s )
 #if [ "$is_git" == "true" ]
