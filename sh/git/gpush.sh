@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/23 15:29:16 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/23 18:23:22 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/23 18:28:47 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -47,13 +47,14 @@ else
 	# la raison du commit est transmise a lappel du script
 	commit=$*
 	file="--all"
-	echo $CW8 $CYE"Press enter to confirm or send any key to cancel.."$CWH
-	read -r verify
-	if [ $verify ]
-	then
-		echo $CKO $CRE"Canceled!"$CWH
-		exit 0
-	fi
+	# Demande confirmation
+	#echo $CW8 $CYE"Press enter to confirm or send any key to cancel.."$CWH
+	#read -r verify
+	#if [ $verify ]
+	#then
+	#	echo $CKO $CRE"Canceled!"$CWH
+	#	exit 0
+	#fi
 fi
 # Execute l'operation
 echo $CW8 $CYE"git add "$file$CWH
