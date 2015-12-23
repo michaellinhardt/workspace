@@ -1,18 +1,21 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    install.sh                                         :+:      :+:    :+:    #
+#    clone.sh                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/12/23 18:45:20 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/23 20:12:18 by mlinhard         ###   ########.fr        #
+#    Created: 2015/12/23 20:05:34 by mlinhard          #+#    #+#              #
+#    Updated: 2015/12/23 20:11:18 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
-# sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/install.sh)"
 
-# 1. Clone ~/42/workspace
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/sh/workspace/clone.sh)"
-echo "ok"
-exit 0
+echo "erase and re-clone ~/42/workspace from github [y/n]"
+read -r confirm
+if [ "$confirm" != "y" ]
+then
+	echo "Canceled!"
+	exit 0;
+fi
+echo "go"
