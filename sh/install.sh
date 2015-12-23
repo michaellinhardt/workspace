@@ -1,8 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    install.sh                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2015/12/23 18:45:20 by mlinhard          #+#    #+#              #
+#    Updated: 2015/12/23 18:45:28 by mlinhard         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 #!/bin/bash
-# Indique au système que l'argument qui suit est le programme utilisé pour exécuter ce fichier
-# En règle générale, les "#" servent à mettre en commentaire le texte qui suit comme ici
-echo Mon premier script
-echo Liste des fichiers :
-ls -la
 
 exit 0
