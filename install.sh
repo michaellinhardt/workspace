@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/23 18:45:20 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/23 20:17:10 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/23 20:19:00 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -14,7 +14,7 @@
 
 # Include colors
 echo "[ W8 ] include colors var"
-source "$(curl -fsSL https://raw/githubusercontent.com/nesthub/workspace/master/config/zsh/colors)"
+source "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/config/zsh/colors)"
 # 1. Clone ~/42/workspace
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/sh/workspace/clone.sh)"
 echo "ok"
