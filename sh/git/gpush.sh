@@ -6,30 +6,24 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/23 15:29:16 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/23 18:02:56 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/23 18:17:34 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
 
-# Verifi quon est dans un dossier git, si oui affiche le status sinon exit
+# Affiche le status et controle le retour, exit si ce nest pas un dossier git
 echo $CW8 $CYE"git status -s"$CWH
 git status -s
 if [ "$?" -eq 128 ]
 then
-		echo $CKO $CRE "not a git repository... tard!"
+		echo $CKO $CRE "not a git repository... tard!"$CWH
 		exit 0
 fi
-echo $?
-[[ -z $(git status) ]] && echo $CKO $CRE "this branch is clean, no need to push... tard!" && exit 0;
-#is_git=$( git status -s )
-#if [ "$is_git" == "true" ]
-#then
-#	echo $CKO $CRE"not in a git directory.. tard!"
-#	exit 1
-#fi
-# Aucun argument transmit,
-# on demande la raison du commit et on push all,
-# si raison du commit vide on annule
+# Verifie si le dossier git actuel necessite une mise a jour
+[[ -z $(git status --porcelain) ]] && echo $CKO $CRE "this branch is clean.. tard!"$CWH && exit 0;
+# Si aucun argument transmit on recupere la raison du commit et la liste a push
+# si raison du commit est vide on stop
+# si aucune list a push on push tout
 if [ $# -lt 1 ]
 then
 	# recupere la raison du commit
@@ -47,10 +41,16 @@ then
 	if [ ! $file ]
 	then
 		file="--all"
-		echo $file
-		exit 0
 	fi
-	exit 0
+# Si un argument transmit on push tout avec comme commit l'argument transmit
+else
+	# la raison du commit est transmise a lappel du script
+	commit=$*
+	file="--all"
 fi
-
+# Execute l'operation
+echo $CW8 $CYEL"git add "$file$CWH
+git add $file
+echo $CW8 $CYEL"git commit -m \""$commit"\""$CWH
+git commit -m "$commit"
 exit 0
