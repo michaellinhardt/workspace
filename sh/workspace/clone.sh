@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/23 20:05:34 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/23 20:11:18 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/23 20:13:08 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -16,6 +16,6 @@ read -r confirm
 if [ "$confirm" != "y" ]
 then
 	echo "Canceled!"
-	exit 0;
+	exit 1;
 fi
 echo "go"
