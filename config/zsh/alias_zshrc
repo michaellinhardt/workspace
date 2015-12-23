@@ -1,6 +1,8 @@
 alias cc="gcc -Wall -Wextra -Werror"
 alias l="ls -la"
 
+alias wsinstall="sh -c \"$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/install.sh)\""
+
 alias zshrc-config="vim ~/42/workspace/config/zsh/.zshrc"
 alias zshrc-alias="vim ~/42/workspace/config/zsh/alias_zshrc"
 alias zshrc-portable="vim ~/42/workspace/config/zsh/portable_zshrc"
