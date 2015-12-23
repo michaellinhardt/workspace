@@ -6,14 +6,20 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/23 15:29:16 by mlinhard          #+#    #+#              #
-#    Updated: 2015/12/23 17:26:34 by mlinhard         ###   ########.fr        #
+#    Updated: 2015/12/23 18:01:33 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
 
 # Verifi quon est dans un dossier git, si oui affiche le status sinon exit
 echo $CW8 $CYE"git status -s"$CWH
-[[ -z $(git status -uno --porcelain) ]] && echo $CKO $CRE "this branch is clean, no need to push... tard!" && exit 0;
+git status -s
+if [ "$?" -eq 128 ]
+then
+		echo $CKO $CRE "not a git repository... tard!"
+		exit 0
+fi
+[[ -z $(git status) ]] && echo $CKO $CRE "this branch is clean, no need to push... tard!" && exit 0;
 #is_git=$( git status -s )
 #if [ "$is_git" == "true" ]
 #then
