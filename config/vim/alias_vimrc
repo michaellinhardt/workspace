@@ -3,8 +3,8 @@ inoremap	<F5>			<ESC>:tabedit ~/42/workspace/config/vim/.vimrc<CR>
 noremap		<F9>			:source ~/42/workspace/config/vim/.vimrc<CR>
 inoremap	<F9>			<ESC>:source ~/42/workspace/config/vim/.vimrc<CR>
 
-noremap		<C-CR>			:w<CR>:!make test<CR>
-inoremap	<C-CR>			<ESC>:w<CR>:!make test<CR>
+noremap		<S-F12>			:w<CR>:!make test<CR>
+inoremap	<S-F12>			<ESC>:w<CR>:!make test<CR>
 
 noremap		<F2>			<ESC>gg=G
 inorema		<F2>			<ESC>gg=G
