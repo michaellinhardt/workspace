@@ -24,5 +24,4 @@ set list listchars=tab:»·,trail:·
 set autochdir
 set backspace=indent,eol,start
 
-source ~/42/workspace/config/vim/numpad_vimrc
-source ~/42/workspace/config/vim/alias_vimrc
+source ~/42/workspace/config/vim/source
