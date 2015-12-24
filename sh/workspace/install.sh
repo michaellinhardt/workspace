@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
-# sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/install.sh)"
+# Include config
+curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/sh/workspace/install-settings.sh
 
 # Include colors
 echo "[ W8 ] include colors var"
