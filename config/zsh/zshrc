@@ -18,5 +18,8 @@ export COK="\033[0;38m[\033[0;32m OK \033[0;38m]"
 export CKO="\033[0;38m[\033[0;31m KO \033[0;38m]"
 export CW8="\033[0;38m[\033[0;34m W8 \033[0;38m]"
 
+# Cask option to force install similink in /Applications
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 source ~/42/workspace/config/zsh/source
 cd ~/42
