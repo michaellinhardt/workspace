@@ -21,9 +21,9 @@ mkdir -p ~/42
 mkdir -p ~/42/workspace
 # 1. Clone ~/42/workspace
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/sh/workspace/clone.sh)"
-if [ "$?" -eq 1 ]
+if [ "$?" != 0 ]
 then
-	echo $CKO $CRE"Cloning workspace canceled!"$CWH
+	echo $CKO $CRE"Cant continue without clean workspace folder!"$CWH
 	exit 1;
 fi
 echo "ok"
