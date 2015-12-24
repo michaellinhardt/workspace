@@ -13,7 +13,7 @@ alias vimrc-portable="vim ~/42/workspace/config/vim/portable_vimrc"
 alias vimrc-school="vim ~/42/workspace/config/vim/school_vimrc"
 alias vimrc-load="sudo sh ~/42/workspace/sh/vim/vimrc-load.sh
 
-wsinstall () { sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/install.sh)" }
+wsinstall () { sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/sh/workspace/install.sh)" }
 
 42 () { cd ~/42/$1 }
 

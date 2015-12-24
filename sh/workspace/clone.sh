@@ -15,7 +15,7 @@ echo $CW8 $CYE"erase and re-clone ~/42/workspace from github [y/n]"$CWH
 read -r confirm
 if [ "$confirm" != "y" ]
 then
-	echo $CKO $CRE"Canceled!"$CWH
+	echo $CKO $CRE"Re-clone workspace canceled!"$CWH
 	exit 1;
 fi
 echo $CW8 $CYE"rm -rf ~/42/workspace"$CWH
