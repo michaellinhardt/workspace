@@ -21,7 +21,7 @@ fi
 echo $CW8 $CYE"rm -rf ~/42/workspace"$CWH
 rm -rf ~/42/workspace
 echo $CW8 $CYE"clone github.com/nesthub/workspace.git"$CWH
-git clone https://github.com/nesthub/workspacee.git ~/42/workspace
+git clone https://github.com/nesthub/workspace.git ~/42/workspace
 if [ "$?" -eq 0 ]
 then
 	echo $COK $CGR"Cloning workspace success!"$CWH
