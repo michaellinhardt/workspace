@@ -19,3 +19,4 @@ export CKO="\033[0;38m[\033[0;31m KO \033[0;38m]"
 export CW8="\033[0;38m[\033[0;34m W8 \033[0;38m]"
 
 source ~/42/workspace/config/zsh/source
+cd ~/42
