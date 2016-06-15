@@ -1,0 +1,28 @@
+"*":
+  core:
+    disabledPackages: [
+      "atom-terminal"
+    ]
+    projectHome: "~/42/projects/"
+    themes: [
+      "atom-dark-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    fontSize: 12
+    invisibles: {}
+    lineHeight: 1.3
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+    tabType: "hard"
+    zoomFontWhenCtrlScrolling: true
+  "exception-reporting":
+    userId: "ea24a614-1502-c08d-505d-2aefe2ced453"
+  "terminal-plus":
+    core:
+      autoRunCommand: "make leaks"
+      mapTerminalsTo: "Folder"
+    toggles: {}
+  welcome:
+    showOnStartup: false
