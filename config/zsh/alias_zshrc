@@ -16,8 +16,3 @@ alias vimrc-load="sudo sh ~/42/workspace/sh/vim/vimrc-load.sh
 wsinstall () { sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/sh/workspace/install.sh)" }
 
 42 () { cd ~/42/$1 }
-
-alias mt="make test"
-m () { make $1 }
-
-alias todo="vim ~/42/workspace/notes"
