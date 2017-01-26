@@ -6,12 +6,13 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/23 15:29:16 by mlinhard          #+#    #+#              #
-#    Updated: 2016/11/20 04:37:39 by mlinhard         ###   ########.fr        #
+#    Updated: 2017/01/26 10:21:51 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
 
-git config user.email "nestoyeur@gmail.com"
+git config --global user.name "Michael Linhardt"
+git config --global user.email "michael.linhardt@recast.ai"
 sh ~/42/workspace/sh/git/gstatus.sh
 [[ $? != 0 ]] && exit 1;
 # Si aucun argument transmit on recupere la raison du commit et la liste a push
