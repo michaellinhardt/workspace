@@ -11,8 +11,8 @@
 # **************************************************************************** #
 #!/bin/bash
 
-git config --global user.name "Michael Linhardt"
-git config --global user.email "michael.linhardt@recast.ai"
+sh ~/42/workspace/sh/git/gsetup.sh
+[[ $? != 0 ]] && exit 1;
 sh ~/42/workspace/sh/git/gstatus.sh
 [[ $? != 0 ]] && exit 1;
 # Si aucun argument transmit on recupere la raison du commit et la liste a push

@@ -21,7 +21,6 @@ export CW8="\033[0;38m[\033[0;34m W8 \033[0;38m]"
 # Cask option to force install similink in /Applications
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-git config --global user.name "Michael Linhardt"
-git config --global user.email "michael.linhardt@recast.ai"
+sh ~/42/workspace/sh/git/gsetup.sh
 source ~/42/workspace/config/zsh/source
 cd ~/42
