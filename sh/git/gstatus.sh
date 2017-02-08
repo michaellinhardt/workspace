@@ -20,5 +20,5 @@ then
 		exit 1
 fi
 # Verifie si le dossier git actuel necessite une mise a jour
-[[ -z $(git status --porcelain) ]] && echo $CKO $CRE "this branch is clean.. tard!"$CWH && exit 2;
+[[ -z $(git status --porcelain) ]] && echo $CKO $CRE "this branch is commited!"$CWH && exit 2;
 exit 0;

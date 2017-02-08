@@ -14,48 +14,21 @@
 sh ~/42/workspace/sh/git/gsetup.sh
 [[ $? != 0 ]] && exit 1;
 sh ~/42/workspace/sh/git/gstatus.sh
-[[ $? != 0 ]] && exit 1;
-# Si aucun argument transmit on recupere la raison du commit et la liste a push
-# si raison du commit est vide on stop
-# si aucune list a push on push tout
+# Si aucun argument transmit on push et c'est tout
 if [ $# -lt 1 ]
 then
-	# recupere la raison du commit
-	echo $CW8 $CYE"Enter commit description or leave blank for cancel.."$CWH
-	read -r commit
-	# cancel si aucune raison
-	if [ ! "$commit" ]
-	then
-		echo $CKO $CRE"Canceled!"$CWH
-		exit 0
-	fi
-	# recupere la liste des fichiers a push
-	echo $CW8 $CYE"Enter file list or leave blank for all.."$CWH
-	read -r file
-	if [ ! "$file" ]
-	then
-		file="--all"
-	fi
-# Si un argument transmit on push tout avec comme commit l'argument transmit
+  echo $CW8 $CYE"git push"$CWH
+  git push
+  echo $COK $CGR"Done!"$CWH
+  exit 0
 else
-	# la raison du commit est transmise a lappel du script
 	commit=$*
-	file="--all"
-	# Demande confirmation
-	#echo $CW8 $CYE"Press enter to confirm or send any key to cancel.."$CWH
-	#read -r verify
-	#if [ $verify ]
-	#then
-	#	echo $CKO $CRE"Canceled!"$CWH
-	#	exit 0
-	#fi
+  echo $CW8 $CYE"git add --all"
+  git add --all
+  echo $CW8 $CYE"git commit -m \""$commit"\""$CWH
+  git commit -m "$commit"
+  echo $CW8 $CYE"git push"$CWH
+  git push
+  echo $COK $CGR"Done!"$CWH
+  exit 0
 fi
-# Execute l'operation
-echo $CW8 $CYE"git add "$file$CWH
-git add $file
-echo $CW8 $CYE"git commit -m \""$commit"\""$CWH
-git commit -m "$commit"
-echo $CW8 $CYE"git push"$CWH
-git push
-echo $COK $CGR"Done!"$CWH
-exit 0

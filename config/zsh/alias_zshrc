@@ -4,6 +4,7 @@ alias l="ls -la"
 wsinstall () { sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/sh/workspace/install.sh)" }
 
 42 () { cd ~/42/$@ }
+workspace () { cd ~/42/workspace/$@ }
 
 recast () { cd ~/42/recastai/$@ }
 wallace () { cd ~/42/recastai/botconnector/wallace/$@ }
