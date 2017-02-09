@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sh ~/42/workspace/sh/git/glint.sh
-[[ $? != 0 ]] && exit 1;
 sh ~/42/workspace/sh/git/gclean.sh
 [[ $? != 0 ]] && exit 1;
 sh ~/42/workspace/sh/git/gsetup.sh
@@ -15,6 +13,8 @@ then
   echo $COK $CGR"Done!"$CWH
   exit 0
 else
+  sh ~/42/workspace/sh/git/glint.sh
+  [[ $? != 0 ]] && exit 1;
 	commit=$*
   echo $CW8 $CYE"git add --all"
   git add --all
