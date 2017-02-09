@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sh ~/42/workspace/sh/git/glint.sh
+[[ $? != 0 ]] && exit 1;
 sh ~/42/workspace/sh/git/gclean.sh
 [[ $? != 0 ]] && exit 1;
 sh ~/42/workspace/sh/git/gsetup.sh

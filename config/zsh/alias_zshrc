@@ -13,3 +13,4 @@ gromit () { cd ~/42/recastai/botconnector/gromit/$@ }
 bernard () { cd ~/42/bernard/$@ }
 
 atom () { open -a atom $@ }
+lint () { sh ~/42/workspace/sh/git/glint.sh }
