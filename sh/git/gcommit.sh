@@ -2,7 +2,7 @@
 
 sh ~/42/workspace/sh/git/glint.sh
 [[ $? != 0 ]] && exit 1;
-sh ~/42/workspace/sh/git/gclean.sh
+sh ~/42/workspace/sh/sys/dstore.sh
 [[ $? != 0 ]] && exit 1;
 sh ~/42/workspace/sh/git/gsetup.sh
 [[ $? != 0 ]] && exit 1;
