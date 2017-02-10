@@ -1,17 +1,22 @@
+# programming related command
 alias cc="gcc -Wall -Wextra -Werror"
-alias l="ls -la"
+lint () { sh ~/42/workspace/sh/git/glint.sh }
+atom () { open -a atom $@ }
 
+# usefull system command
+alias l="ls -la"
+dstore () { sh ~/42/workspace/sh/sys/dstore.sh }
+
+# Install the workspace.. not used yet but need a good rework
 wsinstall () { sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/sh/workspace/install.sh)" }
 
+# CD to a particular path
 42 () { cd ~/42/$@ }
 workspace () { cd ~/42/workspace/$@ }
+bernard () { cd ~/42/bernard/$@ }
 
+# CD (recast related) to a particular path
 recast () { cd ~/42/recastai/$@ }
 wallace () { cd ~/42/recastai/botconnector/wallace/$@ }
 gromit () { cd ~/42/recastai/botconnector/gromit/$@ }
-
-bernard () { cd ~/42/bernard/$@ }
-
-atom () { open -a atom $@ }
-lint () { sh ~/42/workspace/sh/git/glint.sh }
-dstore () { sh ~/42/workspace/sh/sys/dstore.sh }
+hellobot () { cd ~/42/recastai/botconnector/hellobot/$@ }
