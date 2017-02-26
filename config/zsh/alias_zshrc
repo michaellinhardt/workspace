@@ -22,3 +22,5 @@ gromit () { cd ~/42/recastai/botconnector/gromit/$@ }
 hellobot () { cd ~/42/recastai/botconnector/hellobot/$@ }
 europ () { cd ~/42/recastai/client/europ/$@ }
 claudie () { cd ~/42/recastai/claudie/$@ }
+
+noe () { echo "\e(1" }
