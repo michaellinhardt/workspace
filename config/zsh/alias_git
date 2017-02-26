@@ -1,4 +1,9 @@
 alias gst="sh ~/42/workspace/sh/git/gstatus.sh"
+
 alias gpu="sh ~/42/workspace/sh/git/gpush.sh"
+
 alias gco="sh ~/42/workspace/sh/git/gcommit.sh"
+
 alias gad="git add $@"
+
+alias gclone="sh ~/42/workspace/sh/git/gclone.sh"
