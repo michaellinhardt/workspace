@@ -7,3 +7,5 @@ alias gco="sh ~/42/workspace/sh/git/gcommit.sh"
 alias gad="git add $@"
 
 alias gclone="sh ~/42/workspace/sh/git/gclone.sh"
+
+alias gdelete="sh ~/42/workspace/sh/git/gdelete.sh"
