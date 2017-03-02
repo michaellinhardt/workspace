@@ -3,6 +3,7 @@ alias gst="sh ~/42/workspace/sh/git/gstatus.sh"
 alias gco="sh ~/42/workspace/sh/git/gcommit.sh"
 alias gpu="sh ~/42/workspace/sh/git/gpush.sh"
 
+alias gcd="git checkout $@"
 alias gclone="sh ~/42/workspace/sh/git/gclone.sh"
 
 alias gdelete="sh ~/42/workspace/sh/git/gdelete.sh"
