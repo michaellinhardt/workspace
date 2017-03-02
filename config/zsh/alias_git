@@ -8,3 +8,4 @@ alias gclone="sh ~/42/workspace/sh/git/gclone.sh"
 
 alias gdelete="sh ~/42/workspace/sh/git/gdelete.sh"
 alias gcreate="sh ~/42/workspace/sh/git/gcreate.sh"
+alias gbranch="git branch -a"
