@@ -1,3 +1,3 @@
 europ_to_bernard () {
-  europ && mkdir -p ~/42/bernard/src/helpers-import && cp -r ./src/actions/uc3/replies ~/42/bernard/src/helpers-import && cp -r ./src/botunitest ~/42/bernard/src/helpers-import
+  europ && mkdir -p ~/42/bernard-import && mkdir -p ~/42/bernard-import/europ-assist1 && cp -r ./src/actions/uc3/replies ~/42/bernard-import/europ-assist1 && cp -r ./src/botunitest ~/42/bernard-import/europ-assist1 && l ~/42/bernard-import/europ-assist1
 }
