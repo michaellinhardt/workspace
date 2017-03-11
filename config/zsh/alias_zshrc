@@ -26,3 +26,6 @@ claudie () { cd ~/42/recastai/claudie/$@ }
 surveybot () { cd ~/42/recastai/surveybot/$@ }
 
 noe () { echo "\e(1" }
+
+run () { sh ~/42/workspace/sh/run.sh $@ }
+arun () { open -a atom ~/42/workspace/sh/run.sh }
