@@ -21,6 +21,7 @@ wallace () { cd ~/42/recastai/botconnector/wallace/$@ }
 gromit () { cd ~/42/recastai/botconnector/gromit/$@ }
 hellobot () { cd ~/42/recastai/botconnector/hellobot/$@ }
 europ () { cd ~/42/recastai/client/europ/$@ }
+sfr () { cd ~/42/recastai/client/sfr/$@ }
 claudie () { cd ~/42/recastai/claudie/$@ }
 
 surveybot () { cd ~/42/recastai/surveybot/$@ }

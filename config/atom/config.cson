@@ -1,28 +1,29 @@
 "*":
   core:
-    disabledPackages: [
-      "atom-terminal"
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      ".o"
     ]
-    projectHome: "~/42/projects/"
-    themes: [
-      "atom-dark-ui"
-      "one-dark-syntax"
-    ]
+    reopenProjectMenuCount: 14
+    telemetryConsent: "no"
   editor:
     fontSize: 12
-    invisibles: {}
-    lineHeight: 1.3
-    showIndentGuide: true
-    showInvisibles: true
-    tabLength: 4
-    tabType: "hard"
-    zoomFontWhenCtrlScrolling: true
+    tabType: "soft"
   "exception-reporting":
-    userId: "ea24a614-1502-c08d-505d-2aefe2ced453"
-  "terminal-plus":
-    core:
-      autoRunCommand: "make leaks"
-      mapTerminalsTo: "Folder"
-    toggles: {}
+    userId: "a89edab9-879f-3b7f-ea36-130fdeb4cf41"
+  linter:
+    errorPanelHeight: 132
+    showErrorInline: false
+  "node-debugger":
+    nodePath: "/usr/local/bin/node"
+  wakatime:
+    apikey: "Saved in your ~/.wakatime.cfg file"
+  "wakatime-hidden":
+    lastInit: 1489857724
   welcome:
     showOnStartup: false

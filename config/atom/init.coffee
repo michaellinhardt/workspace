@@ -9,10 +9,3 @@
 # atom.workspace.observeTextEditors (editor) ->
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}"
-
-atom.commands.add 'atom-workspace', 'custom:make-test', ->
-	editor = atom.views.getView(atom.workspace.getActiveTextEditor())
-	return unless editor
-	atom.commands.dispatch(editor, 'window:save-all')
-	atom.commands.dispatch(editor, 'terminal-plus:close')
-	atom.commands.dispatch(editor, 'terminal-plus:toggle')
