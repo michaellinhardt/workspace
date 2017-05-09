@@ -11,7 +11,6 @@
 # **************************************************************************** #
 
 NAME	= 	fillit
-
 SRCS	= 	create_tab.c \
 			convert_tab.c \
 			convert_tab2.c \
@@ -21,6 +20,7 @@ SRCS	= 	create_tab.c \
 			check_file.c \
 			read_file.c \
 			main.c
+
 
 HEADER	=	fillit.h
 

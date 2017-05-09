@@ -16,6 +16,7 @@
 	- sup les includes de bibli dans libft.h et les mettre dans les .c
 	- lstdelone -> utiliser ft_memdel pour free le maillon 
 
+
 - libft bonus
 	- ft_arrlen
 	- ft_arrfree
