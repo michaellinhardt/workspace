@@ -2,6 +2,7 @@
 alias cc="gcc -Wall -Wextra -Werror"
 lint () { sh ~/42/workspace/sh/git/glint.sh }
 atom () { open -a atom $@ }
+vsc () { open -a Visual\ Studio\ Code $@ }
 
 # usefull system command
 alias l="ls -la"
