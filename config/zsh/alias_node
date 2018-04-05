@@ -1,1 +1,1 @@
-alias dev="sh ~/42/workspace/sh/node/dev.sh"
+alias dev="sh ~/workspace/sh/node/dev.sh"

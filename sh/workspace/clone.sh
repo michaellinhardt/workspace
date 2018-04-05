@@ -11,17 +11,17 @@
 # **************************************************************************** #
 #!/bin/bash
 
-echo $CW8 $CYE"erase and re-clone ~/42/workspace from github [y/n]"$CWH
+echo $CW8 $CYE"erase and re-clone ~/workspace from github [y/n]"$CWH
 read -r confirm
 if [ "$confirm" != "y" ]
 then
 	echo $CKO $CRE"Re-clone workspace canceled!"$CWH
 	exit 1;
 fi
-echo $CW8 $CYE"rm -rf ~/42/workspace"$CWH
-rm -rf ~/42/workspace
+echo $CW8 $CYE"rm -rf ~/workspace"$CWH
+rm -rf ~/workspace
 echo $CW8 $CYE"clone github.com/nesthub/workspace.git"$CWH
-git clone https://github.com/nesthub/workspace.git ~/42/workspace
+git clone https://github.com/nesthub/workspace.git ~/workspace
 if [ "$?" -eq 0 ]
 then
 	echo $COK $CGR"Cloning workspace success!"$CWH

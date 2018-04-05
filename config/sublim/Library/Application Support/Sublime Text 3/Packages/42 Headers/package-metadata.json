@@ -1,1 +1,0 @@
-{"description": "A sublime text plug-in for the students of 42", "sublime_text": ">=3000", "platforms": ["*"], "url": "https://github.com/Globidev/Sublime-Text-42-Headers", "version": "1.0.18", "dependencies": []}

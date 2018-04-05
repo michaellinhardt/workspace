@@ -17,8 +17,8 @@ curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/config/zsh
 
 # 0. prepare folder 42 and workspace
 mkdir -p ~/42
-mkdir -p ~/42/workspace
-# 1. Clone ~/42/workspace
+mkdir -p ~/workspace
+# 1. Clone ~/workspace
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/sh/workspace/clone.sh)"
 if [ "$?" != 0 ]
 then

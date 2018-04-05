@@ -1,8 +1,8 @@
 export ZSH=~/.oh-my-zsh
 
-export PATH_ZSH_CONF=~/42/workspace/config/zsh
+export PATH_ZSH_CONF=~/workspace/config/zsh
 
-export MAIL=$USER@student.42.fr
+export MAIL=linhardt.michael@gmail.com
 ZSH_THEME="gallois"
 plugins=(git)
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Applications/Atom.app/Contents/MacOS"
@@ -23,5 +23,5 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 git config --global core.editor vim
 
-source ~/42/workspace/config/zsh/source
-cd ~/42
+source ~/workspace/config/zsh/source
+cd ~/
