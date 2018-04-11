@@ -31,3 +31,5 @@ noe () { echo "\e(1" }
 
 run () { sh ~/workspace/sh/run.sh $@ }
 arun () { open -a atom ~/workspace/sh/run.sh }
+
+finder () { sh ~/workspace/sh/sys/finder.sh }
