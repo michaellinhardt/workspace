@@ -16,20 +16,11 @@ wsinstall () { sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/wor
 workspace () { cd ~/workspace/$@ }
 bernard () { cd ~/42/bernard/$@ }
 
-# CD (recast related) to a particular path
-recast () { cd ~/42/recastai/$@ }
-wallace () { cd ~/42/recastai/botconnector/wallace/$@ }
-gromit () { cd ~/42/recastai/botconnector/gromit/$@ }
-hellobot () { cd ~/42/recastai/botconnector/hellobot/$@ }
-europ () { cd ~/42/recastai/client/europ/$@ }
-sfr () { cd ~/42/recastai/client/sfr/$@ }
-claudie () { cd ~/42/recastai/claudie/$@ }
-
-surveybot () { cd ~/42/recastai/surveybot/$@ }
-
 noe () { echo "\e(1" }
 
 run () { sh ~/workspace/sh/run.sh $@ }
 arun () { open -a atom ~/workspace/sh/run.sh }
 
 finder () { sh ~/workspace/sh/sys/finder.sh }
+
+clevy () { cd ~/clevy/$@ }
