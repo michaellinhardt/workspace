@@ -5,7 +5,7 @@ export PATH_ZSH_CONF=~/workspace/config/zsh
 export MAIL=linhardt.michael@gmail.com
 ZSH_THEME="gallois"
 plugins=(git)
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Applications/Atom.app/Contents/MacOS"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Applications/Atom.app/Contents/MacOS:/Users/mikaopenlife"
 source $ZSH/oh-my-zsh.sh
 
 #COLORS
