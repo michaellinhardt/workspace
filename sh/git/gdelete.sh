@@ -18,5 +18,9 @@ echo $CW8 $CYE"git push origin :"$arg $CWH
 git push origin :$arg
 [[ $? != 0 ]] && echo $CKO $CRE"Erreur pendant le delete distant!"$CWH && exit 1;
 
+echo $CW8 $CYE"git remote prune origin" $CWH
+git remote prune origin
+[[ $? != 0 ]] && echo $CKO $CRE"Erreur pendant le delete des branch remote!"$CWH && exit 1;
+
 echo $COK $CGR"Done!"$CWH
 exit 0

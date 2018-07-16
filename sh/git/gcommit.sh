@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sh ~/workspace/sh/git/glint.sh
-[[ $? != 0 ]] && exit 1;
 sh ~/workspace/sh/sys/dstore.sh
 [[ $? != 0 ]] && exit 1;
 sh ~/workspace/sh/git/gsetup.sh

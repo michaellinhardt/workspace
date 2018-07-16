@@ -3,9 +3,6 @@ alias gst="sh ~/workspace/sh/git/gstatus.sh"
 alias gco="sh ~/workspace/sh/git/gcommit.sh"
 alias gpu="sh ~/workspace/sh/git/gpush.sh"
 
-alias gcd="git checkout $@"
-alias gclone="sh ~/workspace/sh/git/gclone.sh"
-
 alias gdelete="sh ~/workspace/sh/git/gdelete.sh"
 alias gcreate="sh ~/workspace/sh/git/gcreate.sh"
-alias gbranch="git branch -a"
+alias gbranch="git remote prune origin && git branch -a"
