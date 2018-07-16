@@ -1,26 +1,7 @@
-# programming related command
-alias cc="gcc -Wall -Wextra -Werror"
-lint () { sh ~/workspace/sh/git/glint.sh }
 atom () { open -a atom $@ }
-vsc () { open -a Visual\ Studio\ Code $@ }
 
-# usefull system command
-alias l="ls -la"
 dstore () { sh ~/workspace/sh/sys/dstore.sh }
 
-# Install the workspace.. not used yet but need a good rework
-wsinstall () { sh -c "$(curl -fsSL https://raw.githubusercontent.com/nesthub/workspace/master/sh/workspace/install.sh)" }
-
-# CD to a particular path
-42 () { cd ~/42/$@ }
 workspace () { cd ~/workspace/$@ }
-bernard () { cd ~/42/bernard/$@ }
-
-noe () { echo "\e(1" }
-
-run () { sh ~/workspace/sh/run.sh $@ }
-arun () { open -a atom ~/workspace/sh/run.sh }
-
-finder () { sh ~/workspace/sh/sys/finder.sh }
 
 clevy () { cd ~/clevy/$@ }

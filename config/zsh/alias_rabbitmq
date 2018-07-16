@@ -1,2 +1,0 @@
-alias mqack="sh ~/workspace/sh/rabbitmq/mqack.sh"
-alias mqstart="sh ~/workspace/sh/rabbitmq/mqstart.sh"

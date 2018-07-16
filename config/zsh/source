@@ -1,6 +1,3 @@
 source $PATH_ZSH_CONF/colors
 source $PATH_ZSH_CONF/alias_zshrc
-source $PATH_ZSH_CONF/alias_zshrc_tmp
 source $PATH_ZSH_CONF/alias_git
-source $PATH_ZSH_CONF/alias_node
-source $PATH_ZSH_CONF/alias_rabbitmq
