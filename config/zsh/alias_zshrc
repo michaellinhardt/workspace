@@ -4,4 +4,9 @@ dstore () { sh ~/workspace/sh/sys/dstore.sh }
 
 workspace () { cd ~/workspace/$@ }
 
+reload () { source ~/.zshrc }
+
+vimrc () { vim ~/workspace/config/vim/vimrc }
+zshrc () { vim ~/workspace/config/zsh/zshrc && source ~/.zshrc }
+
 clevy () { cd ~/clevy/$@ }
