@@ -3,7 +3,7 @@ set smartindent
 set autoindent
 set ruler
 syntax on
-colorscheme molokai 
+colorscheme molokai
 
 inoremap ( ()<left>
 inoremap [ []<left>

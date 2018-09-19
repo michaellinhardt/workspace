@@ -1,6 +1,8 @@
-# DEFINE
-export ZSH_CONF=~/workspace/config/zsh
-export VIM_CONF=~/workspace/config/vim
+# PATH
+export WORKSPACE_PATH=~/workspace
+export WORKSPACE_CONF=~/workspace/config
+export ZSH_CONF=$WORKSPACE_CONF/zsh
+export VIM_CONF=$WORKSPACE_CONF/vim
 
 # ZSH
 export ZSH=~/.oh-my-zsh
