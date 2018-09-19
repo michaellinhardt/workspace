@@ -1,34 +1,14 @@
-export ZSH=~/.oh-my-zsh
+# EXPORTS
+source ~/workspace/config/zsh/exports.zsh
 
-export PATH_ZSH_CONF=~/workspace/config/zsh
-
-export MAIL=linhardt.michael@gmail.com
-ZSH_THEME="gallois"
-plugins=(git)
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Applications/Atom.app/Contents/MacOS:/Users/mikaopenlife"
+# ZSH CONFIG
 source $ZSH/oh-my-zsh.sh
 
-#COLORS
-export CRE="\033[0;31m"
-export CGR="\033[0;32m"
-export CYE="\033[0;33m"
-export CBL="\033[0;34m"
-export CWH="\033[0;38m"
-export COK="\033[0;38m[\033[0;32m OK \033[0;38m]"
-export CKO="\033[0;38m[\033[0;31m KO \033[0;38m]"
-export CW8="\033[0;38m[\033[0;34m W8 \033[0;38m]"
+# COLORS
+source $CONF_ZSH/colors.zsh
 
-# Cask option to force install similink in /Applications
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# ALIAS
+source $CONF_ZSH/alias.zsh
 
-git config --global core.editor vim
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-source $PATH_ZSH_CONF/source
-echo mkdir -p ~/.vim
-mkdir -p ~/.vim
-echo cp -r ~/workspace/config/vim/colors ~/.vim
-cp -r ~/workspace/config/vim/colors ~/.vim
+# COMMANDS
+source $CONF_ZSH/commands.zsh

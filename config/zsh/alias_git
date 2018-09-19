@@ -1,8 +1,0 @@
-alias gad="git add $@"
-alias gst="sh ~/workspace/sh/git/gstatus.sh"
-alias gco="sh ~/workspace/sh/git/gcommit.sh"
-alias gpu="sh ~/workspace/sh/git/gpush.sh"
-
-alias gdelete="sh ~/workspace/sh/git/gdelete.sh"
-alias gcreate="sh ~/workspace/sh/git/gcreate.sh"
-alias gbranch="git remote prune origin && git branch -a"

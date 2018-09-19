@@ -1,3 +1,4 @@
+# colors used in terminal
 export CRE="\033[0;31m"
 export CGR="\033[0;32m"
 export CYE="\033[0;33m"

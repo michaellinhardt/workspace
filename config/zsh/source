@@ -1,3 +1,0 @@
-source $PATH_ZSH_CONF/colors
-source $PATH_ZSH_CONF/alias_zshrc
-source $PATH_ZSH_CONF/alias_git
