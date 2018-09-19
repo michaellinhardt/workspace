@@ -1,5 +1,5 @@
 # DEFINE
-export CONF_ZSH=~/workspace/config/zsh
+export ZSH_CONF=~/workspace/config/zsh
 
 # ZSH
 export ZSH=~/.oh-my-zsh

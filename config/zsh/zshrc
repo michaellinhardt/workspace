@@ -5,10 +5,10 @@ source ~/workspace/config/zsh/exports.zsh
 source $ZSH/oh-my-zsh.sh
 
 # COLORS
-source $CONF_ZSH/colors.zsh
+source $ZSH_CONF/colors.zsh
 
 # ALIAS
-source $CONF_ZSH/alias.zsh
+source $ZSH_CONF/alias.zsh
 
 # COMMANDS
-source $CONF_ZSH/commands.zsh
+source $ZSH_CONF/commands.zsh
