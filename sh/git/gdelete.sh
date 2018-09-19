@@ -10,8 +10,8 @@ fi
 
 # Execute l'operation
 
-echo $CW8 $CYE"git branch -d "$arg $CWH
-git branch -d $arg
+echo $CW8 $CYE"git branch -D "$arg $CWH
+git branch -D $arg
 [[ $? != 0 ]] && echo $CKO $CRE"Erreur pendant le delete local!"$CWH && exit 1;
 
 echo $CW8 $CYE"git push origin :"$arg $CWH
