@@ -1,8 +1,11 @@
 # PATH
 export WORKSPACE_PATH=~/workspace
-export WORKSPACE_CONF=~/workspace/config
+export WORKSPACE_CONF=$WORKSPACE_PATH/config
+
+export BREW_CONF=$WORKSPACE_CONF/brew
 export ZSH_CONF=$WORKSPACE_CONF/zsh
 export VIM_CONF=$WORKSPACE_CONF/vim
+export VIM_PLUGGED=~/.vim/plugged
 
 # ZSH
 export ZSH=~/.oh-my-zsh

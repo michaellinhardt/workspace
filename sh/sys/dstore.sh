@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo $CW8 $CYE"find ./ -name \".DS_Store\" -depth -exec rm {} \;"$CWH
+echo $CW8"find ./ -name \".DS_Store\" -depth -exec rm {} \;"$CWH
 find ./ -name ".DS_Store" -depth -exec rm {} \;
-echo $COK $CGR "Done!"$CWH
+echo $COK "Done!"$CWH
 exit 0;

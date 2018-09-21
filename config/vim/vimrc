@@ -1,4 +1,11 @@
 source $VIM_CONF/vimrc_remap
+source $VIM_CONF/vimrc_vimplug
+source $VIM_CONF/vimrc_nerdtree
+source $VIM_CONF/vimrc_gitgutter
+source $VIM_CONF/vimrc_syntastic
+
+" update stuff like git symbol in margin (default 4000 = 4s)
+set updatetime=1000
 
 set noswapfile
 
@@ -10,4 +17,3 @@ set number
 
 syntax on
 colorscheme molokai
-

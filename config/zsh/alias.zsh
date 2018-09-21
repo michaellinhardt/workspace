@@ -24,3 +24,8 @@ alias gpu="sh $WORKSPACE_PATH/sh/git/gpush.sh"
 alias gdelete="sh $WORKSPACE_PATH/sh/git/gdelete.sh"
 alias gcreate="sh $WORKSPACE_PATH/sh/git/gcreate.sh"
 alias gbranch="git remote prune origin && git branch -a"
+
+# INSTALL WORKSPACE
+alias install-brew="sh $BREW_CONF/brew_install.sh"
+alias install-vim="sh $VIM_CONF/vim_install.sh"
+alias install-all="sh $BREW_CONF/brew_install.sh && sh $VIM_CONF/vim_install.sh"
