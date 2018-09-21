@@ -11,3 +11,5 @@ if [ ! -d ~/.vim/colors ]; then
 	cp -r $VIM_CONF/colors ~/.vim
 fi
 
+# VIM VUNDLE
+sh $VIM_CONF/vundle_install.sh
