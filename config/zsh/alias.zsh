@@ -11,6 +11,8 @@ clevy () { cd ~/clevy/$@ }
 
 # CONFIG
 vimrc () { vim $VIM_CONF/vimrc }
+vimrc_remap () { vim $VIM_CONF/vimrc_remap }
+vimrc_plugvim () { vim $VIM_CONF/vimrc_plugvim }
 zshrc () { vim $ZSH_CONF/zshrc && source ~/.zshrc }
 
 # GIT
