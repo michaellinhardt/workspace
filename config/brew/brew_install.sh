@@ -70,15 +70,17 @@ brewInstall "TIG" "tig"
 brewInstall "PYTHON" "python"
 brewInstall "NODE" "node"
 brewInstall "NPM" "npm"
+sh $NPM_CONF/npm_install.sh
 
 caskInstall "ITERM2" "iterm2"
+caskInstall "NGROK" "ngrok"
 caskInstall "CHROME" "google-chrome"
 caskInstall "FIREFOX" "firefox"
 caskInstall "ALFRED" "alfred"
 caskInstall "BETTER-TOUCH-TOOL" "BetterTouchTool"
 caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync"
 caskInstall "FRANZ" "franz"
-caskInstall "ATOM" "atom"
+# caskInstall "ATOM" "atom"
 caskInstall "VSCODE" "visual-studio-code"
 caskInstall "SPOTIFY" "spotify"
 caskInstall "POSTMAN" "postman"
@@ -88,6 +90,8 @@ echo $CRE"GITHUB-DESKTOP can't be auto installed"$CWH
 echo $CRE"ANTISLEEP can't be auto installed"$CWH
 echo $CRE"SNAP can't be auto installed"$CWH
 
+echo $COK"Brew update all packages..."$CWH
+brew upgrade &> /dev/null
 
 echo $COK"Brew cleanup..."$CWH
 brew cleanup &> /dev/null
