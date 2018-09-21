@@ -2,6 +2,12 @@
 git config --global core.editor vim
 git config --global user.email "$MAIL"
 
-# VIM
+# VIM FOLDER
 mkdir -p ~/.vim
-cp -r $VIM_CONF/colors ~/.vim
+
+# VIN COLORS
+if [ ! -d ~/.vim/colors ]; then
+	echo 'install colors'
+	cp -r $VIM_CONF/colors ~/.vim
+fi
+
