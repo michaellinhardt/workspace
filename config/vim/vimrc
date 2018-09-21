@@ -7,10 +7,10 @@ colorscheme molokai
 
 inoremap ( ()<left>
 inoremap [ []<left>
-inoremap ' '' <left>
-inoremap " "" <left>
-inoremap { {} <left>
-inoremap ` `` <left>
+inoremap ' ''<left>
+inoremap " ""<left>
+inoremap { {}<left>
+inoremap ` ``<left>
 
 nnoremap ; :
 vnoremap ; :
