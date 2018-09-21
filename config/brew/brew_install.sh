@@ -64,10 +64,11 @@ function caskInstall () {
   fi
 }
 
-brewInstall "CMAKE" "CMake"
-brewInstall "CTAG" "universal-ctags/universal-ctags/universal-ctags" "--HEAD"
 brewInstall "TIG" "tig"
+brewInstall "CMAKE" "CMake"
+# brewInstall "CTAG" "universal-ctags/universal-ctags/universal-ctags" "--HEAD"
 brewInstall "PYTHON" "python"
+brewInstall "RUBY" "ruby"
 brewInstall "NODE" "node"
 brewInstall "NPM" "npm"
 sh $NPM_CONF/npm_install.sh
