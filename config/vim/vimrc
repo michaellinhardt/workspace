@@ -2,6 +2,7 @@ set number
 set smartindent
 set autoindent
 set ruler
+set noswapfile
 syntax on
 colorscheme molokai
 
