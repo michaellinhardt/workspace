@@ -66,7 +66,9 @@ function caskInstall () {
 
 brewInstall "TIG" "tig"
 brewInstall "CMAKE" "CMake"
-brewInstall "CTAGS" "ctags" "--HEAD"
+brewInstall "CTAGS" "universal-ctags/universal-ctags/universal-ctags" "--HEAD"
+# mkdir -p ~/.ctags.d
+# cp $CTAGS_CONF/ctags ~/.ctags.d/config.ctags
 brewInstall "PYTHON" "python"
 brewInstall "RUBY" "ruby"
 brewInstall "NODE" "node"
