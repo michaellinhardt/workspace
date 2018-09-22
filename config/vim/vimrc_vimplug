@@ -36,6 +36,9 @@ Plug 'mbbill/undotree'
 " YOU COMPLETE ME
 Plug 'valloric/youcompleteme'
 
+" Nerd Comment
+Plug 'scrooloose/nerdcommenter'
+
 call plug#end()
 " PlugClean!
 " PlugUpdate!
