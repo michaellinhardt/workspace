@@ -1,3 +1,8 @@
+function! MapBoth(keys, rhs)
+    execute 'nmap' a:keys a:rhs
+    execute 'imap' a:keys '<Esc>' . a:rhs
+endfunction
+
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap ' ''<left>
@@ -9,7 +14,7 @@ nnoremap ; :
 vnoremap ; :
 
 " Navigate between split pane
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+call MapBoth('<C-J>', '<C-W><C-J>')
+call MapBoth('<C-K>', '<C-W><C-K>')
+call MapBoth('<C-L>', '<C-W><C-L>')
+call MapBoth('<C-H>', '<C-W><C-H>')
