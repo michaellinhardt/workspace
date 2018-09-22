@@ -6,6 +6,7 @@ export BREW_CONF=$WORKSPACE_CONF/brew
 export ZSH_CONF=$WORKSPACE_CONF/zsh
 export VIM_CONF=$WORKSPACE_CONF/vim
 export NPM_CONF=$WORKSPACE_CONF/npm
+export CTAGS_CONF=$WORKSPACE_CONF/ctags
 
 export VIM_PLUGGED=~/.vim/plugged
 
