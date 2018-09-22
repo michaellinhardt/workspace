@@ -30,3 +30,6 @@ alias install-brew="sh $BREW_CONF/brew_install.sh"
 alias install-npm="sh $NPM_CONF/npm_install.sh"
 alias install-vim="sh $VIM_CONF/vim_install.sh"
 alias install-all="sh $BREW_CONF/brew_install.sh && sh $VIM_CONF/vim_install.sh"
+
+# CTAGS
+alias tags="ctags -R -f ./.git/tags ."
