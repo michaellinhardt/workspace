@@ -99,4 +99,3 @@ brew upgrade &> /dev/null
 echo $COK"Brew cleanup..."$CWH
 brew cleanup &> /dev/null
 
-echo $CW8"Security: https://objective-see.com/products.html"$CWH
