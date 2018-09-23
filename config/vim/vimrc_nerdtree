@@ -3,7 +3,17 @@
 " auto open NerdTree, focus on file
 autocmd! VimEnter * NERDTree | wincmd w
 " auto close NerdTree if no file
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Quit after opening a file
+" let NERDTreeQuitOnOpen = 1
+
+" delete buffer of the file you just deleted in NerdTree
+let NERDTreeAutoDeleteBuffer = 1
+
+" better design
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " arrow symbol
 let g:NERDTreeDirArrowExpandable = '▸'
