@@ -33,71 +33,75 @@ else
 	fi
 fi
 
-function brewInstall () {
+function isInstalled() {
+	# var is empty
+	if [[ -z "$1" ]]; then
+		return 0;
+	fi
+	# test with which
 	which -s $1
 	if [[ $? == 0 ]] ; then
-		echo $COK"$1 already installed"$CWH
-		return true;
+		return 1; 
 	fi
-
+	# check in Applications folder
 	if ls /Applications/ | grep -i $1 &> /dev/null; then
-		echo $COK"$1 already installed"$CWH
-		return true;
+		return  1;
 	fi
-
+	# check in user Application folder
 	if ls ~/Applications/ | grep -i $1 &> /dev/null; then
+		return 1;
+	fi
+	# check with brew if installed
+	if brew ls --versions $1 &> /dev/null; then
+		return 1;
+	fi
+	# check with brew cask if installed
+	brew cask list $1 &> /dev/null
+	if [[ $? == 0 ]]; then
+		return 1;
+	fi
+	return 0;
+}
+
+function brewInstall () {
+	if ! isInstalled $1 || ! isInstalled $2 || ! isInstalled $3; then
 		echo $COK"$1 already installed"$CWH
-		return true;
+		return 0
 	fi
 
-	if ! brew ls --versions $2 &> /dev/null; then
-		echo $CW8"installing $1..."$CWH
-		brew install $3$2
-
-		if [[ $? != 0 ]] ; then
-			echo $CKO"$1 install fail"$CWH
-		else
-			echo $COK"$1 install success"$CWH
-		fi
+	echo $CW8"installing $1..."$CWH
+	brew install $3$2
+	if [[ $? != 0 ]] ; then
+		echo $CKO"$1 install fail"$CWH
 	else
-		echo $COK"$1 already installed"$CWH
+		echo $COK"$1 install success"$CWH
 	fi
 }
 
 function caskInstall () {
-	which -s $1
-	if [[ $? == 0 ]] ; then
+	if ! isInstalled $1 || ! isInstalled $2 || ! isInstalled $3; then
 		echo $COK"$1 already installed"$CWH
-		return true;
+		return 0
 	fi
 
-	if ls /Applications/ | grep -i $1 &> /dev/null; then
-		echo $COK"$1 already installed"$CWH
-		return true;
-	fi
-
-	if ls ~/Applications/ | grep -i $1 &> /dev/null; then
-		echo $COK"$1 already installed"$CWH
-		return true;
-	fi
-
-	brew cask list $2 &> /dev/null
+	echo $CW8"installing $1..."$CWH
+	brew cask install $2
 	if [[ $? != 0 ]] ; then
-		echo $CW8"installing $1..."$CWH
-		brew cask install $2
-		if [[ $? != 0 ]] ; then
-			echo $CKO"$1 install fail"$CWH
-		else
-			echo $COK"$1 install success"$CWH
-		fi
+		echo $CKO"$1 install fail"$CWH
 	else
-		echo $COK"$1 already installed"$CWH
+		echo $COK"$1 install success"$CWH
 	fi
 }
 
 
 
-xcode-select --install
+xcode-select --install &> /dev/null
+if [[ $? != 0 ]] ; then
+	echo $COK"XCODE-SELECT already installed"$CWH
+else
+	echo $CW8"XCODE-SELECT install"$CWH
+fi
+
 brewInstall "TIG" "tig"
 brewInstall "CMAKE" "CMake"
 brewInstall "CTAGS" "universal-ctags/universal-ctags/universal-ctags" "--HEAD"
@@ -106,18 +110,17 @@ brewInstall "PYTHON" "python"
 brewInstall "RUBY" "ruby"
 brewInstall "NODE" "node"
 brewInstall "NPM" "npm"
-sh $NPM_CONF/npm_install.sh
 
 caskInstall "ITERM" "iterm2"
 caskInstall "NGROK" "ngrok"
 caskInstall "CHROME" "google-chrome"
 caskInstall "ALFRED" "alfred"
 caskInstall "BETTER-TOUCH-TOOL" "BetterTouchTool"
-caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync"
+caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync" "backup"
 caskInstall "FRANZ" "franz"
 caskInstall "SPOTIFY" "spotify"
 caskInstall "POSTMAN" "postman"
-caskInstall "SEQUEL-PRO" "sequel-pro"
+caskInstall "SEQUEL-PRO" "sequel-pro" "sequel"
 # caskInstall "FIREFOX" "firefox"
 # caskInstall "ATOM" "atom"
 # caskInstall "VSCODE" "visual-studio-code"
