@@ -3,7 +3,7 @@ function! MapBoth(keys, rhs)
     execute 'imap' a:keys '<Esc>' . a:rhs
 endfunction
 
-call MapBoth('<F12>', ':NERDTree<Enter>')
+call MapBoth('<F12>', ':NERDTreeToggle<Enter>')
 
 inoremap ( ()<left>
 inoremap [ []<left>
@@ -18,5 +18,6 @@ vnoremap ; :
 " Navigate between split pane
 call MapBoth('<C-J>', '<C-W><C-J>')
 call MapBoth('<C-K>', '<C-W><C-K>')
-call MapBoth('<C-L>', '<C-W><C-L>')
 call MapBoth('<C-H>', '<C-W><C-H>')
+call MapBoth('<C-L>', '<C-W><C-L>')
+

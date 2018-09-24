@@ -11,6 +11,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " delete buffer of the file you just deleted in NerdTree
 let NERDTreeAutoDeleteBuffer = 1
 
+" whildcard ignoe
+set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*,*.git
+let NERDTreeRespectWildIgnore=1
+
+" ignore some files
+let NERDTreeIgnore=['node_modules']
+
+" Nerdtree config for wildignore
+
 " better design
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
