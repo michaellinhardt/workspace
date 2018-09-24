@@ -15,6 +15,7 @@ set autoindent
 
 set ruler
 set number
+set relativenumber
 
 syntax on
 colorscheme molokai

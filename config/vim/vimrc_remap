@@ -3,6 +3,8 @@ function! MapBoth(keys, rhs)
     execute 'imap' a:keys '<Esc>' . a:rhs
 endfunction
 
+call MapBoth('<F12>', ':NERDTree<Enter>')
+
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap ' ''<left>
