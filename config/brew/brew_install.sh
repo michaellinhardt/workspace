@@ -85,7 +85,7 @@ function caskInstall () {
 	fi
 
 	echo $CW8"installing $1..."$CWH
-	brew cask install $2
+	brew cask install $2 $3
 	if [[ $? != 0 ]] ; then
 		echo $CKO"$1 install fail"$CWH
 	else
