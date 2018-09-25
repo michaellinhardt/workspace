@@ -39,6 +39,9 @@ Plug 'valloric/youcompleteme'
 " Nerd Comment
 Plug 'scrooloose/nerdcommenter'
 
+" manage ctags file
+Plug 'ludovicchabant/vim-gutentags'
+
 call plug#end()
 " PlugClean!
 " PlugUpdate!
