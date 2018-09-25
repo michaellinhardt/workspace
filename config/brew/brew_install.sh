@@ -105,7 +105,6 @@ fi
 brewInstall "TIG" "tig"
 brewInstall "CMAKE" "CMake"
 brewInstall "CTAGS" "universal-ctags/universal-ctags/universal-ctags" "--HEAD"
-cp $CTAGS_CONF/ctags ~/.ctags
 brewInstall "PYTHON" "python"
 brewInstall "RUBY" "ruby"
 brewInstall "NODE" "node"
