@@ -2,13 +2,11 @@
 export WORKSPACE_PATH=~/workspace
 
 export WORKSPACE_CONF=$WORKSPACE_PATH/config
+export FUNCTIONS_CONF=$WORKSPACE_CONF/functions
 export BREW_CONF=$WORKSPACE_CONF/brew
 export ZSH_CONF=$WORKSPACE_CONF/zsh
-export VIM_CONF=$WORKSPACE_CONF/vim
 export NPM_CONF=$WORKSPACE_CONF/npm
-export CTAGS_CONF=$WORKSPACE_CONF/ctags
-
-export VIM_PLUGGED=~/.vim/plugged
+export VSCODE_CONF=$WORKSPACE_CONF/vscode
 
 # ZSH
 export ZSH=~/.oh-my-zsh

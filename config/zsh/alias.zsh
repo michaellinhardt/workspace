@@ -28,6 +28,7 @@ alias grebase="git fetch && git rebase && git pull"
 
 # INSTALL WORKSPACE
 alias install-brew="sh $BREW_CONF/brew_install.sh"
+alias install-vscode="sh $VSCODE_CONF/vscode_install.sh"
 alias install-npm="sh $NPM_CONF/npm_install.sh"
 alias install-vim="sh $VIM_CONF/vim_install.sh"
 alias install-all="sh $BREW_CONF/brew_install.sh && sh $NPM_CONF/npm_install.sh && sh $VIM_CONF/vim_install.sh"
