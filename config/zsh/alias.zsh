@@ -25,6 +25,7 @@ alias gdelete="sh $WORKSPACE_PATH/sh/git/gdelete.sh"
 alias gcreate="sh $WORKSPACE_PATH/sh/git/gcreate.sh"
 alias gbranch="git remote prune origin && git branch -a"
 alias grebase="git fetch && git rebase && git pull"
+alias gsub="git submodule update --init"
 
 # INSTALL WORKSPACE
 alias install-brew="sh $BREW_CONF/brew_install.sh"
