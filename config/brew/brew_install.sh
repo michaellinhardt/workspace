@@ -38,7 +38,7 @@ caskInstall "ALFRED" "alfred"
 caskInstall "FRANZ" "franz"
 caskInstall "SPOTIFY" "spotify"
 caskInstall "POSTMAN" "postman"
-caskInstall "SEQUEL-PRO" "sequel-pro" "sequel"
+caskInstall "SEQUEL-PRO" "sequel-pro"
 
 caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync" "backup"
 
