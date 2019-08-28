@@ -15,6 +15,9 @@ vimrc_remap () { vim $VIM_CONF/vimrc_remap }
 vimrc_plugvim () { vim $VIM_CONF/vimrc_plugvim }
 zshrc () { vim $ZSH_CONF/zshrc && source ~/.zshrc }
 
+# VSCODE
+alias vscode="open -a Visual\ Studio\ Code $@"
+
 # GIT
 alias gad="git add $@"
 alias gst="sh $WORKSPACE_PATH/sh/git/gstatus.sh"
