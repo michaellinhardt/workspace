@@ -22,7 +22,6 @@ else
 	echo $CW8"XCODE-SELECT install"$CWH
 fi
 
-brewInstall "CMAKE" "CMake"
 caskInstall "NGROK" "ngrok"
 brewInstall "TIG" "tig"
 brewInstall "PYTHON" "python"
