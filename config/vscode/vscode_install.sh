@@ -4,6 +4,6 @@
 
 caskInstall "VSCODE" "visual-studio-code"
 
-code --install-extension shan.code-settings-sync
+# code --install-extension shan.code-settings-sync
 
-cp $VSCODE_CONF/syncLocalSettings.json ~/Library/Application\ Support/Code/User/syncLocalSettings.json
+# cp $VSCODE_CONF/syncLocalSettings.json ~/Library/Application\ Support/Code/User/syncLocalSettings.json
