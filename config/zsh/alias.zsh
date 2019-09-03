@@ -7,7 +7,6 @@ atom () { open -a atom $@ }
 
 # NAVIGATION
 workspace () { cd $WORKSPACE_PATH/$@ }
-clevy () { cd ~/clevy/$@ }
 
 # CONFIG
 vimrc () { vim $VIM_CONF/vimrc }
