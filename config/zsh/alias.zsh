@@ -7,6 +7,7 @@ atom () { open -a atom $@ }
 
 # NAVIGATION
 workspace () { cd $WORKSPACE_PATH/$@ }
+dev () { cd ~/dev/$@ }
 
 # CONFIG
 vimrc () { vim $VIM_CONF/vimrc }
