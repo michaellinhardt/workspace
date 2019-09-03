@@ -17,6 +17,7 @@ zshrc () { vim $ZSH_CONF/zshrc && source ~/.zshrc }
 
 # VSCODE
 alias vscode="open -a Visual\ Studio\ Code $@"
+alias vsc="open -a Visual\ Studio\ Code $@"
 
 # GIT
 alias gad="git add $@"
