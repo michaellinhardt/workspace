@@ -16,6 +16,7 @@ globalInstall "yarn"
 globalInstall "npx"
 globalInstall "pm2"
 globalInstall "nodemon"
+globalInstall "electron"
 
 # linting
 globalInstall "eslint"
