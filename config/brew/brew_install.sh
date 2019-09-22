@@ -30,6 +30,8 @@ brewInstall "RUBY" "ruby"
 brewInstall "NODE" "node"
 brewInstall "NPM" "npm"
 
+brewInstall "MYSQL" "mysql"
+
 caskInstall "ITERM" "iterm2"
 
 caskInstall "CHROME" "google-chrome"
