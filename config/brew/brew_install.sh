@@ -32,6 +32,8 @@ brewInstall "NPM" "npm"
 
 brewInstall "MYSQL" "mysql"
 
+caskInstall "MONGODB" "mongodb"
+
 caskInstall "ITERM" "iterm2"
 
 caskInstall "CHROME" "google-chrome"
