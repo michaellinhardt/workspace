@@ -17,6 +17,7 @@ globalInstall "npx"
 globalInstall "pm2"
 globalInstall "nodemon"
 globalInstall "electron"
+globalInstall "knex"
 
 # linting
 globalInstall "eslint"
@@ -33,4 +34,3 @@ globalInstall "@babel/preset-env"
 globalInstall "@babel/cli"
 globalInstall "prettier"
 globalInstall "standard"
-globalInstall "typescript"
