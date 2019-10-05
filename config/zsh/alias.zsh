@@ -39,3 +39,6 @@ alias install-all="sh $BREW_CONF/brew_install.sh && sh $NPM_CONF/npm_install.sh"
 
 # CTAGS
 alias tags="ctags -R -f ./.git/tags ."
+
+# SPECIAL
+alias gogo="cd ~/dev ; mv ~/dev/microservice/.git ~/dev ; mv ~/dev/microservice/README.md ~/dev ; rm -rf ~/dev/microservice ; mkdir -f ~/dev/microservice ; rsync -av --progress ~/dev/soldvn/backend/* ~/dev/microservice --exclude node_modules --exclude README.md ; rsync -av --progress ~/dev/soldvn/backend/.* ~/dev/microservice --exclude .git ; mv ~/dev/.git ~/dev/microservice ; mv ~/dev/README.md ~/dev/microservice ; cd ~/dev/microservice ; gst"
