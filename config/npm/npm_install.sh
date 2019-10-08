@@ -18,6 +18,7 @@ globalInstall "pm2"
 globalInstall "nodemon"
 globalInstall "electron"
 globalInstall "knex"
+globalInstall "mocha"
 
 # linting
 globalInstall "eslint"
