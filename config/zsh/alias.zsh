@@ -7,6 +7,7 @@ atom () { open -a atom $@ }
 
 # NAVIGATION
 workspace () { cd $WORKSPACE_PATH/$@ }
+backend () { cd ~/dev/soldvn/backend/$@ }
 dev () { cd ~/dev/$@ }
 
 # CONFIG
