@@ -30,8 +30,13 @@ brewInstall "RUBY" "ruby"
 brewInstall "NODE" "node"
 brewInstall "NPM" "npm"
 
-brewInstall "MYSQL" "mysql"
+# REACT NATIVE DEVLOPMENT
+brewInstall "yarn" "yarn"
+brewInstall "watchman" "watchman"
+brewTap "AdoptOpenJDK/openjdk"
+caskInstall "ADOPTOPEN-JDK8" "adoptopenjdk8"
 
+brewInstall "MYSQL" "mysql"
 caskInstall "MONGODB" "mongodb"
 
 caskInstall "ITERM" "iterm2"
@@ -56,4 +61,3 @@ brew upgrade &> /dev/null
 
 echo $COK"Brew cleanup..."$CWH
 brew cleanup &> /dev/null
-

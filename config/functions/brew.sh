@@ -65,6 +65,16 @@ function brewInstall () {
 	fi
 }
 
+function brewTap () {
+	echo $CW8"Brew tap $1"$CWH
+	brew tap $1
+	if [[ $? != 0 ]] ; then
+		echo $CKO"$1 tap fail"$CWH
+	else
+		echo $COK"$1 tap success"$CWH
+	fi
+}
+
 function caskInstall () {
 	if ! isInstalled $1 || ! isInstalled $2 || ! isInstalled $3; then
 		echo $COK"$1 already installed"$CWH
@@ -79,4 +89,3 @@ function caskInstall () {
 		echo $COK"$1 install success"$CWH
 	fi
 }
-
