@@ -19,6 +19,7 @@ globalInstall "nodemon"
 globalInstall "electron"
 globalInstall "knex"
 globalInstall "mocha"
+globalInstall "expo-cli"
 
 # linting
 globalInstall "eslint"
