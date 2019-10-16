@@ -25,6 +25,7 @@ alias gad="git add $@"
 alias gst="sh $WORKSPACE_PATH/sh/git/gstatus.sh"
 alias gco="sh $WORKSPACE_PATH/sh/git/gcommit.sh"
 alias gpu="sh $WORKSPACE_PATH/sh/git/gpush.sh"
+alias gacp="sh $WORKSPACE_PATH/sh/git/gaddcompush.sh"
 
 alias gdelete="sh $WORKSPACE_PATH/sh/git/gdelete.sh"
 alias gcreate="sh $WORKSPACE_PATH/sh/git/gcreate.sh"
