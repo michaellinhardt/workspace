@@ -7,8 +7,8 @@ atom () { open -a atom $@ }
 
 # NAVIGATION
 workspace () { cd $WORKSPACE_PATH/$@ }
-backend () { cd ~/dev/soldvn/backend/$@ }
-loginapp () { cd ~/dev/react/loginapp/$@ }
+backend () { cd ~/dev/backend/$@ }
+frontend () { cd ~/dev/frontend-app/$@ }
 dev () { cd ~/dev/$@ }
 
 # CONFIG
