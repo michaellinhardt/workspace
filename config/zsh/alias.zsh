@@ -8,7 +8,7 @@ atom () { open -a atom $@ }
 # NAVIGATION
 workspace () { cd $WORKSPACE_PATH/$@ }
 backend () { cd ~/dev/backend/$@ }
-frontend () { cd ~/dev/frontend-app/$@ }
+frontend () { cd ~/dev/frontend/$@ }
 dev () { cd ~/dev/$@ }
 
 # CONFIG
