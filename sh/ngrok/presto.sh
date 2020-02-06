@@ -2,6 +2,7 @@
 
 . $FUNCTIONS_CONF/newTab.sh
 . $FUNCTIONS_CONF/getNgrokUrl.sh
+. $FUNCTIONS_CONF/updatePrestoUrl.sh
 
 function loopGetNgrokUrl() {
     if [ $retry -gt 0 ] && [ ! "$url" -o "$url" = "null" ]
@@ -31,16 +32,4 @@ then
     exit 1
 fi
 
-echo Moving to ~/dev/presto.vn/
-cd ~/dev/presto.vn/
-echo Erase old backend.json file
-rm -rf ~/dev/presto.vn/backend.json
-echo "Write new json: "
-echo "{ \"url\": \""$url"\" }" | jq
-echo "{ \"url\": \""$url"\" }" >> ~/dev/presto.vn/backend.json
-echo "Send file to FTP server.."
-sh ~/dev/presto.vn/updateBackendUrl.sh
-echo Back to initial directory..
-cd -
-echo "Done!"
-exit 0
+updatePrestoUrl $url
