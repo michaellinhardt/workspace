@@ -47,10 +47,4 @@ alias tags="ctags -R -f ./.git/tags ."
 alias gogo="cd ~/dev ; mv ~/dev/microservice/.git ~/dev ; mv ~/dev/microservice/README.md ~/dev ; rm -rf ~/dev/microservice ; mkdir -f ~/dev/microservice ; rsync -av --progress ~/dev/soldvn/backend/* ~/dev/microservice --exclude node_modules --exclude README.md ; rsync -av --progress ~/dev/soldvn/backend/.* ~/dev/microservice --exclude .git ; mv ~/dev/.git ~/dev/microservice ; mv ~/dev/README.md ~/dev/microservice ; cd ~/dev/microservice ; gst"
 
 # PRESTO
-urlBackend () {
-    cd ~/dev/presto.vn/
-    rm -rf ~/dev/presto.vn/backend.json
-    echo "{ \"url\": \""$1"\" }" >> ~/dev/presto.vn/backend.json
-    sh ~/dev/presto.vn/updateBackendUrl.sh
-    cd -
-}
+ngrokpresto () { sh $WORKSPACE_PATH/sh/ngrok/presto.sh }
