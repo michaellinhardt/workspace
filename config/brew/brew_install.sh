@@ -30,8 +30,9 @@ brewInstall "RUBY" "ruby"
 brewInstall "NODE" "node"
 brewInstall "NPM" "npm"
 
-# FTP COMMAND LINE TOOLS
+# COMMAND LINE TOOLS
 brewInstall "FTP-CLI" "inetutils"
+brewInstall "JQ-JSON-PARSER" "jq"
 
 # REACT NATIVE DEVLOPMENT
 brewInstall "yarn" "yarn"
