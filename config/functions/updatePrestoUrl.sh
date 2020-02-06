@@ -10,9 +10,12 @@ function updatePrestoUrl() {
     exit 1
   fi
 
-  target="http:"
-  replace="https:"
-  url=${url//$target/$replace}
+ if [ "$url" != "http://localhost:4242" ]
+  then
+    target="http:"
+    replace="https:"
+    url=${url//$target/$replace}
+  fi
 
   distant=$(getNgrokUrlFromPresto)
   echo "{ \"distant_url\": \""$distant"\", \"current_url\": \""$url"\" }" | jq
