@@ -9,6 +9,7 @@ atom () { open -a atom $@ }
 workspace () { cd $WORKSPACE_PATH/$@ }
 backend () { cd ~/dev/backend/$@ }
 frontend () { cd ~/dev/frontend/$@ }
+apidoc () { cd ~/dev/apidoc/$@ }
 dev () { cd ~/dev/$@ }
 
 # CONFIG
