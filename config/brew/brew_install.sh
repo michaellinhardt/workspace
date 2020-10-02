@@ -31,8 +31,8 @@ brewInstall "NODE" "node"
 brewInstall "NPM" "npm"
 
 # COMMAND LINE TOOLS
-brewInstall "FTP-CLI" "inetutils"
-brewInstall "JQ-JSON-PARSER" "jq"
+# brewInstall "FTP-CLI" "inetutils"
+# brewInstall "JQ-JSON-PARSER" "jq"
 
 # REACT NATIVE DEVLOPMENT
 brewInstall "yarn" "yarn"
@@ -41,10 +41,11 @@ brewTap "AdoptOpenJDK/openjdk"
 caskInstall "ADOPTOPEN-JDK8" "adoptopenjdk8"
 
 brewInstall "MYSQL" "mysql"
-caskInstall "MONGODB" "mongodb"
+# caskInstall "MONGODB" "mongodb"
 
 caskInstall "ITERM" "iterm2"
 
+caskInstall "VSCODE" "visual-studio-code"
 caskInstall "CHROME" "google-chrome"
 caskInstall "ALFRED" "alfred"
 caskInstall "FRANZ" "franz"
@@ -52,7 +53,7 @@ caskInstall "SPOTIFY" "spotify"
 caskInstall "POSTMAN" "postman"
 caskInstall "SEQUEL-PRO" "sequel-pro"
 
-caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync" "backup"
+# caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync" "backup"
 
 sh $VSCODE_CONF/vscode_install.sh
 

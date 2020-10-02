@@ -39,7 +39,6 @@ alias gsub="git submodule update --init"
 
 # INSTALL WORKSPACE
 alias install-brew="sh $BREW_CONF/brew_install.sh"
-alias install-vscode="sh $VSCODE_CONF/vscode_install.sh"
 alias install-npm="sh $NPM_CONF/npm_install.sh"
 alias install-all="sh $BREW_CONF/brew_install.sh && sh $NPM_CONF/npm_install.sh"
 
