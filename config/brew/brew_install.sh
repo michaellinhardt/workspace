@@ -47,18 +47,20 @@ caskInstall "ITERM" "iterm2"
 
 caskInstall "VSCODE" "visual-studio-code"
 caskInstall "CHROME" "google-chrome"
+caskInstall "FIREFOX" "firefox"
 caskInstall "ALFRED" "alfred"
 caskInstall "FRANZ" "franz"
 caskInstall "SPOTIFY" "spotify"
 caskInstall "POSTMAN" "postman"
 caskInstall "SEQUEL-PRO" "sequel-pro"
+caskInstall "GITHUB-DESKTOP" "github"
+caskInstall "KEEPING-YOU-AWAKE" "keepingyouawake"
+caskInstall "BETTER-TOUCH-TOOL" "bettertouchtool"
 
 # caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync" "backup"
 
 sh $VSCODE_CONF/vscode_install.sh
 
-echo $CRE"GITHUB-DESKTOP can't be auto installed"$CWH
-echo $CRE"ANTISLEEP can't be auto installed"$CWH
 echo $CRE"SNAP can't be auto installed"$CWH
 
 echo $COK"Brew update all packages..."$CWH
