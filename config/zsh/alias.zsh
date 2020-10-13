@@ -7,11 +7,8 @@ atom () { open -a atom $@ }
 
 # NAVIGATION
 workspace () { cd $WORKSPACE_PATH/$@ }
-soldb () { cd ~/dev/soldvn/backend/$@ }
-soldf () { cd ~/dev/soldvn/frontend/$@ }
-backend () { cd ~/dev/backend/$@ }
-frontend () { cd ~/dev/frontend/$@ }
-apidoc () { cd ~/dev/apidoc/$@ }
+backend_presto () { cd ~/dev/presto/backend_presto/$@ }
+app_presto () { cd ~/dev/presto/app_presto/$@ }
 dev () { cd ~/dev/$@ }
 
 # CONFIG
