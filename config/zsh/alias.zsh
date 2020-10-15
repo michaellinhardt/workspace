@@ -9,6 +9,8 @@ atom () { open -a atom $@ }
 workspace () { cd $WORKSPACE_PATH/$@ }
 backend_presto () { cd ~/dev/presto/backend_presto/$@ }
 app_presto () { cd ~/dev/presto/app_presto/$@ }
+backend_sold () { cd ~/dev/sold/backend_sold/$@ }
+app_sold () { cd ~/dev/sold/app_sold/$@ }
 dev () { cd ~/dev/$@ }
 
 # CONFIG
