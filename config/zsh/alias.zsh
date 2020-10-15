@@ -7,10 +7,10 @@ atom () { open -a atom $@ }
 
 # NAVIGATION
 workspace () { cd $WORKSPACE_PATH/$@ }
-backend_presto () { cd ~/dev/presto/backend_presto/$@ }
-app_presto () { cd ~/dev/presto/app_presto/$@ }
-backend_sold () { cd ~/dev/sold/backend_sold/$@ }
-app_sold () { cd ~/dev/sold/app_sold/$@ }
+presto_backend () { cd ~/dev/presto/backend_presto/$@ }
+presto_app () { cd ~/dev/presto/app_presto/$@ }
+sold_backend () { cd ~/dev/sold/backend_sold/$@ }
+sold_app () { cd ~/dev/sold/app_sold/$@ }
 dev () { cd ~/dev/$@ }
 
 # CONFIG
@@ -47,6 +47,6 @@ alias tags="ctags -R -f ./.git/tags ."
 # SPECIAL
 alias gogo="cd ~/dev ; mv ~/dev/microservice/.git ~/dev ; mv ~/dev/microservice/README.md ~/dev ; rm -rf ~/dev/microservice ; mkdir -f ~/dev/microservice ; rsync -av --progress ~/dev/soldvn/backend/* ~/dev/microservice --exclude node_modules --exclude README.md ; rsync -av --progress ~/dev/soldvn/backend/.* ~/dev/microservice --exclude .git ; mv ~/dev/.git ~/dev/microservice ; mv ~/dev/README.md ~/dev/microservice ; cd ~/dev/microservice ; gst"
 
-# PRESTO
-prestongrok () { sh $WORKSPACE_PATH/sh/ngrok/presto.sh }
-prestolocal () { sh $WORKSPACE_PATH/sh/ngrok/prestoLocalhost.sh }
+# PRESTO NGROK
+# prestongrok () { sh $WORKSPACE_PATH/sh/ngrok/presto.sh }
+# prestolocal () { sh $WORKSPACE_PATH/sh/ngrok/prestoLocalhost.sh }
