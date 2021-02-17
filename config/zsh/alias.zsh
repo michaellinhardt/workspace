@@ -7,6 +7,9 @@ atom () { open -a atom $@ }
 
 # NAVIGATION
 workspace () { cd $WORKSPACE_PATH/$@ }
+backend_start () { cd ~/dev/presto/backend_presto && npm run start:dev }
+ios () { cd ~/dev/presto/app_presto && npm run ios }
+ios6 () { cd ~/dev/presto/app_presto && npm run ios6 }
 presto_backend () { cd ~/dev/presto/backend_presto/$@ }
 presto_app () { cd ~/dev/presto/app_presto/$@ }
 prestoyou_backend () { cd ~/dev/prestoyou/backend_prestoyou/$@ }
