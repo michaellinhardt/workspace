@@ -8,14 +8,11 @@ atom () { open -a atom $@ }
 # NAVIGATION
 workspace () { cd $WORKSPACE_PATH/$@ }
 ec2 () { ssh -i ~/gdrive/AWS/ec2-virginia-prestoyou.pem ubuntu@ec2-54-82-197-76.compute-1.amazonaws.com }
-backend_start () { cd ~/dev/presto/backend_presto && npm run start:dev }
 ios () { cd ~/dev/presto/app_presto && npm run ios }
 ios6 () { cd ~/dev/presto/app_presto && npm run ios6 }
 backend () { cd ~/dev/presto/backend_presto/$@ }
 app () { cd ~/dev/presto/app_presto/$@ }
 website () { cd ~/dev/presto/website_presto/$@ }
-# prestoyou_backend () { cd ~/dev/prestoyou/backend_prestoyou/$@ }
-# prestoyou_app () { cd ~/dev/prestoyou/app_prestoyou/$@ }
 dev () { cd ~/dev/$@ }
 
 # CONFIG
