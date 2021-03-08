@@ -12,6 +12,7 @@ ios () { cd ~/dev/presto/app_presto && npm run ios }
 ios6 () { cd ~/dev/presto/app_presto && npm run ios6 }
 backend () { cd ~/dev/presto/backend_presto/$@ }
 app () { cd ~/dev/presto/app_presto/$@ }
+apns () { cd ~/dev/presto/app_presto && xcrun simctl push booted com.prestoconnect.app apns.payload.json }
 website () { cd ~/dev/presto/website_presto/$@ }
 www () { cd /var/www/html }
 dev () { cd ~/dev/$@ }

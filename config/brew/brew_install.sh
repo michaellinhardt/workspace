@@ -57,6 +57,7 @@ caskInstall "GITHUB-DESKTOP" "github"
 caskInstall "KEEPING-YOU-AWAKE" "keepingyouawake"
 caskInstall "BETTER-TOUCH-TOOL" "bettertouchtool"
 caskInstall "1PASSWORD" "1password"
+caskInstall "MACSFANCONTROL" "macs-fan-control"
 
 # caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync" "backup"
 
