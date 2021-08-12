@@ -56,12 +56,12 @@ caskInstall "SEQUEL-ACE" "sequel-ace"
 caskInstall "GITHUB-DESKTOP" "github"
 caskInstall "KEEPING-YOU-AWAKE" "keepingyouawake"
 # caskInstall "BETTER-TOUCH-TOOL" "bettertouchtool"
-caskInstall "1PASSWORD" "1password"
 caskInstall "MACSFANCONTROL" "macs-fan-control"
 caskInstall "TRANSMISSION" "transmission"
 caskInstall "VLC" "vlc"
 caskInstall "NORDVPN" "nordvpn"
 caskInstall "MYSQLWORKBENCH" "mysqlworkbench"
+caskInstall "BITWARDEN" "bitwarden"
 
 caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync"
 
