@@ -22,7 +22,7 @@ else
 	echo $CW8"XCODE-SELECT install"$CWH
 fi
 
-caskInstall "NGROK" "ngrok"
+# caskInstall "NGROK" "ngrok"
 brewInstall "TIG" "tig"
 brewInstall "PYTHON" "python"
 brewInstall "RUBY" "ruby"
@@ -43,25 +43,23 @@ caskInstall "ADOPTOPEN-JDK8" "adoptopenjdk8"
 brewInstall "MYSQL" "mysql"
 # caskInstall "MONGODB" "mongodb"
 
-caskInstall "ITERM" "iterm2"
+# caskInstall "ITERM" "iterm2"
 
 caskInstall "VSCODE" "visual-studio-code"
-caskInstall "CHROME" "google-chrome"
+# caskInstall "CHROME" "google-chrome"
 caskInstall "FIREFOX" "firefox"
 caskInstall "ALFRED" "alfred"
 caskInstall "FRANZ" "franz"
 caskInstall "SPOTIFY" "spotify"
 caskInstall "POSTMAN" "postman"
-caskInstall "SEQUEL-PRO" "sequel-pro"
+caskInstall "SEQUEL-ACE" "sequel-ace"
 caskInstall "GITHUB-DESKTOP" "github"
 caskInstall "KEEPING-YOU-AWAKE" "keepingyouawake"
-caskInstall "BETTER-TOUCH-TOOL" "bettertouchtool"
+# caskInstall "BETTER-TOUCH-TOOL" "bettertouchtool"
 caskInstall "1PASSWORD" "1password"
 caskInstall "MACSFANCONTROL" "macs-fan-control"
 
-# caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync" "backup"
-
-sh $VSCODE_CONF/vscode_install.sh
+caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync" "backup"
 
 echo $CRE"SNAP can't be auto installed"$CWH
 
