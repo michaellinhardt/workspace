@@ -60,7 +60,7 @@ caskInstall "1PASSWORD" "1password"
 caskInstall "MACSFANCONTROL" "macs-fan-control"
 caskInstall "TRANSMISSION" "transmission"
 
-caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync" "backup"
+caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync"
 
 echo $CRE"SNAP can't be auto installed"$CWH
 
