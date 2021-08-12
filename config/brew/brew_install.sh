@@ -38,7 +38,7 @@ brewInstall "NPM" "npm"
 brewInstall "yarn" "yarn"
 brewInstall "watchman" "watchman"
 brewTap "AdoptOpenJDK/openjdk"
-caskInstall "ADOPTOPEN-JDK8" "adoptopenjdk8"
+caskInstall "ADOPTOPEN-JDK8" "adoptopenjdk"
 
 brewInstall "MYSQL" "mysql"
 # caskInstall "MONGODB" "mongodb"
@@ -58,6 +58,7 @@ caskInstall "KEEPING-YOU-AWAKE" "keepingyouawake"
 # caskInstall "BETTER-TOUCH-TOOL" "bettertouchtool"
 caskInstall "1PASSWORD" "1password"
 caskInstall "MACSFANCONTROL" "macs-fan-control"
+caskInstall "TRANSMISSION" "transmission"
 
 caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync" "backup"
 
