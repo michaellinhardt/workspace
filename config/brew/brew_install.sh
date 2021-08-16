@@ -62,6 +62,7 @@ caskInstall "VLC" "vlc"
 caskInstall "NORDVPN" "nordvpn"
 caskInstall "MYSQLWORKBENCH" "mysqlworkbench"
 caskInstall "BITWARDEN" "bitwarden"
+caskInstall "ONYX" "onyx"
 
 caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync"
 
