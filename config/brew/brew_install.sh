@@ -19,6 +19,8 @@ xcode-select --install &> /dev/null
 if [[ $? != 0 ]] ; then
 	echo $COK"XCODE-SELECT already installed"$CWH
 else
+	echo $CW8"XCODE-SELECT validating license (need sudo)"$CWH
+	sudo xcodebuild -license accept
 	echo $CW8"XCODE-SELECT install"$CWH
 fi
 
@@ -49,6 +51,8 @@ caskInstall "CHROME" "google-chrome"
 caskInstall "FIREFOX" "firefox"
 caskInstall "ALFRED" "alfred"
 caskInstall "FERDI" "ferdi"
+caskInstall "SKYPE" "skype"
+caskInstall "ZOOM" "zoom"
 caskInstall "SPOTIFY" "spotify"
 caskInstall "POSTMAN" "postman"
 caskInstall "SEQUEL-ACE" "sequel-ace"
