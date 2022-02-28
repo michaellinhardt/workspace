@@ -27,7 +27,7 @@ brewInstall "TIG" "tig"
 brewInstall "PYTHON" "python"
 brewInstall "RUBY" "ruby"
 
-brewInstall "NODE" "node"
+brewInstall "NVM" "nvm"
 brewInstall "NPM" "npm"
 
 # COMMAND LINE TOOLS
@@ -35,7 +35,6 @@ brewInstall "NPM" "npm"
 # brewInstall "JQ-JSON-PARSER" "jq"
 
 # REACT NATIVE DEVLOPMENT
-brewInstall "yarn" "yarn"
 brewInstall "watchman" "watchman"
 brewTap "AdoptOpenJDK/openjdk"
 caskInstall "ADOPTOPEN-JDK8" "adoptopenjdk"
@@ -46,25 +45,23 @@ brewInstall "MYSQL" "mysql"
 # caskInstall "ITERM" "iterm2"
 
 caskInstall "VSCODE" "visual-studio-code"
-# caskInstall "CHROME" "google-chrome"
+caskInstall "CHROME" "google-chrome"
 caskInstall "FIREFOX" "firefox"
 caskInstall "ALFRED" "alfred"
-caskInstall "FRANZ" "franz"
+caskInstall "FERDI" "ferdi"
 caskInstall "SPOTIFY" "spotify"
 caskInstall "POSTMAN" "postman"
 caskInstall "SEQUEL-ACE" "sequel-ace"
-caskInstall "GITHUB-DESKTOP" "github"
 caskInstall "KEEPING-YOU-AWAKE" "keepingyouawake"
 # caskInstall "BETTER-TOUCH-TOOL" "bettertouchtool"
 caskInstall "MACSFANCONTROL" "macs-fan-control"
 caskInstall "TRANSMISSION" "transmission"
 caskInstall "VLC" "vlc"
 caskInstall "NORDVPN" "nordvpn"
-caskInstall "MYSQLWORKBENCH" "mysqlworkbench"
 caskInstall "BITWARDEN" "bitwarden"
 caskInstall "ONYX" "onyx"
 
-caskInstall "GOOGLE-BACKUP-SYNC" "google-backup-and-sync"
+caskInstall "GOOGLE-DRIVE" "google-drive"
 
 echo $CRE"SNAP can't be auto installed"$CWH
 
@@ -73,3 +70,6 @@ brew upgrade &> /dev/null
 
 echo $COK"Brew cleanup..."$CWH
 brew cleanup &> /dev/null
+
+echo $COK"Install Node with NVM"$CWH
+nvm install --lts
