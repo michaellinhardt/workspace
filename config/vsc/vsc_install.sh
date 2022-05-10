@@ -12,7 +12,6 @@ function vscInstallExtension () {
 }
 
 vscInstallExtension "sashaweiss.block-travel"
-vscInstallExtension "coenraads.bracket-pair-colorizer"
 vscInstallExtension "chunsen.bracket-select"
 vscInstallExtension "dbaeumer.vscode-eslint"
 vscInstallExtension "zainchen.json"
