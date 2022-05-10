@@ -19,7 +19,7 @@ export MAIL=linhardt.michael@gmail.com
 plugins=(git)
 
 # SYSTEM
-export PATH="/Users/teazyou/.gem/ruby/2.6.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Applications/Atom.app/Contents/MacOS"
+export PATH="/Users/teazyou/.gem/ruby/2.6.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Applications/Atom.app/Contents/MacOS:/usr/local/Caskroom"
 
 # CASK option to force install similink in /Applications
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
