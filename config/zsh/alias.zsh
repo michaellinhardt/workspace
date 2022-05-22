@@ -2,9 +2,6 @@
 reload () { source ~/.zshrc }
 dstore () { sh $WORKSPACE_PATH/sh/sys/dstore.sh }
 
-# APP
-atom () { open -a atom $@ }
-
 # NAVIGATION
 workspace () { cd $WORKSPACE_PATH/$@ }
 ec2 () { ssh -i ~/gdrive/AWS/ec2-virginia-prestoyou.pem ubuntu@ec2-54-82-197-76.compute-1.amazonaws.com }
