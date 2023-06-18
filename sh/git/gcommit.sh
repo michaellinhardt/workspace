@@ -2,8 +2,6 @@
 
 sh ~/workspace/sh/sys/dstore.sh
 [[ $? != 0 ]] && exit 1;
-sh ~/workspace/sh/git/gsetup.sh
-[[ $? != 0 ]] && exit 1;
 sh ~/workspace/sh/git/gstatus.sh
 [[ $? != 0 ]] && exit 1;
 # si aucune list a push on push tout

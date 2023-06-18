@@ -10,6 +10,5 @@ function globalInstall () {
   fi
 }
 
-globalInstall "yarn"
 globalInstall "npx"
-globalInstall "corepack"
+globalInstall "corepack"`
