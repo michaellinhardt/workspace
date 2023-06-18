@@ -19,7 +19,7 @@ export MAIL=linhardt.michael@gmail.com
 plugins=(git)
 
 # SYSTEM
-export PATH="/Users/teazyou/.gem/ruby/2.6.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Applications/Atom.app/Contents/MacOS:/usr/local/Caskroom"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/homebrew/bin/brew"
 
 # CASK option to force install similink in /Applications
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -37,4 +37,4 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export GOOGLE_APPLICATION_CREDENTIALS=/home/teazyou/dkt/backend/dsi-dosa-pim-data-fetcher/src/config/analytics.config.json
+export GOOGLE_APPLICATION_CREDENTIALS=/home/$USER/dkt/backend/dsi-dosa-pim-data-fetcher/src/config/analytics.config.json
