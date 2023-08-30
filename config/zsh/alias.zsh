@@ -40,6 +40,10 @@ alias install-npm="sh $NPM_CONF/npm_install.sh"
 alias install-vsc="sh $VSC_CONF/vsc_install.sh"
 alias install-all="sh $BREW_CONF/brew_install.sh && sh $NPM_CONF/npm_install.sh && sh $VSC_CONF/vsc_install.sh"
 
-# PRESTO NGROK
-# prestongrok () { sh $WORKSPACE_PATH/sh/ngrok/presto.sh }
-# prestolocal () { sh $WORKSPACE_PATH/sh/ngrok/prestoLocalhost.sh }
+# DKT FOLDERS
+dkt () { cd ~/dev/dkt/$@ }
+headless_beauty () { cd ~/dev/dkt/headless_beauty/$@ }
+pim_mike () { cd ~/dev/dkt/pim_mike/$@ }
+
+# DKT SERVERS
+start_healdless_beauty () { cd ~/dev/dkt/headless_beauty && nvm use 12.22.10 && npm run dev }
