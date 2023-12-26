@@ -42,8 +42,9 @@ alias install-all="sh $BREW_CONF/brew_install.sh && sh $NPM_CONF/npm_install.sh 
 
 # DKT FOLDERS
 dkt () { cd ~/dev/dkt/$@ }
-headless_beauty () { cd ~/dev/dkt/headless_beauty/$@ }
-pim_mike () { cd ~/dev/dkt/pim_mike/$@ }
+cd_headless_beauty () { cd ~/dev/dkt/headless_beauty/$@ }
+cd_pim_mike () { cd ~/dev/dkt/pim_mike/$@ }
+start_pim_mike () { cd ~/dev/dkt/autorun_pim_mike && osascript ./split_and_run.scpt "$(pwd)" }
 
 # DKT SERVERS
 start_healdless_beauty () { cd ~/dev/dkt/headless_beauty && nvm use 12.22.10 && npm run dev }
