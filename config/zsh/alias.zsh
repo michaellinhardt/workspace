@@ -40,11 +40,15 @@ alias install-npm="sh $NPM_CONF/npm_install.sh"
 alias install-vsc="sh $VSC_CONF/vsc_install.sh"
 alias install-all="sh $BREW_CONF/brew_install.sh && sh $NPM_CONF/npm_install.sh && sh $VSC_CONF/vsc_install.sh"
 
+ssh_dktvn_orders () { ssh -i ~/keys/2024.01.30-DKTVNOrders.pem ubuntu@ec2-52-221-216-32.ap-southeast-1.compute.amazonaws.com }
+
 # DKT FOLDERS
 dkt () { cd ~/dev/dkt/$@ }
 cd_headless_beauty () { cd ~/dev/dkt/headless_beauty/$@ }
 cd_pim_mike () { cd ~/dev/dkt/pim_mike/$@ }
+cd_posdata_fetcher () { cd ~/dev/nodejs_posdata_aeon/$@ }
 start_pim_mike () { cd ~/dev/dkt/autorun_pim_mike && osascript ./split_and_run.scpt "$(pwd)" }
+start_posdata_fetcher () { cd ~/dev/nodejs_posdata_aeon }
 
 # DKT SERVERS
 start_healdless_beauty () { cd ~/dev/dkt/headless_beauty && nvm use 12.22.10 && npm run dev }
