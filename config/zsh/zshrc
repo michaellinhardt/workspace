@@ -14,9 +14,3 @@ source $ZSH_CONF/alias.zsh
 
 # GIT
 source $ZSH_CONF/git.zsh
-
-# SSH HOOKS
-source $ZSH_CONF/ssh_with_hooks.zsh
-
-# FORCE BG COLOR
-source $ZSH_CONF/force_bgcolor.zsh
