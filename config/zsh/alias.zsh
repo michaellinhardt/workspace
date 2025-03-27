@@ -1,5 +1,4 @@
 # SHELL
-reload () { source ~/.zshrc }
 dstore () { sh $WORKSPACE_PATH/sh/sys/dstore.sh }
 
 # NAVIGATION

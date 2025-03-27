@@ -1,3 +1,5 @@
+reload () { source ~/.zshrc }
+
 # EXPORTS
 source ~/workspace/config/zsh/exports.zsh
 
