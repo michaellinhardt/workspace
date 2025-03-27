@@ -33,8 +33,9 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Append nvm and npm binaries to PATH (nvm should be initialized first)
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 export PATH="$NVM_DIR/versions/node/$(nvm current)/bin:/opt/homebrew/opt/mysql@8.0/bin:$PATH"
 
 # MYSQL for compilers
@@ -48,8 +49,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-export GOOGLE_APPLICATION_CREDENTIALS=/home/$USER/dkt/backend/dsi-dosa-pim-data-fetcher/src/config/analytics.config.json
 
 # REACT NATIVE REQS ( pod install related )
 export LANG=en_US.UTF-8
