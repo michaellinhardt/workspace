@@ -20,7 +20,7 @@ else
 	fi
 fi
 
-function isInstalled() {
+function isInstalledApp() {
 	# var is empty
 	if [[ -z "$1" ]]; then
 		return 0;
@@ -51,7 +51,7 @@ function isInstalled() {
 }
 
 function brewInstall () {
-	if ! isInstalled $1 || ! isInstalled $2 || ! isInstalled $3; then
+	if ! isInstalledApp $1 || ! isInstalledApp $2 || ! isInstalledApp $3; then
 		echo $COK"$1 already installed"$CWH
 		return 0
 	fi
@@ -76,7 +76,7 @@ function brewTap () {
 }
 
 function caskInstall () {
-	if ! isInstalled $1 || ! isInstalled $2 || ! isInstalled $3; then
+	if ! isInstalledApp $1 || ! isInstalledApp $2 || ! isInstalledApp $3; then
 		echo $COK"$1 already installed"$CWH
 		return 0
 	fi

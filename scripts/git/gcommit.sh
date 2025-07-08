@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sh ~/workspace/sh/sys/dstore.sh
+sh $SCRIPTS/dstore.sh
 [[ $? != 0 ]] && exit 1;
-sh ~/workspace/sh/git/gstatus.sh
+sh $SCRIPTS/git/gstatus.sh
 [[ $? != 0 ]] && exit 1;
 # si aucune list a push on push tout
 if [ $# -lt 1 ]

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. $FUNCTIONS_CONF/brew.sh
+. $FUNCTIONS/brew.sh
 
 # OH-MY-ZSH
 if [ -d "$ZSH" ]; then
@@ -25,48 +25,37 @@ else
 fi
 
 # caskInstall "NGROK" "ngrok"
-brewInstall "TIG" "tig"
+# brewInstall "TIG" "tig"
+# brewInstall "RUBY" "ruby"
+# brewInstall "REDIS" "redis"
+# caskInstall "MONGODB" "mongodb"
+
 brewInstall "PYTHON" "python"
-brewInstall "RUBY" "ruby"
 
 brewInstall "NVM" "nvm"
 brewInstall "NPM" "npm"
 
-# COMMAND LINE TOOLS
-# brewInstall "FTP-CLI" "inetutils"
-# brewInstall "JQ-JSON-PARSER" "jq"
-
-# REACT NATIVE DEVLOPMENT
-# brewInstall "watchman" "watchman"
-# brewTap "AdoptOpenJDK/openjdk"
-# caskInstall "temurin" "temurin"
-
 brewInstall "MYSQL" "mysql"
-brewInstall "REDIS" "redis"
-# caskInstall "MONGODB" "mongodb"
+brewInstall "POSTGRESQL" "postgresql@17"
 
 caskInstall "ITERM" "iterm2"
 
 caskInstall "VSCODE" "visual-studio-code"
-caskInstall "CHROME" "google-chrome"
-# caskInstall "FIREFOX" "firefox"
+caskInstall "BRAVE" "brave-browser"
 caskInstall "ALFRED" "alfred"
-# caskInstall "FRANZ" "franz"
-# caskInstall "SKYPE" "skype"
-# caskInstall "ZOOM" "zoom"
+
 caskInstall "SPOTIFY" "spotify"
 caskInstall "POSTMAN" "postman"
 caskInstall "DBEAVER" "dbeaver-community"
+
 caskInstall "KEEPING-YOU-AWAKE" "keepingyouawake"
-# caskInstall "BETTER-TOUCH-TOOL" "bettertouchtool"
-caskInstall "MACSFANCONTROL" "macs-fan-control"
-# caskInstall "TRANSMISSION" "transmission"
+caskInstall "BETTER-TOUCH-TOOL" "bettertouchtool"
+caskInstall "TRANSMISSION" "transmission"
 caskInstall "VLC" "vlc"
 caskInstall "NORDVPN" "nordvpn"
 caskInstall "BITWARDEN" "bitwarden"
 caskInstall "ONYX" "onyx"
-# caskInstall "INTELLIJ" "intellij-idea"
-# caskInstall "FORTICLIENT" "forticlient"
+caskInstall "DOCKER" "docker"
 
 # caskInstall "GOOGLE-DRIVE" "google-drive"
 
@@ -77,6 +66,11 @@ brew upgrade &> /dev/null
 
 echo $COK"Brew cleanup..."$CWH
 brew cleanup &> /dev/null
+brew services cleanup &> /dev/null
 
 echo $COK"Install Node with NVM"$CWH
 nvm install --lts
+
+echo $COK"Brew list of service at startup (brew services list)"$CWH
+brew services list
+
