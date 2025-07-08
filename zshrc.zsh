@@ -17,6 +17,9 @@ source $ZSH_CONFIGS/oh-my-zsh.zsh
 # GIT CONFIGS
 source $ZSH_CONFIGS/git.zsh
 
+# NVM CONFIGS
+source $ZSH_CONFIGS/nvm.zsh
+
 # ZSH CONFIG FROM INSTALLATION FOLDER
 source $ZSH/oh-my-zsh.sh
 
