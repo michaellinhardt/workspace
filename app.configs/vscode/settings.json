@@ -1,0 +1,26 @@
+{
+    "editor.fontSize": 16,
+    "workbench.startupEditor": "none",
+    "extensions.ignoreRecommendations": true,
+    "[markdown]": {
+        "diffEditor.ignoreTrimWhitespace": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.markdownlint": true
+        },
+        "editor.codeActionsOnPaste": {
+            "source.fixAll.markdownlint": true
+        }
+        
+    },
+    "roo-cline.allowedCommands": [
+        "npm test",
+        "npm install",
+        "tsc",
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "roo-cline.deniedCommands": []
+}
