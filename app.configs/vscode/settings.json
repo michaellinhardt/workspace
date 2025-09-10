@@ -7,12 +7,11 @@
         "editor.formatOnSave": true,
         "editor.formatOnPaste": true,
         "editor.codeActionsOnSave": {
-            "source.fixAll.markdownlint": true
+            "source.fixAll.markdownlint": "explicit"
         },
         "editor.codeActionsOnPaste": {
             "source.fixAll.markdownlint": true
         }
-        
     },
     "roo-cline.allowedCommands": [
         "npm test",
@@ -22,5 +21,8 @@
         "git diff",
         "git show"
     ],
-    "roo-cline.deniedCommands": []
+    "roo-cline.deniedCommands": [],
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "editor.formatOnSave": true,
+    "notebook.formatOnSave.enabled": true
 }

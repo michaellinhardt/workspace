@@ -29,5 +29,6 @@ source $ZSH_ALIAS/ssh.zsh
 source $ZSH_ALIAS/navigation.zsh
 source $ZSH_ALIAS/git.zsh
 source $ZSH_ALIAS/installations.zsh
+source $ZSH_ALIAS/customs.zsh
 
 echo Workspace Loaded!
