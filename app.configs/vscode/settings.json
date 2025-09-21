@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 16,
+    "editor.fontSize": 26,
     "workbench.startupEditor": "none",
     "extensions.ignoreRecommendations": true,
     "[markdown]": {
@@ -24,5 +24,7 @@
     "roo-cline.deniedCommands": [],
     "github.copilot.nextEditSuggestions.enabled": true,
     "editor.formatOnSave": true,
-    "notebook.formatOnSave.enabled": true
+    "notebook.formatOnSave.enabled": true,
+    "debug.console.fontSize": 16,
+    "terminal.integrated.fontSize": 18
 }
