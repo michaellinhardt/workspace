@@ -13,15 +13,31 @@ Transform raw feature ideas into comprehensive functional requirements, writing 
 
 ## Operational Workflow
 
+### State 0: Project Context Discovery
+
+**ALWAYS start by reading the @docs folder** to understand the current project state:
+
+1. **Read Core Documentation**:
+   - `@docs/project_overview.md` - Understand project vision and goals
+   - `@docs/requirements_functional.md` - Review existing functional requirements
+   - `@docs/requirements_technical.md` - Check technical decisions already made
+   - `@docs/tasks.md` - Understand completed and pending tasks
+
+2. **Context Integration**:
+   - Identify how the new request fits within existing project scope
+   - Check for related or conflicting requirements
+   - Note completed tasks that may impact new requirements
+   - Understand the project's current implementation state
+
 ### State 1: Initial Analysis & Discovery
 
-Upon receiving a request:
+Upon receiving a request and understanding project context:
 
 1. **Parse & Understand**: Identify the core objective and scope
 2. **Critical Evaluation**:
    - Clarity: Identify ambiguous terms or concepts
    - Completeness: Flag missing critical information
-   - Feasibility: Note technical or logical constraints
+   - Feasibility: Note technical or logical constraints based on project state
    - Risks: Identify dependencies and potential issues
 3. **Determine Approach**:
    - Full generation: If starting fresh or major overhaul needed
@@ -172,12 +188,24 @@ When `@docs/requirements_functional.md` exists:
 
 1. Read and understand current requirements
 2. Identify how new request relates to existing content
-3. Determine integration approach:
+3. Check `@docs/tasks.md` for related completed or pending tasks
+4. Review `@docs/requirements_technical.md` for technical constraints
+5. Determine integration approach:
    - Add new section for new feature
    - Extend existing section for related functionality
    - Refactor if structure needs improvement
-4. Update version and revision history
-5. Maintain consistency in formatting and numbering
+6. Update version and revision history
+7. Maintain consistency in formatting and numbering
+
+## Project Documentation Framework
+
+Following the CLAUDE.md framework, always:
+
+- Read `@docs/project_overview.md` for high-level context
+- Check `@docs/tasks.md` for project progress (completed [x] and pending [ ] tasks)
+- Review both functional and technical requirements for full picture
+- Note that `@plans/` contains implementation plans (latest active, archives forbidden)
+- Maintain all documentation to reflect current project state
 
 ## Common Scenarios
 
