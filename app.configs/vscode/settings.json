@@ -1,30 +1,70 @@
 {
-    "editor.fontSize": 26,
-    "workbench.startupEditor": "none",
-    "extensions.ignoreRecommendations": true,
-    "[markdown]": {
-        "diffEditor.ignoreTrimWhitespace": true,
-        "editor.formatOnSave": true,
-        "editor.formatOnPaste": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll.markdownlint": "explicit"
-        },
-        "editor.codeActionsOnPaste": {
-            "source.fixAll.markdownlint": true
-        }
-    },
-    "roo-cline.allowedCommands": [
-        "npm test",
-        "npm install",
-        "tsc",
-        "git log",
-        "git diff",
-        "git show"
-    ],
-    "roo-cline.deniedCommands": [],
-    "github.copilot.nextEditSuggestions.enabled": true,
-    "editor.formatOnSave": true,
-    "notebook.formatOnSave.enabled": true,
-    "debug.console.fontSize": 16,
-    "terminal.integrated.fontSize": 18
+	"editor.fontSize": 14,
+	"workbench.startupEditor": "none",
+	"extensions.ignoreRecommendations": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[markdown]": {
+		"diffEditor.ignoreTrimWhitespace": true,
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.markdownlint": "explicit"
+		},
+		"editor.codeActionsOnPaste": {
+			"source.fixAll.markdownlint": true
+		}
+	},
+	"roo-cline.allowedCommands": [
+		"npm test",
+		"npm install",
+		"tsc",
+		"git log",
+		"git diff",
+		"git show"
+	],
+	"roo-cline.deniedCommands": [],
+	"github.copilot.nextEditSuggestions.enabled": true,
+	"editor.formatOnSave": true,
+	"notebook.formatOnSave.enabled": true,
+	"debug.console.fontSize": 16,
+	"terminal.integrated.fontSize": 18,
+	"kilo-code.allowedCommands": [
+		"git log",
+		"git diff",
+		"git show",
+		"npm run",
+		"python3 -m http.server 8000",
+		"python3",
+		"npm init",
+		"npm",
+		"npm init -y",
+		"mkdir",
+		"npx",
+		"git init",
+		"git clone",
+		"npm install",
+		"node",
+		"npm test",
+		"grep",
+		"tail",
+		"ls",
+		"test",
+		"echo",
+		"head",
+		"cat",
+		"cp",
+		"npm start"
+	],
+	"kilo-code.deniedCommands": [],
+	"workbench.editor.empty.hint": "hidden",
+	"editor.accessibilitySupport": "on",
+	"editor.autoIndentOnPaste": true,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"eslint.codeActionsOnSave.rules": null,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	}
 }
