@@ -10,5 +10,4 @@ export ZSH_ALIAS=$WORKSPACE/zsh.alias
 export ZSH=~/.oh-my-zsh
 
 # SYSTEM PATH
-export PATH_LOCAL_BIN="$HOME/.local/bin" # claude code install himself here
-export PATH="$PATH_LOCAL_BIN:$PATH"
+export PATH="$PATH"
