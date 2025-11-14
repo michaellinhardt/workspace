@@ -37,6 +37,7 @@ fi
 
 copy_template_if_missing "$CLAUDE_TEMPLATES/settings.local.json" ".claude/settings.local.json"
 copy_template_if_missing "$CLAUDE_TEMPLATES/CLAUDE.local.md" ".claude/CLAUDE.local.md"
+copy_template_if_missing "$CLAUDE_TEMPLATES/request.md" ".claude/request.md"
 
 ########################################
 # Initialize docs directory and template files
@@ -67,5 +68,22 @@ if [ ! -d "plans/archived" ]; then
   mkdir ./plans/archived
   echo "Initialized plans/archived directory."
 fi
+
+########################################
+# Agents
+########################################
+
+# List all files in claude-agents and create symbolic links in .claude/agents
+if [ ! -d ".claude/agents" ]; then
+  mkdir -p .claude/agents
+fi
+
+for agent_file in claude-agents/*; do
+  agent_filename=$(basename "$agent_file")
+  if [ ! -f ".claude/agents/$agent_filename" ]; then
+	ln -s "$(realpath "$agent_file")" ".claude/agents/$agent_filename"
+	echo "Created symbolic link for agent: $agent_filename"
+  fi
+done
 
 echo "done"
