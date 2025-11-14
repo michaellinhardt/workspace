@@ -69,5 +69,6 @@
 	},
 	"python.defaultInterpreterPath": "/opt/homebrew/bin/python3.13",
 	"workbench.secondarySideBar.defaultVisibility": "hidden",
-	"accessibility.signalOptions.volume": 10
+	"accessibility.signalOptions.volume": 10,
+	"git.confirmSync": false
 }
