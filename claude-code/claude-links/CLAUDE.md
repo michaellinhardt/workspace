@@ -53,8 +53,17 @@ Functional requirements of the project.
 
 Technical requirements of the project.
 
-#### @docs/implementation_plan.md
+### File description in @plans
 
 Store the latest implementation plan to be used for implementing.
 
-A hook will always set the file empty before making a new plan.
+When starting a new iterations, a hook will first move old plans to @plans/archives.
+
+#### Plan file name convention
+
+plan_YYMMDD_X.X_feature.md: prefix plan_, the date, the task number, a task identifier.
+Example: plan_251114_1.2.2_xmlParser.md
+
+#### @plans/archives
+
+All past plans. This folder is forbidden or you to read.

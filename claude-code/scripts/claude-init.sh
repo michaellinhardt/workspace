@@ -1,9 +1,21 @@
 #!/bin/bash
 
+########################################
+# Functions
+########################################
+
+# Function to copy template file if it doesn't exist
+copy_template_if_missing() {
+  if [ ! -f "./$2" ]; then
+    cp "$1" "./$2"
+    echo "Created ./$2"
+  fi
+}
+
 echo "Initializing Claude..."
 
 ########################################
-# Initialize .claude and CLAUDE.md link
+# Initialize .claude
 ########################################
 
 # Create .claude directory if it doesn't exist
@@ -18,6 +30,14 @@ if [ ! -f "./claude/CLAUDE.md" ]; then
   echo "Created symbolic link for CLAUDE.md."
 fi
 
+if [ ! -f "./claude/settings.json" ]; then
+  ln -s $CLAUDE_LINKS/settings.json ./.claude/settings.json
+  echo "Created symbolic link for settings.json."
+fi
+
+copy_template_if_missing "$CLAUDE_TEMPLATES/settings.local.json" ".claude/settings.local.json"
+copy_template_if_missing "$CLAUDE_TEMPLATES/CLAUDE.local.md" ".claude/CLAUDE.local.md"
+
 ########################################
 # Initialize docs directory and template files
 ########################################
@@ -28,22 +48,24 @@ if [ ! -d "docs" ]; then
   echo "Initialized docs directory."
 fi
 
-# Function to copy template file if it doesn't exist
-copy_template_if_missing() {
-  local filename=$1
-  local filepath="docs/$filename"
-  
-  if [ ! -f "$filepath" ]; then
-    cp "$CLAUDE_TEMPLATES/docs/$filename" "./$filepath"
-    echo "Created $filename in docs."
-  fi
-}
-
 # Copy template files
-copy_template_if_missing "project_overview.md"
-copy_template_if_missing "tasks.md"
-copy_template_if_missing "requirements_functional.md"
-copy_template_if_missing "requirements_technical.md"
-copy_template_if_missing "implementation_plan.md"
+copy_template_if_missing "$CLAUDE_TEMPLATES/docs/project_overview.md" "docs/project_overview.md"
+copy_template_if_missing "$CLAUDE_TEMPLATES/docs/tasks.md" "docs/tasks.md"
+copy_template_if_missing "$CLAUDE_TEMPLATES/docs/requirements_functional.md" "docs/requirements_functional.md"
+copy_template_if_missing "$CLAUDE_TEMPLATES/docs/requirements_technical.md" "docs/requirements_technical.md"
+
+########################################
+# Initialize plans directory and template files
+########################################
+
+if [ ! -d "plans" ]; then
+  mkdir plans
+  echo "Initialized plans directory."
+fi
+
+if [ ! -d "plans/archived" ]; then
+  mkdir ./plans/archived
+  echo "Initialized plans/archived directory."
+fi
 
 echo "done"
