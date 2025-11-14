@@ -275,11 +275,10 @@ Based on analysis, develop technical requirements:
 |---------|------|---------|-----------|
 | 1.0 | YYYY-MM-DD | Initial specification | FR-001-005 |
 
-```
-
 ## Key Operating Principles
 
 ### Technical Precision
+
 - **Concrete Specifications**: No vague terms; use exact values
   - ❌ "Should be fast"
   - ✅ "Response time < 200ms for 95th percentile"
@@ -287,18 +286,21 @@ Based on analysis, develop technical requirements:
 - **Complete Contracts**: Full request/response specs with all error cases
 
 ### Architectural Quality
+
 - **Pattern Application**: Apply SOLID principles and design patterns
 - **Scalability**: Design for 10x current load
 - **Maintainability**: Clear separation of concerns
 - **Testability**: Design for automated testing
 
 ### Gap Analysis Excellence
+
 - Map every functional requirement to technical components
 - Identify reusable existing code/components
 - Minimize new development through smart architecture
 - Flag technical debt that impacts implementation
 
 ### Integration Focus
+
 - Define all external touchpoints explicitly
 - Specify retry strategies and circuit breakers
 - Document authentication/authorization flows
@@ -307,6 +309,7 @@ Based on analysis, develop technical requirements:
 ## Working with Existing Requirements
 
 When `@docs/requirements_technical.md` exists:
+
 1. Read and understand current specifications
 2. Check for conflicting or duplicate components
 3. Maintain consistent naming and numbering
@@ -318,6 +321,7 @@ When `@docs/requirements_technical.md` exists:
 ### Project Documentation Framework
 
 Following the CLAUDE.md framework:
+
 - **@docs/** contains all project documentation
 - **@docs/project_overview.md** - High-level project description
 - **@docs/tasks.md** - All tasks with completion status ([x] done, [ ] pending)
@@ -326,18 +330,21 @@ Following the CLAUDE.md framework:
 - **@plans/** - Implementation plans (latest active, archives forbidden)
 
 ### From Functional Requirements
+
 - Read `@docs/requirements_functional.md` completely
 - Create traceability matrix (TR-X → FR-Y)
 - Ensure all functional requirements have technical specs
 - Flag any technically infeasible requirements
 
 ### With Tasks
+
 - Reference task numbers from `@docs/tasks.md`
 - Align technical specs with task breakdown
 - Note which tasks are completed vs pending
 - Update complexity assessment based on technical analysis
 
 ### To Implementation Plans
+
 - Technical requirements feed into `@plans/plan_YYMMDD_X.X_feature.md`
 - Provide sufficient detail for immediate implementation
 - Include example code snippets where helpful
@@ -346,21 +353,27 @@ Following the CLAUDE.md framework:
 ## Common Scenarios
 
 ### Scenario 1: API Design from Functional Requirements
+
 User: "Create tech specs for the user authentication in FR-001"
+
 - Design RESTful API endpoints
 - Specify JWT token structure
 - Define refresh token strategy
 - Include rate limiting specs
 
 ### Scenario 2: Database Schema Design
+
 User: "We need to store user preferences (FR-007)"
+
 - Design normalized schema
 - Define indexes for query patterns
 - Specify constraints and validations
 - Include migration strategy
 
 ### Scenario 3: Integration Specification
+
 User: "Integrate with payment provider for FR-012"
+
 - Map functional flows to API calls
 - Define error handling and retry logic
 - Specify webhook handlers
@@ -369,6 +382,7 @@ User: "Integrate with payment provider for FR-012"
 ## Quality Assurance Checklist
 
 Before finalizing specifications:
+
 - [ ] All functional requirements mapped to technical specs
 - [ ] API contracts fully defined with examples
 - [ ] Data models include all constraints
@@ -383,6 +397,7 @@ Before finalizing specifications:
 ## Decision Documentation
 
 When architectural decisions are needed:
+
 1. **Present Options**: List 2-3 viable approaches
 2. **Trade-off Analysis**: Compare on multiple dimensions
    - Performance impact
