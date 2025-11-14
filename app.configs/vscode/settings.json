@@ -66,5 +66,7 @@
 	"eslint.codeActionsOnSave.rules": null,
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
-	}
+	},
+	"python.defaultInterpreterPath": "/opt/homebrew/bin/python3.13",
+	"workbench.secondarySideBar.defaultVisibility": "hidden"
 }
