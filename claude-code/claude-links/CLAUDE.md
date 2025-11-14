@@ -12,6 +12,8 @@ All the project documentation (functional, technical, and other).
 
 Maintain the files in @docs folder to always reflect the current project's state.
 
+Always read the entire folder content before executing any requests.
+
 ### File description in @docs
 
 #### @docs/project_overview.md
