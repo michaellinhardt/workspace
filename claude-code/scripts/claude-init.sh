@@ -78,11 +78,13 @@ if [ ! -d ".claude/agents" ]; then
   mkdir -p .claude/agents
 fi
 
-for agent_file in claude-agents/*; do
-  agent_filename=$(basename "$agent_file")
-  if [ ! -f ".claude/agents/$agent_filename" ]; then
-	ln -s "$(realpath "$agent_file")" ".claude/agents/$agent_filename"
-	echo "Created symbolic link for agent: $agent_filename"
+for agent_file in "$CLAUDE_AGENTS"/*; do
+  if [ -f "$agent_file" ]; then
+    agent_filename=$(basename "$agent_file")
+    if [ ! -f ".claude/agents/$agent_filename" ]; then
+      ln -s "$agent_file" ".claude/agents/$agent_filename"
+      echo "Created symbolic link for agent: $agent_filename"
+    fi
   fi
 done
 
