@@ -189,7 +189,7 @@ Analyze project artifacts, existing documentation, and codebase structure to cre
 
 ### **Project Structure**
 
-```
+```folder
 project-root/
 ├── src/           # [Main source code]
 ├── tests/         # [Test files]
@@ -271,8 +271,6 @@ project-root/
 - **Technical Lead**: [Name/Role if known]
 - **Repository**: [URL if applicable]
 - **Last Updated**: [Date]
-
-```
 
 ### Phase 4: Quality Assurance & Refinement
 
