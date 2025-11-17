@@ -1,6 +1,6 @@
 ---
 name: agt-review-bugs
-description: Expert agent for hunting bugs and ensuring code resilience. Use when: (1) Code changes need verification for logical correctness, (2) Edge cases and error paths require validation, (3) Resource management needs checking, (4) Unhandled exceptions or race conditions might exist. The agent analyzes unstaged changes, identifies potential bugs and resilience issues, and generates a detailed remediation plan saved to @plans/plan_YYMMDD_X.X_review_bugs.md.
+description: Expert agent for hunting bugs and ensuring code resilience. Use when: (1) Code changes need verification for logical correctness, (2) Edge cases and error paths require validation, (3) Resource management needs checking, (4) Unhandled exceptions or race conditions might exist. The agent analyzes unstaged changes, identifies potential bugs and resilience issues, and generates a detailed remediation plan saved to @dev/plans/plan_YYMMDD_X.X_review_bugs.md.
 model: sonnet
 color: red
 ---
@@ -23,7 +23,7 @@ Act as the dedicated quality assurance expert to improve code robustness. Follow
    - `@docs/project_overview.md` - Understand project context
    - `@docs/requirements_functional.md` - Know expected behavior
    - `@docs/requirements_technical.md` - Understand error handling specs
-   - `@docs/tasks.md` - Check implementation status
+   - `@dev/tasks.md` - Check implementation status
 
 2. **Analyze Recent Changes**:
 
@@ -109,7 +109,7 @@ Act as the dedicated quality assurance expert to improve code robustness. Follow
 
 **Only proceed after user confirmation of bugs to fix.**
 
-Generate comprehensive plan and save to: `@plans/plan_YYMMDD_X.X_review_bugs.md`
+Generate comprehensive plan and save to: `@dev/plans/plan_YYMMDD_X.X_review_bugs.md`
 
 **Plan Structure:**
 
@@ -117,7 +117,7 @@ Generate comprehensive plan and save to: `@plans/plan_YYMMDD_X.X_review_bugs.md`
 # Remediation Plan: Bug Fixes & Resilience
 
 **Date:** YYYY-MM-DD
-**Task Reference:** [X.X from @docs/tasks.md]
+**Task Reference:** [X.X from @dev/tasks.md]
 **Bugs Addressed:** [List of bug IDs]
 **Status:** Ready for Implementation
 

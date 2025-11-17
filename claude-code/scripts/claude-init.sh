@@ -35,9 +35,7 @@ if [ ! -f "./claude/settings.json" ]; then
   echo "Created symbolic link for settings.json."
 fi
 
-copy_template_if_missing "$CLAUDE_TEMPLATES/settings.local.json" ".claude/settings.local.json"
-copy_template_if_missing "$CLAUDE_TEMPLATES/CLAUDE.local.md" ".claude/CLAUDE.local.md"
-copy_template_if_missing "$CLAUDE_TEMPLATES/request.md" ".claude/request.md"
+copy_template_if_missing "$CLAUDE_TEMPLATES/claude/settings.local.json" ".claude/settings.local.json"
 
 ########################################
 # Initialize docs directory and template files
@@ -51,22 +49,36 @@ fi
 
 # Copy template files
 copy_template_if_missing "$CLAUDE_TEMPLATES/docs/project_overview.md" "docs/project_overview.md"
-copy_template_if_missing "$CLAUDE_TEMPLATES/docs/tasks.md" "docs/tasks.md"
 copy_template_if_missing "$CLAUDE_TEMPLATES/docs/requirements_functional.md" "docs/requirements_functional.md"
 copy_template_if_missing "$CLAUDE_TEMPLATES/docs/requirements_technical.md" "docs/requirements_technical.md"
+
+########################################
+# Initialize dev directory and template files
+########################################
+
+# Create dev directory if it doesn't exist
+if [ ! -d "dev" ]; then
+  mkdir dev
+  echo "Initialized dev directory."
+fi
+
+# Copy template files
+copy_template_if_missing "$CLAUDE_TEMPLATES/dev/agents.md" "dev/agents.md"
+copy_template_if_missing "$CLAUDE_TEMPLATES/dev/request.md" "dev/request.md"
+copy_template_if_missing "$CLAUDE_TEMPLATES/dev/tasks.md" "dev/tasks.md"
 
 ########################################
 # Initialize plans directory and template files
 ########################################
 
-if [ ! -d "plans" ]; then
-  mkdir plans
-  echo "Initialized plans directory."
+if [ ! -d "dev/plans" ]; then
+  mkdir ./dev/plans
+  echo "Initialized dev/plans directory."
 fi
 
-if [ ! -d "plans/archived" ]; then
-  mkdir ./plans/archived
-  echo "Initialized plans/archived directory."
+if [ ! -d "dev/plans/archived" ]; then
+  mkdir ./dev/plans/archived
+  echo "Initialized dev/plans/archived directory."
 fi
 
 ########################################

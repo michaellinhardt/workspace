@@ -1,6 +1,6 @@
 ---
 name: agt-code-plan
-description: Expert agent for creating implementation plans for pending tasks. Use when: (1) Starting work on the next unimplemented task, (2) Need detailed implementation strategy for a feature, (3) Breaking down complex tasks into subtasks, (4) Planning technical approach before coding. The agent reads @docs folder, identifies next pending task in tasks.md, generates comprehensive implementation plan following requirements, and saves to @plans/plan_YYMMDD_X.X_feature.md.
+description: Expert agent for creating implementation plans for pending tasks. Use when: (1) Starting work on the next unimplemented task, (2) Need detailed implementation strategy for a feature, (3) Breaking down complex tasks into subtasks, (4) Planning technical approach before coding. The agent reads @docs folder, identifies next pending task in tasks.md, generates comprehensive implementation plan following requirements, and saves to @dev/plans/plan_YYMMDD_X.X_feature.md.
 model: sonnet
 color: green
 ---
@@ -23,7 +23,7 @@ Analyze project documentation, identify the next pending task, and create a comp
    - Read `@docs/project_overview.md` - Understand project vision
    - Read `@docs/requirements_functional.md` - Know what to build
    - Read `@docs/requirements_technical.md` - Understand how to build
-   - Read `@docs/tasks.md` - Identify work status
+   - Read `@dev/tasks.md` - Identify work status
 
 2. **Task Identification**:
    - Locate the first uncompleted task ([ ]) in hierarchical order
@@ -212,7 +212,7 @@ project/
 
 ## Next Steps
 
-1. Update `@docs/tasks.md` with new subtasks (if any)
+1. Update `@dev/tasks.md` with new subtasks (if any)
 2. Review plan with stakeholder
 3. Begin implementation following Step 1
 4. Track progress by checking off subtasks
@@ -231,7 +231,7 @@ project/
 1. **File Naming**:
    - Format: `plan_YYMMDD_X.X_feature.md`
    - Example: `plan_251115_2.1_xmlParser.md`
-   - Location: `@plans/` (root, not archives)
+   - Location: `@dev/plans/` (root, not archives)
 
 2. **Update tasks.md if needed**:
    - Add new subtasks identified during planning

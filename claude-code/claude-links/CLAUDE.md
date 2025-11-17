@@ -20,7 +20,17 @@ Always read the entire folder content before executing any requests.
 
 It is a high-level project description.
 
-#### @docs/tasks.md
+#### @docs/requirements_functional.md
+
+Functional requirements of the project.
+
+#### @docs/requirements_technical.md
+
+Technical requirements of the project.
+
+### File description in @dev
+
+#### @dev/tasks.md
 
 All tasks and sub-tasks related to the projects ( planning, implementation, review, research, etc.. ).
 
@@ -47,25 +57,25 @@ Follow this structure:
 - [ ] 2.2 Import and use helper in main routine
 ```
 
-#### @docs/requirements_functional.md
+#### @dev/request.md
 
-Functional requirements of the project.
+This is the latest request submited to claude-code.
 
-#### @docs/requirements_technical.md
+#### @dev/agents.md
 
-Technical requirements of the project.
+This file provide specifics instructions for CLAUDE-CODE. In case it would conflicts with instructions from CLAUDE.md, this file is always higher priority and source of truth.
 
-### File description in @plans
+### File description in @dev/plans
 
 Store the latest implementation plan to be used for implementing.
 
-When starting a new iterations, a hook will first move old plans to @plans/archives.
+When starting a new iterations, a hook will first move old plans to @dev/plans/archives.
 
 #### Plan file name convention
 
 plan_YYMMDD_X.X_feature.md: prefix plan_, the date, the task number, a task identifier.
 Example: plan_251114_1.2.2_xmlParser.md
 
-#### @plans/archives
+#### @dev/plans/archives
 
 All past plans. This folder is forbidden or you to read.

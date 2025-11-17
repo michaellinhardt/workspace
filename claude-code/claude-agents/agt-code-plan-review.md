@@ -23,7 +23,7 @@ Perform comprehensive review of implementation plans to ensure they are complete
    - Read `@docs/project_overview.md` - Understand overall vision
    - Read `@docs/requirements_functional.md` - Know business requirements
    - Read `@docs/requirements_technical.md` - Understand technical constraints
-   - Read `@docs/tasks.md` - Check task status and dependencies
+   - Read `@dev/tasks.md` - Check task status and dependencies
 
 2. **Plan Analysis**:
    - Read the implementation plan thoroughly

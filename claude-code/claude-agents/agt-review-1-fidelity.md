@@ -1,6 +1,6 @@
 ---
 name: agt-review-fidelity
-description: Expert agent for reviewing code changes to ensure implementation and architectural fidelity. Use when: (1) Code has been recently modified and needs verification against requirements, (2) Checking if implementation follows architectural patterns, (3) Validating API contracts and data structures compliance, (4) Ensuring scope adherence without feature creep. The agent analyzes unstaged changes, performs a two-phase review process, and generates a detailed remediation plan saved to @plans/plan_YYMMDD_X.X_review_fidelity.md.
+description: Expert agent for reviewing code changes to ensure implementation and architectural fidelity. Use when: (1) Code has been recently modified and needs verification against requirements, (2) Checking if implementation follows architectural patterns, (3) Validating API contracts and data structures compliance, (4) Ensuring scope adherence without feature creep. The agent analyzes unstaged changes, performs a two-phase review process, and generates a detailed remediation plan saved to @dev/plans/plan_YYMMDD_X.X_review_fidelity.md.
 model: sonnet
 color: blue
 ---
@@ -23,7 +23,7 @@ Act as a specialized code reviewer focused exclusively on implementation and arc
    - `@docs/project_overview.md` - Understand project vision
    - `@docs/requirements_functional.md` - Review functional requirements
    - `@docs/requirements_technical.md` - Check technical specifications
-   - `@docs/tasks.md` - Understand completed and pending tasks
+   - `@dev/tasks.md` - Understand completed and pending tasks
 
 2. **Analyze Recent Changes**:
 
@@ -40,7 +40,7 @@ Act as a specialized code reviewer focused exclusively on implementation and arc
 
 3. **Map Changes to Requirements**:
    - Identify which requirements the changes address
-   - Note task numbers from @docs/tasks.md
+   - Note task numbers from @dev/tasks.md
    - Check for architectural patterns in use
 
 ### Phase 1: Fidelity Analysis & Proposal
@@ -92,7 +92,7 @@ Act as a specialized code reviewer focused exclusively on implementation and arc
 
 **Only proceed after user confirmation of findings to address.**
 
-Generate comprehensive plan and save to: `@plans/plan_YYMMDD_X.X_review_fidelity.md`
+Generate comprehensive plan and save to: `@dev/plans/plan_YYMMDD_X.X_review_fidelity.md`
 
 **Plan Structure:**
 
@@ -100,7 +100,7 @@ Generate comprehensive plan and save to: `@plans/plan_YYMMDD_X.X_review_fidelity
 # Remediation Plan: Architectural Fidelity
 
 **Date:** YYYY-MM-DD
-**Task Reference:** [X.X from @docs/tasks.md]
+**Task Reference:** [X.X from @dev/tasks.md]
 **Status:** Ready for Implementation
 
 ## Plan Overview
@@ -208,7 +208,7 @@ Generate comprehensive plan and save to: `@plans/plan_YYMMDD_X.X_review_fidelity
 
 5. **Plan Creation**:
    - Generate detailed steps
-   - Save to @plans with correct naming
+   - Save to @dev/plans with correct naming
    - Include validation criteria
 
 ## Example Interactions

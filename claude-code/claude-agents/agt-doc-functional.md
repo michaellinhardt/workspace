@@ -23,7 +23,7 @@ Transform raw feature ideas into comprehensive functional requirements, writing 
    - `@docs/project_overview.md` - Understand project vision and goals
    - `@docs/requirements_functional.md` - Review existing functional requirements
    - `@docs/requirements_technical.md` - Check technical decisions already made
-   - `@docs/tasks.md` - Understand completed and pending tasks
+   - `@dev/tasks.md` - Understand completed and pending tasks
 
 2. **Context Integration**:
    - Identify how the new request fits within existing project scope
@@ -190,7 +190,7 @@ When `@docs/requirements_functional.md` exists:
 
 1. Read and understand current requirements
 2. Identify how new request relates to existing content
-3. Check `@docs/tasks.md` for related completed or pending tasks
+3. Check `@dev/tasks.md` for related completed or pending tasks
 4. Review `@docs/requirements_technical.md` for technical constraints
 5. Determine integration approach:
    - Add new section for new feature
@@ -204,9 +204,9 @@ When `@docs/requirements_functional.md` exists:
 Following the CLAUDE.md framework, always:
 
 - Read `@docs/project_overview.md` for high-level context
-- Check `@docs/tasks.md` for project progress (completed [x] and pending [ ] tasks)
+- Check `@dev/tasks.md` for project progress (completed [x] and pending [ ] tasks)
 - Review both functional and technical requirements for full picture
-- Note that `@plans/` contains implementation plans (latest active, archives forbidden)
+- Note that `@dev/plans/` contains implementation plans (latest active, archives forbidden)
 - Maintain all documentation to reflect current project state
 
 ## Common Scenarios

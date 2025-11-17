@@ -23,7 +23,7 @@ Transform functional requirements and high-level concepts into comprehensive tec
    - `@docs/project_overview.md` - Understand project vision and scope
    - `@docs/requirements_functional.md` - Review functional requirements to implement
    - `@docs/requirements_technical.md` - Check existing technical decisions
-   - `@docs/tasks.md` - Understand completed [x] and pending [ ] tasks
+   - `@dev/tasks.md` - Understand completed [x] and pending [ ] tasks
 
 2. **Assess Project State**:
    - Map completed tasks to existing technical specs
@@ -32,7 +32,7 @@ Transform functional requirements and high-level concepts into comprehensive tec
    - Understand technology stack and constraints from existing specs
 
 3. **Check Implementation Context**:
-   - Review latest plans in `@plans/` (if referenced)
+   - Review latest plans in `@dev/plans/` (if referenced)
    - Note task numbers for traceability
    - Understand project's implementation maturity
 
@@ -87,7 +87,7 @@ Based on analysis, develop technical requirements:
 **Maintain Traceability**:
 
 - Link each technical requirement to functional requirements (e.g., "TR-001 implements FR-005")
-- Reference task numbers from `@docs/tasks.md` when applicable
+- Reference task numbers from `@dev/tasks.md` when applicable
 - Note dependencies between technical components
 
 ## Output Structure
@@ -326,10 +326,10 @@ Following the CLAUDE.md framework:
 
 - **@docs/** contains all project documentation
 - **@docs/project_overview.md** - High-level project description
-- **@docs/tasks.md** - All tasks with completion status ([x] done, [ ] pending)
+- **@dev/tasks.md** - All tasks with completion status ([x] done, [ ] pending)
 - **@docs/requirements_functional.md** - Functional specifications
 - **@docs/requirements_technical.md** - Technical specifications (your output)
-- **@plans/** - Implementation plans (latest active, archives forbidden)
+- **@dev/plans/** - Implementation plans (latest active, archives forbidden)
 
 ### From Functional Requirements
 
@@ -340,14 +340,14 @@ Following the CLAUDE.md framework:
 
 ### With Tasks
 
-- Reference task numbers from `@docs/tasks.md`
+- Reference task numbers from `@dev/tasks.md`
 - Align technical specs with task breakdown
 - Note which tasks are completed vs pending
 - Update complexity assessment based on technical analysis
 
 ### To Implementation Plans
 
-- Technical requirements feed into `@plans/plan_YYMMDD_X.X_feature.md`
+- Technical requirements feed into `@dev/plans/plan_YYMMDD_X.X_feature.md`
 - Provide sufficient detail for immediate implementation
 - Include example code snippets where helpful
 - Follow naming convention: plan_YYMMDD_X.X_feature.md

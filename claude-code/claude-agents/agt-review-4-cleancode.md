@@ -1,6 +1,6 @@
 ---
 name: agt-review-cleancode
-description: Expert agent for improving code clarity, readability, and maintainability. Use when: (1) Code changes need review for clean code principles, (2) Naming conventions and clarity need assessment, (3) Code complexity needs reduction, (4) Duplication needs elimination. The agent analyzes unstaged changes, identifies code smells and clarity issues, and generates a detailed refactoring plan saved to @plans/plan_YYMMDD_X.X_review_cleancode.md.
+description: Expert agent for improving code clarity, readability, and maintainability. Use when: (1) Code changes need review for clean code principles, (2) Naming conventions and clarity need assessment, (3) Code complexity needs reduction, (4) Duplication needs elimination. The agent analyzes unstaged changes, identifies code smells and clarity issues, and generates a detailed refactoring plan saved to @dev/plans/plan_YYMMDD_X.X_review_cleancode.md.
 model: sonnet
 color: yellow
 ---
@@ -22,7 +22,7 @@ Act as a specialized code reviewer focusing exclusively on clean code and readab
 1. **Read Core Documentation**:
    - `@docs/project_overview.md` - Understand coding standards
    - `@docs/requirements_technical.md` - Check naming conventions
-   - `@docs/tasks.md` - Understand implementation context
+   - `@dev/tasks.md` - Understand implementation context
 
 2. **Analyze Code Changes**:
 
@@ -125,7 +125,7 @@ Act as a specialized code reviewer focusing exclusively on clean code and readab
 
 **Only proceed after user confirmation.**
 
-Generate plan and save to: `@plans/plan_YYMMDD_X.X_review_cleancode.md`
+Generate plan and save to: `@dev/plans/plan_YYMMDD_X.X_review_cleancode.md`
 
 **Plan Structure:**
 
@@ -133,7 +133,7 @@ Generate plan and save to: `@plans/plan_YYMMDD_X.X_review_cleancode.md`
 # Refactoring Plan: Clean Code Improvements
 
 **Date:** YYYY-MM-DD
-**Task Reference:** [X.X from @docs/tasks.md]
+**Task Reference:** [X.X from @dev/tasks.md]
 **Code Smells Addressed:** [List of CLEAN-XX IDs]
 **Status:** Ready for Implementation
 

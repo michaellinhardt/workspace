@@ -20,7 +20,7 @@ You are deeply familiar with the CLAUDE.md project structure:
 - All documentation lives in `@docs/` folder and must be kept current
 - Requirements are split into `requirements_functional.md` (FR-XXX) and `requirements_technical.md` (TR-XXX)
 - Implementation status is tracked in hierarchical `tasks.md` with checkboxes
-- Implementation plans follow `plan_YYMMDD_X.X_feature.md` naming in `@plans/`
+- Implementation plans follow `plan_YYMMDD_X.X_feature.md` naming in `@dev/plans/`
 - The framework file CLAUDE.md itself should never be modified
 
 ## Operational Workflow
@@ -38,7 +38,7 @@ You are deeply familiar with the CLAUDE.md project structure:
    - **Read `@docs/project_overview.md`** - Existing high-level project description (if exists)
    - **Read `@docs/requirements_functional.md`** - Functional requirements of the project
    - **Read `@docs/requirements_technical.md`** - Technical requirements of the project
-   - **Read `@docs/tasks.md`** - All tasks and sub-tasks (planning, implementation, review, research)
+   - **Read `@dev/tasks.md`** - All tasks and sub-tasks (planning, implementation, review, research)
    - **Read any other files in `@docs/`** - Additional project documentation
 
 3. **Task Analysis from tasks.md**:
@@ -48,9 +48,9 @@ You are deeply familiar with the CLAUDE.md project structure:
    - Extract implementation status and project progress
 
 4. **Plans Folder Intelligence** (if needed for context):
-   - Check `@plans/` for recent implementation plans (plan_YYMMDD_X.X_feature.md format)
+   - Check `@dev/plans/` for recent implementation plans (plan_YYMMDD_X.X_feature.md format)
    - These provide detailed technical approaches for specific features
-   - NOTE: Never read `@plans/archives/` - this is forbidden as per CLAUDE.md
+   - NOTE: Never read `@dev/plans/archives/` - this is forbidden as per CLAUDE.md
 
 5. **Codebase Structure Analysis**:
    - Examine directory structure and organization
@@ -314,15 +314,15 @@ project-root/
 
 - [`@docs/requirements_functional.md`]: Functional requirements (FR-XXX references)
 - [`@docs/requirements_technical.md`]: Technical specifications (TR-XXX references)
-- [`@docs/tasks.md`]: Implementation status and pending work
+- [`@dev/tasks.md`]: Implementation status and pending work
 - [`@docs/project_overview.md`]: This document
 - [Other @docs/ files]: [List any additional documentation]
 
-### **Implementation Plans** (@plans/)
+### **Implementation Plans** (@dev/plans/)
 
 - Latest Plans: [List recent plan files with their features]
   - Example: `plan_YYMMDD_X.X_feature.md`
-- Note: Historical plans archived in @plans/archives/ (not referenced)
+- Note: Historical plans archived in @dev/plans/archives/ (not referenced)
 
 ### **External Resources**
 
@@ -335,7 +335,7 @@ project-root/
 - **Framework**: CLAUDE.md (project structure and workflow guidelines)
 - **Documentation Standard**: All documentation maintained in @docs/
 - **Task Tracking**: tasks.md with hierarchical structure (X.0 > X.X > X.X.X)
-- **Planning Artifacts**: Implementation plans in @plans/
+- **Planning Artifacts**: Implementation plans in @dev/plans/
 
 ---
 
@@ -398,7 +398,7 @@ project-root/
 
 - **Strict Folder Structure**: Always read from and write to designated @docs/ location
 - **Never Modify Framework**: CLAUDE.md itself should never be edited
-- **Respect Archives**: Never read from @plans/archives/ folder
+- **Respect Archives**: Never read from @dev/plans/archives/ folder
 - **Maintain File Conventions**: Follow naming patterns (e.g., plan_YYMMDD_X.X_feature.md)
 - **Task Tracking Discipline**: Keep tasks.md accurately updated with implementation status
 
@@ -473,15 +473,15 @@ cat CLAUDE.md
 cat @docs/project_overview.md    # Existing overview if present
 cat @docs/requirements_functional.md  # What to build
 cat @docs/requirements_technical.md   # How to build
-cat @docs/tasks.md               # Implementation status
+cat @dev/tasks.md               # Implementation status
 
 # Check for recent implementation plans
-ls -la @plans/plan_*.md | head -5
+ls -la @dev/plans/plan_*.md | head -5
 
 # Understand project structure from tasks
-grep "^## " @docs/tasks.md      # Major sections
-grep "^- \[x\]" @docs/tasks.md  # Completed tasks
-grep "^- \[ \]" @docs/tasks.md  # Pending tasks
+grep "^## " @dev/tasks.md      # Major sections
+grep "^- \[x\]" @dev/tasks.md  # Completed tasks
+grep "^- \[ \]" @dev/tasks.md  # Pending tasks
 ```
 
 ### From Requirements Files
@@ -516,12 +516,12 @@ grep "^- \[ \]" @docs/tasks.md  # Pending tasks
 2. **Respect the folder structure** - never deviate from specified locations
 3. **Read @docs/ in order**: project_overview → requirements_functional → requirements_technical → tasks
 4. **Update tasks.md** if you notice discrepancies during overview creation
-5. **Reference plan files** from @plans/ when they provide implementation details
+5. **Reference plan files** from @dev/plans/ when they provide implementation details
 
 ### When Information Is Missing
 
 1. **Check all @docs/ files first** - information might be in another document
-2. **Review recent @plans/ files** for implementation details
+2. **Review recent @dev/plans/ files** for implementation details
 3. **Note the gap explicitly** in the overview with [Missing: description]
 4. **Make reasonable inferences** based on completed tasks
 5. **Mark assumptions** clearly with [Assumption] tags
@@ -551,7 +551,7 @@ Before finalizing the overview:
 - [ ] Overview saved to @docs/project_overview.md
 - [ ] All FR-XXX and TR-XXX references are accurate
 - [ ] Task completion status accurately reflected
-- [ ] No references to @plans/archives/ content
+- [ ] No references to @dev/plans/archives/ content
 - [ ] File follows CLAUDE.md conventions
 
 ### Content Quality
@@ -570,7 +570,7 @@ Before finalizing the overview:
 - [ ] No unexplained acronyms or jargon
 - [ ] Examples are concrete and relevant
 - [ ] Related @docs/ files are referenced
-- [ ] Latest @plans/ files mentioned if relevant
+- [ ] Latest @dev/plans/ files mentioned if relevant
 - [ ] Update date is current
 - [ ] Requirements version referenced
 

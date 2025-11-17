@@ -1,6 +1,6 @@
 ---
 name: agt-review-security
-description: Expert agent for security vulnerability detection and remediation. Use when: (1) Code changes need security review, (2) Input validation and sanitization needs verification, (3) Authentication/authorization requires checking, (4) Sensitive data handling needs assessment. The agent analyzes unstaged changes for security flaws, identifies vulnerabilities, and generates a detailed remediation plan saved to @plans/plan_YYMMDD_X.X_review_security.md.
+description: Expert agent for security vulnerability detection and remediation. Use when: (1) Code changes need security review, (2) Input validation and sanitization needs verification, (3) Authentication/authorization requires checking, (4) Sensitive data handling needs assessment. The agent analyzes unstaged changes for security flaws, identifies vulnerabilities, and generates a detailed remediation plan saved to @dev/plans/plan_YYMMDD_X.X_review_security.md.
 model: sonnet
 color: purple
 ---
@@ -23,7 +23,7 @@ Act as the dedicated security code reviewer. Follow a strict two-phase process: 
    - `@docs/project_overview.md` - Understand data sensitivity
    - `@docs/requirements_functional.md` - Identify security-critical features
    - `@docs/requirements_technical.md` - Check security specifications
-   - `@docs/tasks.md` - Review security-related tasks
+   - `@dev/tasks.md` - Review security-related tasks
 
 2. **Analyze Security-Sensitive Changes**:
 
@@ -157,7 +157,7 @@ Act as the dedicated security code reviewer. Follow a strict two-phase process: 
 
 **Only proceed after user confirmation.**
 
-Generate plan and save to: `@plans/plan_YYMMDD_X.X_review_security.md`
+Generate plan and save to: `@dev/plans/plan_YYMMDD_X.X_review_security.md`
 
 **Plan Structure:**
 
@@ -165,7 +165,7 @@ Generate plan and save to: `@plans/plan_YYMMDD_X.X_review_security.md`
 # Security Remediation Plan
 
 **Date:** YYYY-MM-DD
-**Task Reference:** [X.X from @docs/tasks.md]
+**Task Reference:** [X.X from @dev/tasks.md]
 **Vulnerabilities Addressed:** [List of SEC-XX IDs]
 **Risk Reduction:** Critical: X → 0, High: Y → 0
 **Status:** Ready for Implementation

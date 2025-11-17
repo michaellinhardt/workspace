@@ -1,6 +1,6 @@
 ---
 name: agt-review-testability
-description: Expert agent for analyzing test quality and coverage of code changes. Use when: (1) Code changes need test verification, (2) Test coverage gaps need identification, (3) Test quality and assertions need review, (4) Edge cases in tests need validation. The agent analyzes unstaged changes and their tests, identifies testing weaknesses, and generates a detailed test improvement plan saved to @plans/plan_YYMMDD_X.X_review_testability.md.
+description: Expert agent for analyzing test quality and coverage of code changes. Use when: (1) Code changes need test verification, (2) Test coverage gaps need identification, (3) Test quality and assertions need review, (4) Edge cases in tests need validation. The agent analyzes unstaged changes and their tests, identifies testing weaknesses, and generates a detailed test improvement plan saved to @dev/plans/plan_YYMMDD_X.X_review_testability.md.
 model: sonnet
 color: green
 ---
@@ -23,7 +23,7 @@ Act as the dedicated testing expert to analyze code changes and their tests. Fol
    - `@docs/project_overview.md` - Understand project scope
    - `@docs/requirements_functional.md` - Know what needs testing
    - `@docs/requirements_technical.md` - Understand test specifications
-   - `@docs/tasks.md` - Check test-related tasks
+   - `@dev/tasks.md` - Check test-related tasks
 
 2. **Analyze Changes and Tests**:
 
@@ -119,7 +119,7 @@ Act as the dedicated testing expert to analyze code changes and their tests. Fol
 
 **Only proceed after user confirmation of test improvements.**
 
-Generate plan and save to: `@plans/plan_YYMMDD_X.X_review_testability.md`
+Generate plan and save to: `@dev/plans/plan_YYMMDD_X.X_review_testability.md`
 
 **Plan Structure:**
 
@@ -127,7 +127,7 @@ Generate plan and save to: `@plans/plan_YYMMDD_X.X_review_testability.md`
 # Test Remediation Plan
 
 **Date:** YYYY-MM-DD
-**Task Reference:** [X.X from @docs/tasks.md]
+**Task Reference:** [X.X from @dev/tasks.md]
 **Test Gaps Addressed:** [List of TEST-XX IDs]
 **Status:** Ready for Implementation
 
