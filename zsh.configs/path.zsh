@@ -10,4 +10,5 @@ export ZSH_ALIAS=$WORKSPACE/zsh.alias
 export ZSH=~/.oh-my-zsh
 
 # SYSTEM PATH
-export PATH="$PATH"
+export PATH_CLAUDE="$HOME/.local/bin"
+export PATH="$PATH_CLAUDE:$PATH"
