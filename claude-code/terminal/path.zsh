@@ -1,10 +1,16 @@
-export CLAUDE_WORKSPAC=~/workspace/claude-code
+export CLAUDE_WORKSPACE=~/workspace/claude-code
 
-export CLAUDE_TERMINAL=~/workspace/claude-code/terminal
-export CLAUDE_SCRIPTS=~/workspace/claude-code/scripts
-export CLAUDE_LINKS=~/workspace/claude-code/claude-links
-export CLAUDE_TEMPLATES=~/workspace/claude-code/claude-templates
-export CLAUDE_AGENTS=~/workspace/claude-code/claude-agents
-export CLAUDE_WORKFLOWS=~/workspace/claude-code/claude-workflows
+export CLAUDE_WORKSPACE_TERMINAL=$CLAUDE_WORKSPACE/terminal
+export CLAUDE_WORKSPACE_SCRIPTS=$CLAUDE_WORKSPACE/scripts
+export CLAUDE_WORKSPACE_LINKS=$CLAUDE_WORKSPACE/claude-links
+export CLAUDE_WORKSPACE_TEMPLATES=$CLAUDE_WORKSPACE/claude-templates
+export CLAUDE_WORKSPACE_AGENTS=$CLAUDE_WORKSPACE/claude-agents
+export CLAUDE_WORKSPACE_COMMANDS=$CLAUDE_WORKSPACE/claude-commands
+
+export CLAUDE_GLOBAL=~/.claude
+
+export CLAUDE_GLOBAL_AGENTS=$CLAUDE_GLOBAL/agents
+export CLAUDE_GLOBAL_COMMANDS=$CLAUDE_GLOBAL/commands
+
 
 echo "ok"
