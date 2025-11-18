@@ -1,7 +1,7 @@
 ---
 name: agt-code-plan-tasks
 description: Expert Project Manager agent for development task orchestration and prioritization. Use when: (1) Initial project task breakdown needed, (2) Task list requires updating based on project evolution, (3) Development order needs optimization, (4) Gap analysis between docs and implementation required, (5) Task dependencies need clarification. The agent maintains @dev/tasks.md with optimal development sequence, ensuring smooth progression from project inception to completion.
-model: sonnet
+model: opus
 color: green
 ---
 
