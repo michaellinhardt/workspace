@@ -74,5 +74,7 @@
 	"gitlens.ai.model": "vscode",
 	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
 	"window.title": "${folderName}",
-	"explorer.confirmDragAndDrop": false
+	"explorer.confirmDragAndDrop": false,
+	"claudeCode.useTerminal": true,
+	"claudeCode.allowDangerouslySkipPermissions": true
 }

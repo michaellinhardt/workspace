@@ -42,7 +42,15 @@ Analyze project docs, identify next pending task, create comprehensive implement
    - Identify dependencies from completed tasks
    - Gather relevant requirements (FR-X, TR-X)
 
-3. **Technical Context**:
+3. **Task Scope Definition** (CRITICAL):
+   - **ONE high-level task per plan**: NEVER implement entire parent task if subtasks exist
+   - **High-level task = X.X level + all X.X.X subtasks**
+   - **Example**: If task 3.0 has 3.1, 3.2, 3.3 → plan ONLY 3.1 + all 3.1.X subtasks
+   - **Exception**: If X.0 has NO X.X subtasks → plan entire X.0
+   - **Rule**: Plan 3.2 and ALL 3.2.X, but NEVER 3.2 + 3.3 together
+   - **Enforce strictly**: One iteration = one high-level task scope
+
+4. **Technical Context**:
    - Review specs related to task
    - Note architecture decisions
    - Identify reusable components from completed tasks
@@ -78,6 +86,20 @@ Analyze project docs, identify next pending task, create comprehensive implement
 **Task:** X.X - [Full task description from tasks.md]
 **Status:** Ready for Implementation
 **Requirements:** FR-[X], TR-[X] (list all related)
+
+## Summary of Plan
+
+[Verbose but concise explanation of what this plan implements. Describe the feature/functionality being built, the approach being taken, and why this matters for the project. This should give clear context about what's being accomplished in this iteration.]
+
+## Tasks Planned
+
+[Explicitly list the tasks targeted by this plan with full hierarchy]
+
+- X.X [High-level task name] (implements FR-X, TR-X)
+  - X.X.1 [Subtask name]
+  - X.X.2 [Subtask name]
+  - X.X.3 [Subtask name]
+  - ...
 
 ## Plan Overview
 
