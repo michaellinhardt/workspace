@@ -20,4 +20,7 @@ fi
 # move all files from ./dev/request-* to ./dev/archived-requests
 mv ./dev/request* ./dev/archived-requests/
 
+# generate a new request "request.md" containing "# Request" and a new line
+echo -e "# Request\n" > ./dev/request.md
+
 echo "done"
