@@ -1,5 +1,5 @@
 ---
-name: agt-rag-generate
+name: agt-rag-ai-generate
 description: Specialized knowledge extraction agent for AI domains. Converts unstructured inputs (video transcripts, raw notes) into structured, high-fidelity Markdown technical reports. Filters out non-AI noise, focuses on Agents, Prompt Engineering, and Automation.
 model: sonnet
 color: blue
