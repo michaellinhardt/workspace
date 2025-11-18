@@ -1,7 +1,8 @@
 {
 	"permissions": {
 		"deny": [
-			"Read(./plans/archived/**)"
+			"Read(./plans/archived/**)",
+			"Read(./dev/archived-requests/**)"
 		]
 	}
 }

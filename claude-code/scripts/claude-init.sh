@@ -62,6 +62,12 @@ if [ ! -d "dev" ]; then
   echo "Initialized dev directory."
 fi
 
+# Create dev directory if it doesn't exist
+if [ ! -d "./dev/archived-requests" ]; then
+  mkdir ./dev/archived-requests
+  echo "Initialized dev/archived-requests directory."
+fi
+
 # Copy template files
 copy_template_if_missing "$CLAUDE_TEMPLATES/dev/agents.md" "dev/agents.md"
 copy_template_if_missing "$CLAUDE_TEMPLATES/dev/request.md" "dev/request.md"
@@ -99,5 +105,28 @@ for agent_file in "$CLAUDE_AGENTS"/*; do
     fi
   fi
 done
+
+########################################
+# Workflows
+########################################
+
+# List all files in claude-workflows and create symbolic links in .claude/workflows
+if [ ! -d ".claude/workflows" ]; then
+  mkdir -p .claude/workflows
+fi
+
+for workflow_file in "$CLAUDE_WORKFLOWS"/*; do
+  if [ -f "$workflow_file" ]; then
+    workflow_filename=$(basename "$workflow_file")
+    if [ ! -f ".claude/workflows/$workflow_filename" ]; then
+      ln -s "$workflow_file" ".claude/workflows/$workflow_filename"
+      echo "Created symbolic link for workflow: $workflow_filename"
+    fi
+  fi
+done
+
+########################################
+# DONE!
+########################################
 
 echo "done"

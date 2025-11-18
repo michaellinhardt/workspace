@@ -5,5 +5,6 @@ export CLAUDE_SCRIPTS=~/workspace/claude-code/scripts
 export CLAUDE_LINKS=~/workspace/claude-code/claude-links
 export CLAUDE_TEMPLATES=~/workspace/claude-code/claude-templates
 export CLAUDE_AGENTS=~/workspace/claude-code/claude-agents
+export CLAUDE_WORKFLOWS=~/workspace/claude-code/claude-workflows
 
 echo "ok"
