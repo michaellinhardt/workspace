@@ -82,9 +82,9 @@ if [ ! -d "dev/plans" ]; then
   echo "Initialized dev/plans directory."
 fi
 
-if [ ! -d "dev/plans/archived" ]; then
-  mkdir ./dev/plans/archived
-  echo "Initialized dev/plans/archived directory."
+if [ ! -d "dev/archived-plans" ]; then
+  mkdir ./dev/archived-plans
+  echo "Initialized dev/archived-plans directory."
 fi
 
 ########################################
