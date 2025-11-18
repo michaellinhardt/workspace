@@ -32,4 +32,3 @@ Below are all the resources required for you to accomplish the request.
 # The agent
 
 ![[../claude-agents/agt-code-implementation]]
-
