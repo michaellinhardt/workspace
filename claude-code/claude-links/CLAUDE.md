@@ -14,6 +14,24 @@ Maintain the files in @docs folder to always reflect the current project's state
 
 Always read the entire folder content before executing any requests.
 
+### File description in @.claude
+
+#### @.claude/CLAUDE.md
+
+This file, describing the project workflow and should never be modified.
+
+#### @.claude/settings.json
+
+Set of project rules to respect for claude-code, it is used in every projects and should never be modified.
+
+#### @.claude/settings.local.json
+
+Set of project rules specific to this project and complementary to the settings.json. This file can be edited if needed.
+
+### ### File description in @.claude/agents
+
+Folder containing all agents. They can not be modified and they link to a main folder used in many projects.
+
 ### File description in @docs
 
 #### @docs/project_overview.md
