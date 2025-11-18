@@ -17,6 +17,18 @@ if [ ! -d "./dev/archived-requests" ]; then
   mkdir -p "./dev/archived-requests"
 fi
 
+# list all file names starting with "request" in ./dev and add a timestamp unix at the end, before the .md extension
+for file in ./dev/request*; do
+  if [ -f "$file" ]; then
+	filename=$(basename -- "$file")
+	extension="${filename##*.}"
+	filename="${filename%.*}"
+	timestamp=$(date +%s)
+	new_filename="${filename}_${timestamp}.${extension}"
+	mv "$file" "./dev/archived-requests/$new_filename"
+  fi
+done
+
 # move all files from ./dev/request-* to ./dev/archived-requests
 mv ./dev/request* ./dev/archived-requests/
 
