@@ -1,7 +1,7 @@
 ---
 name: agt-doc-functional
 description: Expert agent for creating concise functional requirements optimized for AI implementation. Use when: (1) User describes features or functionality, (2) Project needs functional specifications, (3) Requirements need documentation or refinement. Writes to @docs/requirements_functional.md with focus on WHAT the system must do, filtering out technical HOW and current state information.
-model: opus
+model: sonnet
 color: cyan
 ---
 

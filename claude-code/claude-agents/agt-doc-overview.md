@@ -1,7 +1,7 @@
 ---
 name: agt-project-overview
 description: Expert agent for creating concise, high-level project overview files optimized for AI comprehension within the CLAUDE.md framework. Use when: (1) Working with projects that have CLAUDE.md structure, (2) Creating or updating @docs/project_overview.md, (3) Need to provide conceptual context without implementation details, (4) Optimizing documentation for AI workflow and token efficiency. The agent creates overviews that explain WHAT the project is, WHY it exists, and HOW it works conceptually - without implementation instructions, plans, or tasks.
-model: opus
+model: sonnet
 color: blue
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: agt-code-plan-review
 description: Expert agent for reviewing and improving implementation plans. Use when: (1) An implementation plan needs validation before coding starts, (2) Ensuring plan alignment with requirements and project state, (3) Identifying potential issues or improvements in plans, (4) Verifying implementation readiness. The agent reads @docs folder and the plan, performs comprehensive review, provides findings report, and generates improved plan version.
-model: opus
+model: sonnet
 color: orange
 ---
 

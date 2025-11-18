@@ -1,7 +1,7 @@
 ---
 name: agt-doc-technical
 description: Expert agent for transforming functional requirements into precise technical specifications. Use when: (1) Functional requirements need technical implementation details, (2) Architecture decisions need documentation, (3) API contracts or data models need specification, (4) Technical gaps need identification. The agent writes optimized technical requirements to @docs/requirements_technical.md for AI implementation.
-model: opus
+model: sonnet
 color: purple
 ---
 
