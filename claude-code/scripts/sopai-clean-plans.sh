@@ -17,7 +17,14 @@ if [ ! -d "./dev/plans/archived" ]; then
   mkdir -p "./dev/plans/archived"
 fi
 
-# move all files from ./dev/plans to ./dev/plans/archived
-mv ./dev/plans/* ./dev/plans/archived/
+# move all files from ./dev/plans to ./dev/plans/archived with timestamp at the beginning (excluding archived dir)
+timestamp=$(date +%Y-%m-%dT%H-%M)
+for file in ./dev/plans/*; do
+  if [ -f "$file" ]; then
+    filename=$(basename -- "$file")
+    new_filename="${timestamp}_${filename}"
+    mv "$file" "./dev/plans/archived/$new_filename"
+  fi
+done
 
 echo "done"

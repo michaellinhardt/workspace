@@ -17,22 +17,22 @@ if [ ! -d "./dev/archived-requests" ]; then
   mkdir -p "./dev/archived-requests"
 fi
 
-# list all file names starting with "request" in ./dev and add a timestamp unix at the end, before the .md extension
+# list all file names starting with "request" in ./dev and add a timestamp at the beginning
+timestamp=$(date +%Y-%m-%dT%H-%M)
 for file in ./dev/request*; do
   if [ -f "$file" ]; then
-	filename=$(basename -- "$file")
-	extension="${filename##*.}"
-	filename="${filename%.*}"
-	timestamp=$(date +%s)
-	new_filename="${filename}_${timestamp}.${extension}"
-	mv "$file" "./dev/archived-requests/$new_filename"
+    # skip file if it only contains "# Request" and a newline
+    content=$(cat "$file")
+    if [ "$content" = "# Request" ]; then
+      continue
+    fi
+    filename=$(basename -- "$file")
+    new_filename="${timestamp}_${filename}"
+    mv "$file" "./dev/archived-requests/$new_filename"
   fi
 done
 
-# move all files from ./dev/request-* to ./dev/archived-requests
-mv ./dev/request* ./dev/archived-requests/
-
 # generate a new request "request.md" containing "# Request" and a new line
-echo -e "# Request\n" > ./dev/request.md
+printf "# Request\n" > ./dev/request.md
 
 echo "done"
