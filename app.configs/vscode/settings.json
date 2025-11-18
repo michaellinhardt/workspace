@@ -69,7 +69,7 @@
 	},
 	"python.defaultInterpreterPath": "/opt/homebrew/bin/python3.13",
 	"workbench.secondarySideBar.defaultVisibility": "hidden",
-	"accessibility.signalOptions.volume": 10,
+	"accessibility.signalOptions.volume": 5,
 	"git.confirmSync": false,
 	"gitlens.ai.model": "vscode",
 	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
