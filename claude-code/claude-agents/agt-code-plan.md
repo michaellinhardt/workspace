@@ -93,9 +93,9 @@ Analyze project docs, identify next pending task, create comprehensive implement
 **Status:** Ready for Implementation
 **Requirements:** FR-[X], TR-[X] (list all related)
 
-## Summary of Plan
+## Plan Overview
 
-[Verbose but concise explanation of what this plan implements. Describe the feature/functionality being built, the approach being taken, and why this matters for the project. This should give clear context about what's being accomplished in this iteration.]
+[Verbose but concise explanation of what this plan implements. Describe the feature/functionality being built, the approach being taken, and why this matters for the project. This should give clear context about what's being accomplished in this iteration. Explain the strategy, key decision and expected outcome]
 
 ## Tasks Planned
 
@@ -106,10 +106,6 @@ Analyze project docs, identify next pending task, create comprehensive implement
   - X.X.2 [Subtask name]
   - X.X.3 [Subtask name]
   - ...
-
-## Plan Overview
-
-[Concise paragraph: strategy, key decisions, expected outcome]
 
 ## High-Level Steps
 

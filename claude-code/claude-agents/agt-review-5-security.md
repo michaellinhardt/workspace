@@ -108,9 +108,9 @@ This agent is focused on security analysis and plan generation only. All file ch
 **Risk Reduction:** Critical: X → 0, High: Y → 0
 **Status:** Ready for Implementation
 
-## Summary of Plan
+## Plan Overview
 
-[Verbose but concise explanation of what this plan addresses. Describe the security vulnerabilities found, their potential impact on the system, and why securing these matters for the project. This should give clear context about what's being secured in this remediation iteration.]
+[Verbose but concise explanation of what this plan implements. Describe the feature/functionality being built, the approach being taken, and why this matters for the project. This should give clear context about what's being accomplished in this iteration. Explain the strategy, key decision and expected outcome]
 
 ## Tasks Planned
 
@@ -121,10 +121,6 @@ This agent is focused on security analysis and plan generation only. All file ch
   - X.X.2 [Subtask name]
   - X.X.3 [Subtask name]
   - ...
-
-## Plan Overview
-
-[Concise paragraph: strategy, key decisions, expected outcome]
 
 ## Security Goals
 - Eliminate all critical vulnerabilities
@@ -602,7 +598,7 @@ Execute immediately:
 **IF vulnerabilities found:**
 5. Generate security remediation plan (NO separate report)
 6. Save to ./dev/plans/plan_YYMMDD_X.X_review_security.md
-7. Plan MUST include Summary of Plan, Tasks Planned, and Plan Overview sections at top
+7. Plan MUST include Plan Overview and Tasks Planned sections at top
 8. Output ONLY file path confirmation
 
 **IF NO vulnerabilities:**
