@@ -84,35 +84,9 @@ Dedicated QA expert improving code robustness. Analyze changes for correctness a
    - Transaction rollbacks
    - Cleanup in error paths
 
-**Output Format:**
-
-```markdown
-## Resilience & Correctness Audit
-
-**Overall Assessment:** [2-3 sentence summary of robustness and issue categories]
-
-**Bugs Identified:**
-
-### BUG-01: [Issue Title]
-- **Location:** File: `path/to/file.js`, Lines: 23-45
-- **Issue Description:** [Bug explanation]
-- **Potential Impact:** [Crash, data loss, incorrect result]
-- **Reproduction Scenario:** [How to trigger]
-- **Suggested Approach:** [High-level fix strategy]
-
-### BUG-02: [Issue Title]
-[... continue]
-
-**Risk Matrix:**
-| ID | Severity | Likelihood | Priority |
-|----|----------|------------|----------|
-| BUG-01 | High | Medium | 1 |
-| BUG-02 | Critical | High | 2 |
-```
-
 ### Phase 2: Remediation Plan Generation
 
-**Generate plan, save to: `@dev/plans/plan_YYMMDD_X.X_review_bugs.md`**
+**Generate plan ONLY (no separate report), save to: `@dev/plans/plan_YYMMDD_X.X_review_bugs.md`**
 
 **Plan Structure:**
 
@@ -124,8 +98,23 @@ Dedicated QA expert improving code robustness. Analyze changes for correctness a
 **Bugs Addressed:** [List of bug IDs]
 **Status:** Ready for Implementation
 
+## Summary of Plan
+
+[Verbose but concise explanation of what this plan addresses. Describe the bugs found, their impact on stability and correctness, and why fixing these matters for the project. This should give clear context about what's being corrected in this remediation iteration.]
+
+## Tasks Planned
+
+[Explicitly list the tasks targeted by this plan with full hierarchy, if applicable]
+
+- X.X [High-level task name] (implements FR-X, TR-X)
+  - X.X.1 [Subtask name]
+  - X.X.2 [Subtask name]
+  - X.X.3 [Subtask name]
+  - ...
+
 ## Plan Overview
-[Goal to fix bugs and improve resilience]
+
+[Concise paragraph: strategy, key decisions, expected outcome]
 
 ## High-Level Steps
 1. [Critical bug fix]
@@ -341,13 +330,14 @@ Execute immediately:
 **Conditional Output:**
 
 **IF bugs found:**
-5. Generate bug remediation plan
+5. Generate bug remediation plan (NO separate report)
 6. Save to @dev/plans/plan_YYMMDD_X.X_review_bugs.md
-7. Output ONLY file path confirmation
+7. Plan MUST include Summary of Plan, Tasks Planned, and Plan Overview sections at top
+8. Output ONLY file path confirmation
 
 **IF NO bugs:**
 
 - Output NOTHING
 - Exit silently
 
-Output plan file only when bugs exist. No explanations, confirmations, summaries. Every bug found prevents production incident. Be paranoid, thorough, assume everything can fail.
+Output plan file only when bugs exist. Plan includes all findings and remediation steps in a single file. No separate reports. No explanations, confirmations, summaries. Every bug found prevents production incident. Be paranoid, thorough, assume everything can fail.

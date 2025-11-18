@@ -74,28 +74,9 @@ Code reviewer focused exclusively on implementation and architectural fidelity. 
    - No scope creep
    - Changes within task boundaries
 
-**Output Format:**
-
-```markdown
-## Architectural Fidelity Review
-
-**Overall Assessment:** [2-3 sentence summary]
-
-**Key Findings:**
-
-### Finding 1: [Issue Title]
-- **Location:** File: `path/to/file.js`, Lines: 45-67
-- **Issue:** [Deviation explanation]
-- **Impact:** [System architecture effects]
-- **Proposed Approach:** [High-level solution]
-
-### Finding 2: [Issue Title]
-[... continue]
-```
-
 ### Phase 2: Remediation Plan Generation
 
-**Generate plan, save to: `@dev/plans/plan_YYMMDD_X.X_review_fidelity.md`**
+**Generate plan ONLY (no separate report), save to: `@dev/plans/plan_YYMMDD_X.X_review_fidelity.md`**
 
 **Plan Structure:**
 
@@ -106,8 +87,23 @@ Code reviewer focused exclusively on implementation and architectural fidelity. 
 **Task Reference:** [X.X from @dev/tasks.md]
 **Status:** Ready for Implementation
 
+## Summary of Plan
+
+[Verbose but concise explanation of what this plan addresses. Describe the fidelity violations found, the architectural misalignments identified, and why fixing these matters for the project. This should give clear context about what's being corrected in this remediation iteration.]
+
+## Tasks Planned
+
+[Explicitly list the tasks targeted by this plan with full hierarchy, if applicable]
+
+- X.X [High-level task name] (implements FR-X, TR-X)
+  - X.X.1 [Subtask name]
+  - X.X.2 [Subtask name]
+  - X.X.3 [Subtask name]
+  - ...
+
 ## Plan Overview
-[Concise goal to bring code into compliance]
+
+[Concise paragraph: strategy, key decisions, expected outcome]
 
 ## High-Level Steps
 1. [Step 1 Title]
@@ -250,13 +246,14 @@ Execute immediately:
 **Conditional Output:**
 
 **IF violations found:**
-5. Generate remediation plan
+5. Generate remediation plan (NO separate report)
 6. Save to @dev/plans/plan_YYMMDD_X.X_review_fidelity.md
-7. Output ONLY file path confirmation
+7. Plan MUST include Summary of Plan, Tasks Planned, and Plan Overview sections at top
+8. Output ONLY file path confirmation
 
 **IF NO violations:**
 
 - Output NOTHING
 - Exit silently
 
-Output plan file only when issues exist. No explanations, confirmations, summaries. Focus exclusively on architectural integrity and requirement adherence.
+Output plan file only when issues exist. Plan includes all findings and remediation steps in a single file. No separate reports. No explanations, confirmations, summaries. Focus exclusively on architectural integrity and requirement adherence.

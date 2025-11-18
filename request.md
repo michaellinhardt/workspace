@@ -1,9 +1,29 @@
 # Request
 
-You are going to review each agents file in @claude-code/claude-agents, one at a time.
+I need you to modify the agents related to code review: @claude-code/claude-agents/agt-review-*
 
-The mission is to forbid all agents to use git add or git commit. When they are modifying files, I do not want them to add or commit manually because I need to review by myself the changes before its commited.
+First, ensure those agents only generate a plan to fix the issue they found, no other files such as a report.
 
-Ensure there is no explicit instruction to execute git add and git commit in all agent file and then add an explicit rule to never use those commands.
+In this new generated plan, it should always include the following information at the top of the file:
 
-You will review each agents file separately with a sub agent and you will do it one at a time, waiting for one agent to finish to move on the next one.
+```example
+## Summary of Plan
+
+[Verbose but concise explanation of what this plan implements. Describe the feature/functionality being built, the approach being taken, and why this matters for the project. This should give clear context about what's being accomplished in this iteration.]
+
+## Tasks Planned
+
+[Explicitly list the tasks targeted by this plan with full hierarchy]
+
+- X.X [High-level task name] (implements FR-X, TR-X)
+  - X.X.1 [Subtask name]
+  - X.X.2 [Subtask name]
+  - X.X.3 [Subtask name]
+  - ...
+
+## Plan Overview
+
+[Concise paragraph: strategy, key decisions, expected outcome]
+```
+
+Review each of thise agent starting by "agt-review-" to be sure this is explicitly explained in the file.

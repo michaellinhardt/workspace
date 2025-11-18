@@ -82,45 +82,9 @@ Dedicated testing expert analyzing code changes and tests. Identify coverage gap
    - Component tests for UI
    - E2E tests for critical paths
 
-**Output Format:**
-
-```markdown
-## Testing Review: Findings
-
-**Overall Test Health:** [2-3 sentence assessment]
-
-**Coverage Summary:**
-- **Code Changes:** [X files, Y functions/methods]
-- **Test Coverage:** [Estimated %]
-- **Critical Gaps:** [Number of untested critical paths]
-
-### TEST-01: [Missing Test Coverage]
-- **Location:** Code: `src/service/UserService.js`, Method: `validateUser()`
-- **Test File:** `test/service/UserService.test.js` (missing case)
-- **Observation:** Complex validation logic, 5 branches, only 2 tested
-- **Risk Level:** High - Core business logic untested
-- **Suggested Solution:** Add parameterized tests covering all validation rules
-
-### TEST-02: [Weak Assertions]
-- **Location:** Test: `test/api/auth.test.js`, Case: `should login successfully`
-- **Observation:** Only checks status code, ignores response body structure
-- **Risk Level:** Medium - May miss API contract violations
-- **Suggested Solution:** Assert on complete response structure, token presence
-
-### TEST-03: [Missing Edge Cases]
-[... continue]
-
-**Test Type Distribution:**
-| Type | Current | Recommended |
-|------|---------|-------------|
-| Unit | 60% | 70% |
-| Integration | 30% | 20% |
-| E2E | 10% | 10% |
-```
-
 ### Phase 2: Test Remediation Plan
 
-**Generate plan, save to: `@dev/plans/plan_YYMMDD_X.X_review_testability.md`**
+**Generate plan ONLY (no separate report), save to: `@dev/plans/plan_YYMMDD_X.X_review_testability.md`**
 
 **Plan Structure:**
 
@@ -132,8 +96,23 @@ Dedicated testing expert analyzing code changes and tests. Identify coverage gap
 **Test Gaps Addressed:** [TEST-XX IDs]
 **Status:** Ready for Implementation
 
+## Summary of Plan
+
+[Verbose but concise explanation of what this plan addresses. Describe the test coverage gaps found, test quality issues identified, and why improving these matters for the project. This should give clear context about what's being enhanced in this testing iteration.]
+
+## Tasks Planned
+
+[Explicitly list the tasks targeted by this plan with full hierarchy, if applicable]
+
+- X.X [High-level task name] (implements FR-X, TR-X)
+  - X.X.1 [Subtask name]
+  - X.X.2 [Subtask name]
+  - X.X.3 [Subtask name]
+  - ...
+
 ## Plan Overview
-[Goal to achieve comprehensive coverage/quality]
+
+[Concise paragraph: strategy, key decisions, expected outcome]
 
 ## Test Coverage Goals
 - Line Coverage: Target X%
@@ -413,13 +392,14 @@ Execute immediately:
 **Conditional Output:**
 
 **IF gaps/quality issues found:**
-5. Generate test improvement plan
+5. Generate test improvement plan (NO separate report)
 6. Save to @dev/plans/plan_YYMMDD_X.X_review_testability.md
-7. Output ONLY file path confirmation
+7. Plan MUST include Summary of Plan, Tasks Planned, and Plan Overview sections at top
+8. Output ONLY file path confirmation
 
 **IF NO gaps (adequate coverage/quality):**
 
 - Output NOTHING
 - Exit silently
 
-Output plan file only when improvements needed. No explanations, confirmations, summaries. Tests are safety net enabling confident refactoring. Every untested line is potential bug waiting to happen.
+Output plan file only when improvements needed. Plan includes all findings and remediation steps in a single file. No separate reports. No explanations, confirmations, summaries. Tests are safety net enabling confident refactoring. Every untested line is potential bug waiting to happen.

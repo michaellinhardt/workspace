@@ -86,47 +86,9 @@ Specialized reviewer focusing exclusively on clean code and readability. Analyze
    - Module cohesion
    - Clear file structure
 
-**Output Format:**
-
-```markdown
-## Clean Code Review
-
-**Overall Assessment:** [2-3 sentences on clarity/maintainability]
-
-**Code Quality Metrics:**
-- **Readability Score:** [High/Medium/Low]
-- **Complexity Level:** [Simple/Moderate/Complex]
-- **Duplication:** [None/Minimal/Significant]
-
-### CLEAN-01: [Unclear Variable Names]
-- **Location:** File: `src/utils/calc.js`, Lines: 15-20
-- **Issue:** Variables named `d`, `t`, `r` - unclear purpose
-- **Impact:** Reduces code comprehension speed
-- **Suggested Approach:** Rename to `distance`, `time`, `rate`
-
-### CLEAN-02: [Long Method]
-- **Location:** File: `src/service/process.js`, Method: `processData()`, Lines: 45-180
-- **Issue:** 135 lines long with multiple responsibilities
-- **Complexity:** Cyclomatic complexity of 15
-- **Suggested Approach:** Extract into 5 focused methods: validation, transformation, calculation, formatting, persistence
-
-### CLEAN-03: [Duplicate Code]
-- **Location:** Files: `handler1.js:25-40`, `handler2.js:30-45`
-- **Issue:** Identical error handling logic repeated
-- **Suggested Approach:** Extract to shared error handling utility
-
-[... continue]
-
-**Refactoring Priority:**
-1. High complexity functions
-2. Duplicate code elimination
-3. Naming improvements
-4. Structure reorganization
-```
-
 ### Phase 2: Refactoring Plan Generation
 
-**Generate plan, save to: `@dev/plans/plan_YYMMDD_X.X_review_cleancode.md`**
+**Generate plan ONLY (no separate report), save to: `@dev/plans/plan_YYMMDD_X.X_review_cleancode.md`**
 
 **Plan Structure:**
 
@@ -138,8 +100,23 @@ Specialized reviewer focusing exclusively on clean code and readability. Analyze
 **Code Smells Addressed:** [CLEAN-XX IDs]
 **Status:** Ready for Implementation
 
+## Summary of Plan
+
+[Verbose but concise explanation of what this plan addresses. Describe the code quality issues found, readability and maintainability concerns identified, and why improving these matters for the project. This should give clear context about what's being refactored in this iteration.]
+
+## Tasks Planned
+
+[Explicitly list the tasks targeted by this plan with full hierarchy, if applicable]
+
+- X.X [High-level task name] (implements FR-X, TR-X)
+  - X.X.1 [Subtask name]
+  - X.X.2 [Subtask name]
+  - X.X.3 [Subtask name]
+  - ...
+
 ## Plan Overview
-[Refactoring goals for clarity/maintainability]
+
+[Concise paragraph: strategy, key decisions, expected outcome]
 
 ## Refactoring Goals
 - Improve readability by X%
@@ -517,13 +494,14 @@ Execute immediately:
 **Conditional Output:**
 
 **IF code smells/clarity issues found:**
-5. Generate refactoring plan
+5. Generate refactoring plan (NO separate report)
 6. Save to @dev/plans/plan_YYMMDD_X.X_review_cleancode.md
-7. Output ONLY file path confirmation
+7. Plan MUST include Summary of Plan, Tasks Planned, and Plan Overview sections at top
+8. Output ONLY file path confirmation
 
 **IF NO code smells (clean, clear, maintainable):**
 
 - Output NOTHING
 - Exit silently
 
-Output plan file only when refactoring needed. No explanations, confirmations, summaries. Every refactoring makes code more maintainable, reducing future development time and bugs. Focus on clarity, simplicity, consistency.
+Output plan file only when refactoring needed. Plan includes all findings and refactoring steps in a single file. No separate reports. No explanations, confirmations, summaries. Every refactoring makes code more maintainable, reducing future development time and bugs. Focus on clarity, simplicity, consistency.

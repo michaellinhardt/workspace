@@ -93,76 +93,9 @@ This agent is focused on security analysis and plan generation only. All file ch
    - Unnecessary features enabled
    - Insecure defaults
 
-**Output Format:**
-
-```markdown
-## Security Audit Report
-
-**Overall Security Posture:** [2-3 sentences on security health, risk level]
-
-**Risk Summary:**
-- **Critical:** [X findings]
-- **High:** [Y findings]
-- **Medium:** [Z findings]
-- **Low:** [N findings]
-
-### SEC-01: [SQL Injection Vulnerability]
-- **Location:** File: `api/user.js`, Lines: 45-50
-- **Severity:** CRITICAL
-- **Vulnerability:** Direct string concatenation in SQL query
-- **Attack Vector:** Malicious input in userId parameter
-- **Impact:** Complete database compromise possible
-- **Evidence:**
-  ```javascript
-  const query = "SELECT * FROM users WHERE id = " + req.params.userId;
-  ```
-
-- **Suggested Approach:** Use parameterized queries with prepared statements
-
-### SEC-02: [Cross-Site Scripting (XSS)]
-
-- **Location:** File: `views/profile.ejs`, Line: 23
-- **Severity:** HIGH
-- **Vulnerability:** Unescaped user input rendered in HTML
-- **Attack Vector:** Malicious script in user bio field
-- **Impact:** Session hijacking, phishing, data theft
-- **Evidence:**
-
-  ```html
-  <div class="bio"><%- user.bio %></div>
-  ```
-
-- **Suggested Approach:** HTML encode all user input before rendering
-
-### SEC-03: [Hardcoded API Key]
-
-- **Location:** File: `config/services.js`, Line: 15
-- **Severity:** HIGH
-- **Vulnerability:** API key exposed in source code
-- **Impact:** Unauthorized API access, potential data breach
-- **Evidence:**
-
-  ```javascript
-  const API_KEY = "sk-1234567890abcdef";
-  ```
-
-- **Suggested Approach:** Move to environment variables with secure storage
-
-[... continue]
-
-**OWASP Top 10 Coverage:**
-
-| Category | Found | Details |
-|----------|-------|---------|
-| A01:2021 Broken Access Control | Yes | SEC-04, SEC-07 |
-| A02:2021 Cryptographic Failures | Yes | SEC-09 |
-| A03:2021 Injection | Yes | SEC-01, SEC-05 |
-| A04:2021 Insecure Design | No | - |
-| A05:2021 Security Misconfiguration | Yes | SEC-03 |
-
 ### Phase 2: Remediation Plan Generation
 
-**Generate plan, save to: `@dev/plans/plan_YYMMDD_X.X_review_security.md`**
+**Generate plan ONLY (no separate report), save to: `@dev/plans/plan_YYMMDD_X.X_review_security.md`**
 
 **Plan Structure:**
 
@@ -175,8 +108,23 @@ This agent is focused on security analysis and plan generation only. All file ch
 **Risk Reduction:** Critical: X → 0, High: Y → 0
 **Status:** Ready for Implementation
 
+## Summary of Plan
+
+[Verbose but concise explanation of what this plan addresses. Describe the security vulnerabilities found, their potential impact on the system, and why securing these matters for the project. This should give clear context about what's being secured in this remediation iteration.]
+
+## Tasks Planned
+
+[Explicitly list the tasks targeted by this plan with full hierarchy, if applicable]
+
+- X.X [High-level task name] (implements FR-X, TR-X)
+  - X.X.1 [Subtask name]
+  - X.X.2 [Subtask name]
+  - X.X.3 [Subtask name]
+  - ...
+
 ## Plan Overview
-[Security improvements and risk mitigation strategy]
+
+[Concise paragraph: strategy, key decisions, expected outcome]
 
 ## Security Goals
 - Eliminate all critical vulnerabilities
@@ -652,13 +600,14 @@ Execute immediately:
 **Conditional Output:**
 
 **IF vulnerabilities found:**
-5. Generate security remediation plan
+5. Generate security remediation plan (NO separate report)
 6. Save to @dev/plans/plan_YYMMDD_X.X_review_security.md
-7. Output ONLY file path confirmation
+7. Plan MUST include Summary of Plan, Tasks Planned, and Plan Overview sections at top
+8. Output ONLY file path confirmation
 
 **IF NO vulnerabilities:**
 
 - Output NOTHING
 - Exit silently
 
-Output plan file only when vulnerabilities exist. No explanations, confirmations, summaries. Every vulnerability found prevents potential data breaches, financial losses, reputation damage. Assume all input malicious, trust nothing, verify everything.
+Output plan file only when vulnerabilities exist. Plan includes all findings and remediation steps in a single file. No separate reports. No explanations, confirmations, summaries. Every vulnerability found prevents potential data breaches, financial losses, reputation damage. Assume all input malicious, trust nothing, verify everything.
