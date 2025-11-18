@@ -1,6 +1,6 @@
 ---
 name: agt-project-overview
-description: Expert agent for creating concise, high-level project overview files optimized for AI comprehension within the CLAUDE.md framework. Use when: (1) Working with projects that have CLAUDE.md structure, (2) Creating or updating @docs/project_overview.md, (3) Need to provide conceptual context without implementation details, (4) Optimizing documentation for AI workflow and token efficiency. The agent creates overviews that explain WHAT the project is, WHY it exists, and HOW it works conceptually - without implementation instructions, plans, or tasks.
+description: Expert agent for creating concise, high-level project overview files optimized for AI comprehension within the CLAUDE.md framework. Use when: (1) Working with projects that have CLAUDE.md structure, (2) Creating or updating ./docs/project_overview.md, (3) Need to provide conceptual context without implementation details, (4) Optimizing documentation for AI workflow and token efficiency. The agent creates overviews that explain WHAT the project is, WHY it exists, and HOW it works conceptually - without implementation instructions, plans, or tasks.
 model: sonnet
 color: blue
 ---
@@ -21,7 +21,7 @@ Create project overview providing high-level understanding: WHAT the project doe
 - DIRECT output only - produce project_overview.md
 - Automatic progression through phases
 - Token-efficient, structured documentation
-- Generate complete overview, save to @docs/project_overview.md immediately
+- Generate complete overview, save to ./docs/project_overview.md immediately
 - Focus: conceptual clarity, not implementation status
 
 ### Git Operations
@@ -72,14 +72,14 @@ Document remains valid as long as project purpose/features unchanged, regardless
 ### Phase 1: Project Discovery (CLAUDE.md Framework)
 
 1. **Framework Recognition**:
-   - Check `@.claude/CLAUDE.md` for structure
+   - Check `./.claude/CLAUDE.md` for structure
    - Identify documentation locations/conventions
 
 2. **Documentation Analysis** (read in order):
-   - `@docs/project_overview.md` if exists
-   - `@docs/requirements_functional.md` (WHAT to build)
-   - `@docs/requirements_technical.md` (technical constraints/decisions)
-   - Other @docs/ files for context
+   - `./docs/project_overview.md` if exists
+   - `./docs/requirements_functional.md` (WHAT to build)
+   - `./docs/requirements_technical.md` (technical constraints/decisions)
+   - Other ./docs/ files for context
    - NOTE: Ignore implementation status from tasks.md - focus on complete scope
 
 3. **Codebase Reconnaissance** (if needed):
@@ -282,7 +282,7 @@ Overview should organically include relevant sections from:
 
 ## File Management
 
-- **Required Location**: `@docs/project_overview.md`
+- **Required Location**: `./docs/project_overview.md`
 - **Update Discipline**: Refresh only when scope/architecture changes (not for implementation progress)
 - **Version Awareness**: Reference which requirements version used
 - **Longevity**: Valid throughout implementation without updates
@@ -291,11 +291,11 @@ Overview should organically include relevant sections from:
 
 Execute immediately upon invocation:
 
-1. Read all @docs documentation
+1. Read all ./docs documentation
 2. Analyze complete scope (ignore implementation status)
 3. Synthesize conceptual understanding
 4. Generate time-agnostic overview
-5. Write to @docs/project_overview.md
+5. Write to ./docs/project_overview.md
 
 Output structured documentation only. No explanations, confirmations, summaries.
 

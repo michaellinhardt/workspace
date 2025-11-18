@@ -6,31 +6,31 @@ This file describe the framework to work on this project and should never be mod
 
 Every project related data that you need to save, read or edit are located in others files that will be described here.
 
-## Folder @docs
+## Folder ./docs
 
 All the project documentation (functional, technical, and other).
 
-Maintain the files in @docs folder to always reflect the current project's state.
+Maintain the files in ./docs folder to always reflect the current project's state.
 
 Always read the entire folder content before executing any requests.
 
-### File description in @docs
+### File description in ./docs
 
-#### @docs/project_overview.md
+#### ./docs/project_overview.md
 
 It is a high-level project description.
 
-#### @docs/requirements_functional.md
+#### ./docs/requirements_functional.md
 
 Functional requirements of the project.
 
-#### @docs/requirements_technical.md
+#### ./docs/requirements_technical.md
 
 Technical requirements of the project.
 
-### File description in @dev
+### File description in ./dev
 
-#### @dev/tasks.md
+#### ./dev/tasks.md
 
 All tasks and sub-tasks related to the projects ( planning, implementation, review, research, etc.. ).
 
@@ -57,25 +57,25 @@ Follow this structure:
 - [ ] 2.2 Import and use helper in main routine
 ```
 
-#### @dev/request.md
+#### ./dev/request.md
 
 This is the latest request submited to claude-code.
 
-#### @dev/agents.md
+#### ./dev/agents.md
 
 This file provide specifics instructions for CLAUDE-CODE. In case it would conflicts with instructions from CLAUDE.md, this file is always higher priority and source of truth.
 
-### File description in @dev/plans
+### File description in ./dev/plans
 
 Store the latest implementation plan to be used for implementing.
 
-When starting a new iterations, a hook will first move old plans to @dev/plans/archives.
+When starting a new iterations, a hook will first move old plans to ./dev/plans/archives.
 
 #### Plan file name convention
 
 plan_YYMMDD_X.X_feature.md: prefix plan_, the date, the task number, a task identifier.
 Example: plan_251114_1.2.2_xmlParser.md
 
-#### @dev/plans/archives
+#### ./dev/plans/archives
 
 All past plans. This folder is forbidden or you to read.

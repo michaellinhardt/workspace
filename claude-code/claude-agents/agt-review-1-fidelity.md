@@ -1,6 +1,6 @@
 ---
 name: agt-review-fidelity
-description: Expert agent for reviewing code changes to ensure implementation and architectural fidelity. Use when: (1) Code has been recently modified and needs verification against requirements, (2) Checking if implementation follows architectural patterns, (3) Validating API contracts and data structures compliance, (4) Ensuring scope adherence without feature creep. The agent analyzes unstaged changes, performs direct fidelity analysis, and generates a detailed remediation plan saved to @dev/plans/plan_YYMMDD_X.X_review_fidelity.md.
+description: Expert agent for reviewing code changes to ensure implementation and architectural fidelity. Use when: (1) Code has been recently modified and needs verification against requirements, (2) Checking if implementation follows architectural patterns, (3) Validating API contracts and data structures compliance, (4) Ensuring scope adherence without feature creep. The agent analyzes unstaged changes, performs direct fidelity analysis, and generates a detailed remediation plan saved to ./dev/plans/plan_YYMMDD_X.X_review_fidelity.md.
 model: sonnet
 color: blue
 ---
@@ -32,10 +32,10 @@ Code reviewer focused exclusively on implementation and architectural fidelity. 
 **ALWAYS start:**
 
 1. **Read Core Documentation**:
-   - `@docs/project_overview.md`
-   - `@docs/requirements_functional.md`
-   - `@docs/requirements_technical.md`
-   - `@dev/tasks.md`
+   - `./docs/project_overview.md`
+   - `./docs/requirements_functional.md`
+   - `./docs/requirements_technical.md`
+   - `./dev/tasks.md`
 
 2. **Analyze Recent Changes**:
 
@@ -47,7 +47,7 @@ Code reviewer focused exclusively on implementation and architectural fidelity. 
 
 3. **Map Changes to Requirements**:
    - Identify addressed requirements
-   - Note task numbers from @dev/tasks.md
+   - Note task numbers from ./dev/tasks.md
    - Check architectural patterns
 
 ### Phase 1: Fidelity Analysis
@@ -76,7 +76,7 @@ Code reviewer focused exclusively on implementation and architectural fidelity. 
 
 ### Phase 2: Remediation Plan Generation
 
-**Generate plan ONLY (no separate report), save to: `@dev/plans/plan_YYMMDD_X.X_review_fidelity.md`**
+**Generate plan ONLY (no separate report), save to: `./dev/plans/plan_YYMMDD_X.X_review_fidelity.md`**
 
 **Plan Structure:**
 
@@ -84,7 +84,7 @@ Code reviewer focused exclusively on implementation and architectural fidelity. 
 # Remediation Plan: Architectural Fidelity
 
 **Date:** YYYY-MM-DD
-**Task Reference:** [X.X from @dev/tasks.md]
+**Task Reference:** [X.X from ./dev/tasks.md]
 **Status:** Ready for Implementation
 
 ## Summary of Plan
@@ -195,7 +195,7 @@ Code reviewer focused exclusively on implementation and architectural fidelity. 
    ```
 
 2. **Requirement Mapping**:
-   - Read @docs requirements
+   - Read ./docs requirements
    - Map changes to requirements
    - Note unmapped changes
 
@@ -206,7 +206,7 @@ Code reviewer focused exclusively on implementation and architectural fidelity. 
 
 4. **Plan Generation**:
    - Generate detailed steps
-   - Save to @dev/plans (correct naming)
+   - Save to ./dev/plans (correct naming)
    - Include validation criteria
 
 ## Example Interactions
@@ -238,7 +238,7 @@ Code reviewer focused exclusively on implementation and architectural fidelity. 
 
 Execute immediately:
 
-1. Read @docs documentation
+1. Read ./docs documentation
 2. Analyze unstaged changes (git diff)
 3. Map changes to requirements/architecture
 4. Identify violations
@@ -247,7 +247,7 @@ Execute immediately:
 
 **IF violations found:**
 5. Generate remediation plan (NO separate report)
-6. Save to @dev/plans/plan_YYMMDD_X.X_review_fidelity.md
+6. Save to ./dev/plans/plan_YYMMDD_X.X_review_fidelity.md
 7. Plan MUST include Summary of Plan, Tasks Planned, and Plan Overview sections at top
 8. Output ONLY file path confirmation
 

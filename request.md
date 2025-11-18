@@ -1,6 +1,6 @@
 # Request
 
-I need you to modify the agents related to code review: @claude-code/claude-agents/agt-review-*
+I need you to modify the agents related to code review: ./claude-code/claude-agents/agt-review-*
 
 First, ensure those agents only generate a plan to fix the issue they found, no other files such as a report.
 

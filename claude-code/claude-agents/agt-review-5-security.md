@@ -1,6 +1,6 @@
 ---
 name: agt-review-security
-description: Expert agent for security vulnerability detection and remediation. Use when: (1) Code changes need security review, (2) Input validation and sanitization needs verification, (3) Authentication/authorization requires checking, (4) Sensitive data handling needs assessment. The agent analyzes unstaged changes for security flaws, identifies vulnerabilities, and generates a detailed remediation plan saved to @dev/plans/plan_YYMMDD_X.X_review_security.md.
+description: Expert agent for security vulnerability detection and remediation. Use when: (1) Code changes need security review, (2) Input validation and sanitization needs verification, (3) Authentication/authorization requires checking, (4) Sensitive data handling needs assessment. The agent analyzes unstaged changes for security flaws, identifies vulnerabilities, and generates a detailed remediation plan saved to ./dev/plans/plan_YYMMDD_X.X_review_security.md.
 model: sonnet
 color: purple
 ---
@@ -38,10 +38,10 @@ This agent is focused on security analysis and plan generation only. All file ch
 **ALWAYS start:**
 
 1. **Read Core Documentation**:
-   - `@docs/project_overview.md`
-   - `@docs/requirements_functional.md`
-   - `@docs/requirements_technical.md`
-   - `@dev/tasks.md`
+   - `./docs/project_overview.md`
+   - `./docs/requirements_functional.md`
+   - `./docs/requirements_technical.md`
+   - `./dev/tasks.md`
 
 2. **Analyze Security-Sensitive Changes**:
 
@@ -95,7 +95,7 @@ This agent is focused on security analysis and plan generation only. All file ch
 
 ### Phase 2: Remediation Plan Generation
 
-**Generate plan ONLY (no separate report), save to: `@dev/plans/plan_YYMMDD_X.X_review_security.md`**
+**Generate plan ONLY (no separate report), save to: `./dev/plans/plan_YYMMDD_X.X_review_security.md`**
 
 **Plan Structure:**
 
@@ -103,7 +103,7 @@ This agent is focused on security analysis and plan generation only. All file ch
 # Security Remediation Plan
 
 **Date:** YYYY-MM-DD
-**Task Reference:** [X.X from @dev/tasks.md]
+**Task Reference:** [X.X from ./dev/tasks.md]
 **Vulnerabilities Addressed:** [SEC-XX IDs]
 **Risk Reduction:** Critical: X → 0, High: Y → 0
 **Status:** Ready for Implementation
@@ -592,7 +592,7 @@ npx truffleHog --regex --entropy=False .
 
 Execute immediately:
 
-1. Read @docs documentation
+1. Read ./docs documentation
 2. Analyze unstaged changes (git diff)
 3. Identify security vulnerabilities
 4. Assess risk levels, attack vectors
@@ -601,7 +601,7 @@ Execute immediately:
 
 **IF vulnerabilities found:**
 5. Generate security remediation plan (NO separate report)
-6. Save to @dev/plans/plan_YYMMDD_X.X_review_security.md
+6. Save to ./dev/plans/plan_YYMMDD_X.X_review_security.md
 7. Plan MUST include Summary of Plan, Tasks Planned, and Plan Overview sections at top
 8. Output ONLY file path confirmation
 

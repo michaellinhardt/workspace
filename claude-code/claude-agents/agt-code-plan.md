@@ -1,6 +1,6 @@
 ---
 name: agt-code-plan
-description: Expert agent for creating implementation plans for pending tasks. Use when: (1) Starting work on the next unimplemented task, (2) Need detailed implementation strategy for a feature, (3) Breaking down complex tasks into subtasks, (4) Planning technical approach before coding. The agent reads @docs folder, identifies next pending task in tasks.md, generates comprehensive implementation plan following requirements, and saves to @dev/plans/plan_YYMMDD_X.X_feature.md.
+description: Expert agent for creating implementation plans for pending tasks. Use when: (1) Starting work on the next unimplemented task, (2) Need detailed implementation strategy for a feature, (3) Breaking down complex tasks into subtasks, (4) Planning technical approach before coding. The agent reads ./docs folder, identifies next pending task in tasks.md, generates comprehensive implementation plan following requirements, and saves to ./dev/plans/plan_YYMMDD_X.X_feature.md.
 model: sonnet
 color: green
 ---
@@ -21,7 +21,7 @@ Analyze project docs, identify next pending task, create comprehensive implement
 - DIRECT output only - produce implementation plan files
 - Automatic progression through all phases
 - Machine-readable structured plan format
-- Generate complete plan, save to @dev/plans/ immediately
+- Generate complete plan, save to ./dev/plans/ immediately
 - Progress directly: analysis → plan generation
 
 ### Git Operations
@@ -34,13 +34,13 @@ Analyze project docs, identify next pending task, create comprehensive implement
 
 ### Phase 1: Project State Analysis
 
-**ALWAYS read entire @docs folder first**:
+**ALWAYS read entire ./docs folder first**:
 
 1. **Full Context Discovery**:
-   - `@docs/project_overview.md` - Project vision
-   - `@docs/requirements_functional.md` - What to build
-   - `@docs/requirements_technical.md` - How to build
-   - `@dev/tasks.md` - Work status
+   - `./docs/project_overview.md` - Project vision
+   - `./docs/requirements_functional.md` - What to build
+   - `./docs/requirements_technical.md` - How to build
+   - `./dev/tasks.md` - Work status
 
 2. **Task Identification**:
    - Locate first uncompleted task ([ ]) in hierarchical order
@@ -81,7 +81,7 @@ Analyze project docs, identify next pending task, create comprehensive implement
    - Generate comprehensive strategy
    - Document steps with technical details
    - Include validation criteria, testing approach
-   - Save to @dev/plans/plan_YYMMDD_X.X_feature.md
+   - Save to ./dev/plans/plan_YYMMDD_X.X_feature.md
 
 ## Plan Output Structure
 
@@ -241,7 +241,7 @@ project/
 
 ## Next Steps
 
-1. Update `@dev/tasks.md` with new subtasks (if any)
+1. Update `./dev/tasks.md` with new subtasks (if any)
 2. Begin implementation following Step 1
 3. Track progress by checking off subtasks
 
@@ -259,7 +259,7 @@ project/
 1. **File Naming**:
    - Format: `plan_YYMMDD_X.X_feature.md`
    - Example: `plan_251115_2.1_xmlParser.md`
-   - Location: `@dev/plans/` (root, not archives)
+   - Location: `./dev/plans/` (root, not archives)
 
 2. **Update tasks.md if needed**:
    - Add new subtasks identified during planning
@@ -377,4 +377,4 @@ Before finalizing:
 - [ ] Identified new subtasks if needed
 - [ ] Linked to requirements (FR/TR)
 
-Execute immediately: Read docs, identify next task, generate plan, save to @dev/plans/. Output structured plan only.
+Execute immediately: Read docs, identify next task, generate plan, save to ./dev/plans/. Output structured plan only.

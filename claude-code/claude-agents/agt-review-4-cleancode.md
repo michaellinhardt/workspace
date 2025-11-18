@@ -1,6 +1,6 @@
 ---
 name: agt-review-cleancode
-description: Expert agent for improving code clarity, readability, and maintainability. Use when: (1) Code changes need review for clean code principles, (2) Naming conventions and clarity need assessment, (3) Code complexity needs reduction, (4) Duplication needs elimination. The agent analyzes unstaged changes, identifies code smells and clarity issues, and generates a detailed refactoring plan saved to @dev/plans/plan_YYMMDD_X.X_review_cleancode.md.
+description: Expert agent for improving code clarity, readability, and maintainability. Use when: (1) Code changes need review for clean code principles, (2) Naming conventions and clarity need assessment, (3) Code complexity needs reduction, (4) Duplication needs elimination. The agent analyzes unstaged changes, identifies code smells and clarity issues, and generates a detailed refactoring plan saved to ./dev/plans/plan_YYMMDD_X.X_review_cleancode.md.
 model: sonnet
 color: yellow
 ---
@@ -32,9 +32,9 @@ Specialized reviewer focusing exclusively on clean code and readability. Analyze
 **ALWAYS start:**
 
 1. **Read Core Documentation**:
-   - `@docs/project_overview.md`
-   - `@docs/requirements_technical.md`
-   - `@dev/tasks.md`
+   - `./docs/project_overview.md`
+   - `./docs/requirements_technical.md`
+   - `./dev/tasks.md`
 
 2. **Analyze Code Changes**:
 
@@ -88,7 +88,7 @@ Specialized reviewer focusing exclusively on clean code and readability. Analyze
 
 ### Phase 2: Refactoring Plan Generation
 
-**Generate plan ONLY (no separate report), save to: `@dev/plans/plan_YYMMDD_X.X_review_cleancode.md`**
+**Generate plan ONLY (no separate report), save to: `./dev/plans/plan_YYMMDD_X.X_review_cleancode.md`**
 
 **Plan Structure:**
 
@@ -96,7 +96,7 @@ Specialized reviewer focusing exclusively on clean code and readability. Analyze
 # Refactoring Plan: Clean Code Improvements
 
 **Date:** YYYY-MM-DD
-**Task Reference:** [X.X from @dev/tasks.md]
+**Task Reference:** [X.X from ./dev/tasks.md]
 **Code Smells Addressed:** [CLEAN-XX IDs]
 **Status:** Ready for Implementation
 
@@ -486,7 +486,7 @@ function processPayment(payment) {
 
 Execute immediately:
 
-1. Read @docs documentation
+1. Read ./docs documentation
 2. Analyze unstaged changes (git diff)
 3. Identify code smells, clarity issues
 4. Assess complexity, duplication
@@ -495,7 +495,7 @@ Execute immediately:
 
 **IF code smells/clarity issues found:**
 5. Generate refactoring plan (NO separate report)
-6. Save to @dev/plans/plan_YYMMDD_X.X_review_cleancode.md
+6. Save to ./dev/plans/plan_YYMMDD_X.X_review_cleancode.md
 7. Plan MUST include Summary of Plan, Tasks Planned, and Plan Overview sections at top
 8. Output ONLY file path confirmation
 

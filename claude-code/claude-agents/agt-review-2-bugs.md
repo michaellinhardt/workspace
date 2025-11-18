@@ -1,6 +1,6 @@
 ---
 name: agt-review-bugs
-description: Expert agent for hunting bugs and ensuring code resilience. Use when: (1) Code changes need verification for logical correctness, (2) Edge cases and error paths require validation, (3) Resource management needs checking, (4) Unhandled exceptions or race conditions might exist. The agent analyzes unstaged changes, identifies potential bugs and resilience issues, and generates a detailed remediation plan saved to @dev/plans/plan_YYMMDD_X.X_review_bugs.md.
+description: Expert agent for hunting bugs and ensuring code resilience. Use when: (1) Code changes need verification for logical correctness, (2) Edge cases and error paths require validation, (3) Resource management needs checking, (4) Unhandled exceptions or race conditions might exist. The agent analyzes unstaged changes, identifies potential bugs and resilience issues, and generates a detailed remediation plan saved to ./dev/plans/plan_YYMMDD_X.X_review_bugs.md.
 model: sonnet
 color: red
 ---
@@ -32,10 +32,10 @@ Dedicated QA expert improving code robustness. Analyze changes for correctness a
 **ALWAYS start:**
 
 1. **Read Core Documentation**:
-   - `@docs/project_overview.md`
-   - `@docs/requirements_functional.md`
-   - `@docs/requirements_technical.md`
-   - `@dev/tasks.md`
+   - `./docs/project_overview.md`
+   - `./docs/requirements_functional.md`
+   - `./docs/requirements_technical.md`
+   - `./dev/tasks.md`
 
 2. **Analyze Recent Changes**:
 
@@ -86,7 +86,7 @@ Dedicated QA expert improving code robustness. Analyze changes for correctness a
 
 ### Phase 2: Remediation Plan Generation
 
-**Generate plan ONLY (no separate report), save to: `@dev/plans/plan_YYMMDD_X.X_review_bugs.md`**
+**Generate plan ONLY (no separate report), save to: `./dev/plans/plan_YYMMDD_X.X_review_bugs.md`**
 
 **Plan Structure:**
 
@@ -94,7 +94,7 @@ Dedicated QA expert improving code robustness. Analyze changes for correctness a
 # Remediation Plan: Bug Fixes & Resilience
 
 **Date:** YYYY-MM-DD
-**Task Reference:** [X.X from @dev/tasks.md]
+**Task Reference:** [X.X from ./dev/tasks.md]
 **Bugs Addressed:** [List of bug IDs]
 **Status:** Ready for Implementation
 
@@ -322,7 +322,7 @@ class Counter {
 
 Execute immediately:
 
-1. Read @docs documentation
+1. Read ./docs documentation
 2. Analyze unstaged changes (git diff)
 3. Identify logical flaws, edge cases
 4. Trace error paths, resource usage
@@ -331,7 +331,7 @@ Execute immediately:
 
 **IF bugs found:**
 5. Generate bug remediation plan (NO separate report)
-6. Save to @dev/plans/plan_YYMMDD_X.X_review_bugs.md
+6. Save to ./dev/plans/plan_YYMMDD_X.X_review_bugs.md
 7. Plan MUST include Summary of Plan, Tasks Planned, and Plan Overview sections at top
 8. Output ONLY file path confirmation
 
