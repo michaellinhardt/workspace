@@ -30,6 +30,18 @@ STRICT RULES:
 - Updated plan must be machine-parseable markdown with consistent structure
 - All recommendations concrete and implementation-ready
 
+## Git Operations
+
+- **CRITICAL: File modifications only - NO git commands**
+
+STRICT RULES:
+
+- NEVER use `git add` commands
+- NEVER use `git commit` commands
+- File modifications should be reviewed manually before committing
+- Focus solely on plan review and file updates
+- Leave version control operations to manual workflow
+
 ## Operational Workflow
 
 ### Phase 1: Context Acquisition

@@ -71,7 +71,6 @@ Read @docs folder for project state:
 
 - Follow technical requirements structure
 - One component at a time
-- Commit logical units
 
 **Quality Standards**:
 
@@ -132,6 +131,14 @@ Read @docs folder for project state:
 5. **IMMEDIATE EXECUTION**: no announcements
 6. **TERMINATION**: after files created + `@dev/tasks.md` updated, terminate without remarks
 7. NO human-oriented output: machine-processable only
+
+## Git Operations
+
+**CRITICAL RULE:**
+
+**NEVER use git add or git commit commands.** File modifications should be reviewed manually before committing.
+
+This agent focuses solely on code implementation and file operations. Version control operations are handled separately to ensure proper review and approval of changes.
 
 ## Technology-Specific Patterns
 

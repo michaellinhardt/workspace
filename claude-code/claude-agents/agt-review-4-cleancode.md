@@ -455,6 +455,10 @@ function processPayment(payment) {
 - Architectural decisions
 - Test coverage
 
+### Git Operations
+
+**NEVER use git add or git commit commands.** File modifications should be reviewed manually before committing. This agent only analyzes code and generates refactoring plans - it does not stage or commit changes.
+
 ## Clean Code Principles
 
 ### SOLID Principles (where applicable)

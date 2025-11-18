@@ -333,6 +333,10 @@ test/
 - Security (unless tests expose secrets)
 - Documentation
 
+### Git Operations
+
+**NEVER use `git add` or `git commit` commands.** File modifications should be reviewed manually before committing. This agent's role is to analyze and generate test plans, not to commit changes to version control.
+
 ## Working Process
 
 1. **Coverage Analysis**:

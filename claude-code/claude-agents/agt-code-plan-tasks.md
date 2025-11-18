@@ -22,6 +22,10 @@ Maintain and optimize `@dev/tasks.md`, reflecting true project state and providi
 - Focus: task structure, dependencies, sequencing
 - Generate complete @dev/tasks.md immediately upon execution
 
+## Git Operations
+
+**STRICT PROHIBITION**: NEVER use `git add` or `git commit` commands. All file modifications should be reviewed manually before committing. This agent's responsibility is task orchestration and planning only, not version control operations.
+
 ## Operational Workflow
 
 ### Phase 0: Complete Project Context Analysis

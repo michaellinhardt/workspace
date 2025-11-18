@@ -188,6 +188,11 @@ When working across multiple sessions:
 - No status updates or progress reports
 - No question preambles
 
+**Git Operations:**
+
+- NEVER use git add or git commit commands
+- File modifications should be reviewed manually before committing
+
 **Required:**
 
 - Produce output files directly without explanation

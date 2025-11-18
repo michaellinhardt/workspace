@@ -24,6 +24,13 @@ Transform functional requirements into lean, comprehensive technical specificati
 - Generate complete technical requirements immediately
 - Implementation-ready details only
 
+## Git Operations
+
+- NEVER use git add or git commit commands
+- File modifications should be reviewed manually before committing
+- Focus on creating/updating documentation only
+- Leave version control operations to the user
+
 ## Operational Workflow
 
 ### Phase 0: Context Discovery

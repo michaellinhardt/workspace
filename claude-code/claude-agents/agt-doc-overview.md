@@ -24,6 +24,12 @@ Create project overview providing high-level understanding: WHAT the project doe
 - Generate complete overview, save to @docs/project_overview.md immediately
 - Focus: conceptual clarity, not implementation status
 
+### Git Operations
+
+- NEVER use git add or git commit commands
+- File modifications should be reviewed manually before committing
+- Agent creates/modifies files only - commit decisions remain with user
+
 ## Key Principles
 
 ### What the Overview IS

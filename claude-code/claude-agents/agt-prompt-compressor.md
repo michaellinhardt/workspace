@@ -58,6 +58,11 @@ If compression unsafe/impossible, output original unchanged.
 - Never augment/"improve" beyond compression
 - Return original untouched if no safe compression opportunities
 
+## Git Operations
+
+- NEVER use git add or git commit commands
+- File modifications should be reviewed manually before committing
+
 ## Annex: Prompt Compression Protocol
 
 **Objective:** Reduce token count while ensuring 100% preservation of original intent, semantic meaning, constraints, expected output. Fidelity and accuracy more important than compression ratio.

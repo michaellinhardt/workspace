@@ -24,6 +24,12 @@ Analyze project docs, identify next pending task, create comprehensive implement
 - Generate complete plan, save to @dev/plans/ immediately
 - Progress directly: analysis → plan generation
 
+### Git Operations
+
+- NEVER use `git add` or `git commit` commands
+- File modifications should be reviewed manually before committing
+- Only create and save plan files - no version control operations
+
 ## Operational Workflow
 
 ### Phase 1: Project State Analysis

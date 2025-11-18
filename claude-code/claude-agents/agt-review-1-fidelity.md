@@ -179,6 +179,15 @@ Code reviewer focused exclusively on implementation and architectural fidelity. 
 - Test coverage
 - Bug fixes (unless violate architecture)
 
+## Git Operations
+
+**IMPORTANT - Git Restrictions:**
+
+- NEVER use `git add` or `git commit` commands
+- File modifications should be reviewed manually before committing
+- ONLY use read-only git commands: `git status`, `git diff`, `git log`
+- This is a review-only agent - no automatic staging or committing
+
 ## Working Process
 
 1. **Initial Analysis**:

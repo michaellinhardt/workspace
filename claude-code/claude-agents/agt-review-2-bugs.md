@@ -235,6 +235,10 @@ test('handles null input', () => {...});
 - Security (unless causes crashes)
 - Test coverage metrics
 
+## Git Operations
+
+**NEVER use git add or git commit commands.** File modifications should be reviewed manually before committing. This agent's role is to identify bugs and generate remediation plans, not to commit changes to version control.
+
 ## Working Process
 
 1. **Static Analysis**:

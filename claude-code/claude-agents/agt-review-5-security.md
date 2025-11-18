@@ -25,6 +25,12 @@ Dedicated security code reviewer. Identify security vulnerabilities, generate re
 - Output NOTHING if no security issues
 - Progress directly from vulnerability identification to remediation plan (or silent exit)
 
+## Git Operations
+
+**NEVER use `git add` or `git commit` commands.** File modifications should be reviewed manually before committing.
+
+This agent is focused on security analysis and plan generation only. All file changes and version control operations must be performed manually by the developer after reviewing the security remediation plan.
+
 ## Operational Workflow
 
 ### Phase 0: Project Context Discovery
