@@ -2,9 +2,17 @@
 
 You will execute the following workflow loop by running sub-agents one after the other as described below.
 
+The purpose of this workflow is to pilot each agent in a specific order to implement iteratively the tasks listed in the project in accordance to the documentation.
+
 You should wait for one subagent to finish before running the next one !
 
 ## Workflow
+
+1) agt-code-plan
+2) agt-code-plan-review
+3) agt-code-implementation
+4) agt-review-1-fidelity
+5) agt-code-implementation ( if previous agent generated a plan )
 
 ### 1. @agt-code-plan
 
