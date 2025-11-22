@@ -5,3 +5,5 @@ alias sopai-clean-plans="sh $CLAUDE_WORKSPACE_SCRIPTS/sopai-clean-plans.sh"
 alias sopai-clean-requests="sh $CLAUDE_WORKSPACE_SCRIPTS/sopai-clean-requests.sh"
 alias sopai-clean-all="sh $CLAUDE_WORKSPACE_SCRIPTS/sopai-clean-all.sh"
 
+alias gemini-rag-generator="sh $CLAUDE_WORKSPACE_SCRIPTS/gemini-rag-generator.sh"
+
