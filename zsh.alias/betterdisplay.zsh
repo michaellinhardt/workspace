@@ -1,0 +1,1 @@
+alias ipadvertically="sh $APP_CONFIGS/betterdisplay/ipadvertically.sh"

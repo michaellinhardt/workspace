@@ -77,6 +77,5 @@
 	"explorer.confirmDragAndDrop": false,
 	"claudeCode.allowDangerouslySkipPermissions": true,
 	"claudeCode.initialPermissionMode": "bypassPermissions",
-	"claudeCode.useTerminal": true,
 	"markdown.preview.linkify": false
 }
