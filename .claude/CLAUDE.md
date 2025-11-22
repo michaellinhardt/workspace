@@ -35,3 +35,7 @@ My zsh configs.
 ## File ./zshrc.zsh
 
 My ~/.zshrc file source this file, it is the entry point for all my zshrc configuration.
+
+## Constraint
+
+- NEVER attempt to lint the code or plan for it because I use a command to auto lint.
