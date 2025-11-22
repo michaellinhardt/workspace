@@ -61,7 +61,17 @@ You receive raw data (transcripts, web pages, PDFs, articles) and produce a sing
 
 1. **Report Header:** Level 1 Markdown header (`#`) with synthesized title
 2. **Summary:** `## Summary` section - concise human-readable synopsis combining primary goals and topics
-3. **Content Classification:** `## Content Classification` section with dynamic key-value pairs:
+3. **Knowledge Required:** `## Knowledge Required` section formatted as:
+   - `[level]: [explanation]`
+   - Levels:
+     - **Beginner:** No domain knowledge required, or very minimal; general knowledge sufficient
+     - **Moderate:** Requires foundational domain knowledge; not easily accessible to beginners
+     - **Expert:** Requires deep domain expertise to understand
+   - Include concise human-friendly explanation of why this level applies
+4. **Index:** `## Index` section with bullet points showing the structure of the current document
+   - Use numbered/nested lists to show document hierarchy (e.g., 1. Main topic, 1.1 Subtopic)
+   - Provides a structural overview of the generated report's contents
+5. **Content Classification:** `## Content Classification` section with dynamic key-value pairs:
     - Primary Subject (e.g., `Subject: Protein Nutrition`)
     - Core Goal/Task (e.g., `Task: Optimizing Daily Intake`)
     - Specifics if present (e.g., `Context: Muscle Building`, `Constraint: Vegetarian`)
