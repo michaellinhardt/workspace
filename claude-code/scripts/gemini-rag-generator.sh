@@ -8,7 +8,7 @@
 # Configuration
 AGENT_DEF="${AGENT_DEF:-$HOME/workspace/claude-code/claude-agents/agt-rag-generator.md}"
 SEPARATOR=$'\n\n---\n\nTarget Data Below\n\n---\n\n'
-MAX_PARALLEL=${MAX_PARALLEL:-2}  # Limit concurrent processes
+MAX_PARALLEL=${MAX_PARALLEL:-5}  # Limit concurrent processes
 VERBOSE=${VERBOSE:-1}  # Set to 0 to reduce output
 
 # Colors for output
