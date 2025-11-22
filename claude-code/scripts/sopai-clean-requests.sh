@@ -21,9 +21,10 @@ fi
 timestamp=$(date +%Y-%m-%dT%H-%M)
 for file in ./dev/request*; do
   if [ -f "$file" ]; then
-    # skip file if it only contains "# Request" and a newline
-    content=$(cat "$file")
-    if [ "$content" = "# Request" ]; then
+    # skip file if it only contains "# Request" (with optional whitespace)
+    # remove all whitespace and compare
+    content=$(cat "$file" | tr -d '[:space:]')
+    if [ "$content" = "#Request" ]; then
       continue
     fi
     filename=$(basename -- "$file")
