@@ -11,20 +11,8 @@
 		"editor.formatOnPaste": true,
 		"editor.codeActionsOnSave": {
 			"source.fixAll.markdownlint": "explicit"
-		},
-		"editor.codeActionsOnPaste": {
-			"source.fixAll.markdownlint": true
 		}
 	},
-	"roo-cline.allowedCommands": [
-		"npm test",
-		"npm install",
-		"tsc",
-		"git log",
-		"git diff",
-		"git show"
-	],
-	"roo-cline.deniedCommands": [],
 	"github.copilot.nextEditSuggestions.enabled": true,
 	"editor.formatOnSave": true,
 	"notebook.formatOnSave.enabled": true,
@@ -77,5 +65,15 @@
 	"explorer.confirmDragAndDrop": false,
 	"claudeCode.allowDangerouslySkipPermissions": true,
 	"claudeCode.initialPermissionMode": "bypassPermissions",
-	"markdown.preview.linkify": false
+	"markdown.preview.linkify": false,
+	"workbench.iconTheme": "material-icon-theme",
+	"material-icon-theme.folders.color": "#42a5f5",
+	"workbench.settings.applyToAllProfiles": [],
+	"material-icon-theme.folders.associations": { // https://github.com/material-extensions/vscode-material-icon-theme/tree/main/src/core/icons
+		"Excalidraw": "robot",
+		"10. AI": "robot",
+		"11. CLAUDE-CODE": "robot",
+		"99. WUTHERING": "console",
+		"99. GENSHIN": "console",
+	}
 }
