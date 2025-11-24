@@ -72,10 +72,18 @@
 	"material-icon-theme.folders.associations": { // https://github.com/material-extensions/vscode-material-icon-theme/tree/main/src/core/icons
 		"Excalidraw": "robot",
 		"10. AI": "robot",
-		"11. CLAUDE-CODE": "robot",
 		"99. WUTHERING": "console",
 		"99. GENSHIN": "console",
 		"31. DEV": "github",
 		"grimoire-obsidian": "obsidian",
+		"claude": "claude",
+		".claude": "claude",
+		"11. CLAUDE-CODE": "claude",
+		"claude-agents": "claude",
+		"claude-commands": "claude",
+		"claude-links": "claude",
+		"claude-templates": "claude",
+		"20. KNOWLEDGE": "bibliography",
+		"Excalidraw": "config",
 	}
 }
