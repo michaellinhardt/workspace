@@ -70,7 +70,6 @@
 	"material-icon-theme.folders.color": "#42a5f5",
 	"workbench.settings.applyToAllProfiles": [],
 	"material-icon-theme.folders.associations": { // https://github.com/material-extensions/vscode-material-icon-theme/tree/main/src/core/icons
-		"Excalidraw": "robot",
 		"10. AI": "robot",
 		"99. WUTHERING": "console",
 		"99. GENSHIN": "console",
