@@ -76,6 +76,14 @@ When starting a new iterations, a hook will first move old plans to ./dev/plans/
 plan_YYMMDD_X.X_feature.md: prefix plan_, the date, the task number, a task identifier.
 Example: plan_251114_1.2.2_xmlParser.md
 
-#### ./dev/plans/archives
+#### ./dev/archived-plans
 
-All past plans. This folder is forbidden or you to read.
+All archived plans. This folder is forbidden or you to read.
+
+#### ./dev/archived-requests
+
+All archived requests. This folder is forbidden or you to read.
+
+## Constraint
+
+- NEVER attempt to lint the code or plan for it because I use a command to auto lint.
