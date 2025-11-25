@@ -47,7 +47,7 @@
     ],
     "kilo-code.deniedCommands": [],
     "workbench.editor.empty.hint": "hidden",
-    "editor.accessibilitySupport": "on",
+    "editor.accessibilitySupport": "off",
     "editor.autoIndentOnPaste": true,
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
@@ -90,5 +90,7 @@
         "MD013": false,
         "MD034": false
     },
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "workbench.statusBar.visible": false,
+    "window.customTitleBarVisibility": "windowed"
 }
