@@ -12,8 +12,6 @@ All the project documentation (functional, technical, and other).
 
 Maintain the files in ./docs folder to always reflect the current project's state.
 
-Always read the entire folder content before executing any requests.
-
 ### File description in ./docs
 
 #### ./docs/project_overview.md
@@ -62,6 +60,8 @@ Follow this structure:
 This is the latest request submited to claude-code.
 
 #### ./dev/agents.md
+
+YOU SHOULD ALWAYS READ THIS FILE WHEN EXIST.
 
 This file provide specifics instructions for CLAUDE-CODE. In case it would conflicts with instructions from CLAUDE.md, this file is always higher priority and source of truth.
 
