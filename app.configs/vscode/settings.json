@@ -88,6 +88,7 @@
     },
     "markdownlint.config": {
         "MD013": false,
+        "MD029": false,
         "MD034": false
     },
     "editor.minimap.enabled": false,
