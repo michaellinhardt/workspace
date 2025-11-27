@@ -93,5 +93,6 @@
     },
     "editor.minimap.enabled": false,
     "workbench.statusBar.visible": false,
-    "window.customTitleBarVisibility": "windowed"
+    "window.customTitleBarVisibility": "windowed",
+    "claudeCode.preferredLocation": "sidebar"
 }
