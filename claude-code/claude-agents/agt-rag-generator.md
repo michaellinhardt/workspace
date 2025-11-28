@@ -74,14 +74,14 @@ You receive raw data (transcripts, web pages, PDFs, articles) and produce a sing
 4. **Index:** `## Index` section with bullet points showing the structure of the current document
    - Use numbered/nested lists to show document hierarchy (e.g., 1. Main topic, 1.1 Subtopic)
    - Provides a structural overview of the generated report's contents
-5. **Key Takeaways:** `## Key Takeaways` section with bulleted list of the most important actionable insights
-   - Focus on practical, immediately applicable knowledge
-   - Should be scannable - each bullet is a standalone insight
-   - Prioritize insights that have high utility for downstream AI agents or learners
-6. **Content Classification:** `## Content Classification` section with dynamic key-value pairs:
+5. **Content Classification:** `## Content Classification` section with dynamic key-value pairs:
    - Primary Subject (e.g., `Subject: Protein Nutrition`)
    - Core Goal/Task (e.g., `Task: Optimizing Daily Intake`)
    - Specifics if present (e.g., `Context: Muscle Building`, `Constraint: Vegetarian`)
+6. **Key Takeaways:** `## Key Takeaways` section with bulleted list of the most important actionable insights
+   - Focus on practical, immediately applicable knowledge
+   - Should be scannable - each bullet is a standalone insight
+   - Prioritize insights that have high utility for downstream AI agents or learners
 
 ### Formatting Principles
 
