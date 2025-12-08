@@ -57,9 +57,12 @@ Editing `./content`to apply `request brainstorm` is the request purpose
 4. Task a sub-agent to generate `./plan brainstorm.md`
     1. Give it the context, brainstorm, templates and content files list
     2. Provide it the plan Structure
+    3. The context file should be review too and added if needed
+        1. `../C0 - 00 Project Context.md`
+        2. `../C0 - 00 Module List & Content summary.md`
 5. For each file mentioned in the plan, task a sub-agent to apply it
     1. Give it the context, brainstorm and content files list
-    2. Assigned file `./content/[assigned file.md]`
+    2. Assigned file `./content/[assigned file.md]` or the context file
     3. The corresponding Guide from `00 Template Module Files`
 6. Once all sub-agent are done
 7. Per file changed/created task a sub-agent
