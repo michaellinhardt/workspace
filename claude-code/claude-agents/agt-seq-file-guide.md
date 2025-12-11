@@ -18,15 +18,16 @@ You will follow this file structure:
 ```structure
 # Files Guide for Agents
 
-## [path]
+`./[path file/folder]`
 
-[ file description ]
-[ in which part of the request it could be user. say none if the file is not relevant to accomplish the request ( when provided a request ) ]
-[ in which part of the request it may be irrelevant if request is provided ]
-[ other instructions / advice that could support the request , related to this file ]
+- [ file description ]
+- [ in which part of the request it could be user. say none if the file is not relevant to accomplish the request ( when provided a request ) ]
+- [ in which part of the request it may be irrelevant if request is provided ]
+- [ other instructions / advice that could support the request , related to this file ]
 ```
 
 No more than 3 level of header in the file.
+Minimal markdown formatting. Compact, simple structure & style with focus on clarity & token efficiency.
 
 ## Context
 
@@ -40,7 +41,9 @@ You can list files up to 2 parents level if needed for context gathering.
 
 You can go deep 2 level inside each folder in `./` for context gathering.
 
-Dont explore every folder in a item list as such:
+Operate fast with token efficiency: read first half of a file to extract its context. If not enough information, read second half. You win when first half alone is enough.
+
+Don't explore every folder in a item list as such:
 
 ```
 - ./FolderA/
@@ -48,4 +51,55 @@ Dont explore every folder in a item list as such:
   - ./FolderA/img02/
   - ./FolderA/img03/
   - ...
+```
+
+## Folder / File structure
+
+Add in the file a section for Folders structure, example:
+
+```
+Project Context (C0 - 00 Project Context.md)
+└── Defines entire project philosophy
+├── Module List & Summary (C0 - 00 Module List & Content summary.md)
+│ └── Shows module structure
+└── Module 1 - Prompting
+├── Module Overview (C0 - M1 - 00 Module Overview.md) ← MASTER REFERENCE
+│ └── Derives from Project Context
+│ ├── Script (C0 - M1 - 01 Script.md)
+│ │ └── Implementation of teaching sequence
+├── Assets (Teaching Materials)
+│ ├── Japanese Menu.md
+│ ├── Japanese Trip.md
+├── plan brainstorm.md
+└── request brainstorm.md
+```
+
+## When Request Provided
+
+When the initial request is provided. Identify all task/sub-task that would require a list of file. Or look for the mention `[file-guide]` in the request. Your response, after generating the file will include the following guide:
+
+Example:
+
+```request
+understand the project context [file-guide] and start 2 sub-agent. One analyse the financial part (files: [file-guide]) and one the risk (files: [file-guide]).
+```
+
+You will terminate by giving this answer:
+
+```answer
+# Agent File Guide
+
+List of file to use for each instance of [file-guide]
+
+## Project context:
+
+- `./context.md` project context
+- `./changes.md` list of recent changes
+  
+## Financial sub-agent:
+
+- [Project context files]
+- `./finance/report.md` yearly financial report
+[...]
+
 ```
