@@ -30,8 +30,6 @@ source $ZSH_ALIAS/navigation.zsh
 source $ZSH_ALIAS/git.zsh
 source $ZSH_ALIAS/installations.zsh
 source $ZSH_ALIAS/customs.zsh
-source $ZSH_ALIAS/customs.zsh
-source $ZSH_ALIAS/betterdisplay.zsh
 
 source ~/workspace/claude-code/terminal.zsh
 
