@@ -4,7 +4,9 @@ description: Turn a brainstorm file into Module modification for a Course. Read 
 
 # Request
 
-Execute task using task tool.
+Obtain the file guide and use it.
+
+Create a task for each steps.
 
 ## Folders & Context
 
@@ -14,9 +16,9 @@ Execute task using task tool.
 
 Brainstorm is unstructured draft containing:
 
-- Ideas for current Module + other Modules
+- Ideas for Module(s)
 - No file specification (must deduce)
-- Purpose: Apply to `./content` files
+- Purpose: Apply to `./content` files of the module
 
 ## Plan Structure
 
@@ -49,8 +51,8 @@ Brainstorm is unstructured draft containing:
 1. Read context + brainstorm files
 2. Map templates ↔ content files
 3. List `./content` files impacted by `request brainstorm`
-4. Task sub-agent: generate `./plan brainstorm.md`
-   - Input: context, brainstorm, templates, content files list
+4. /compact
+5. Task sub-agent: generate `./plan brainstorm.md`
    - Provide plan structure
    - Include context files if needed:
      - `../C0 - 00 Project Context.md`
