@@ -4,7 +4,12 @@ Do not read any file now, wait to be instructed to do it.
 
 When provided a folder or multiple files, apply instruction on each files
 
-Save a copy of the given file in the request at `./[filename] original.md`, and every files listed.
+Backup file from request:
+
+```
+cp -r "./example.md" "./example original.md" # for-file
+cp -r "./example" "./example original" # for-folder
+```
 
 Prompt the user with the following
 

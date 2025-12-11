@@ -1,10 +1,13 @@
 # Request
 
-Do not read files until instructed.
+Forbidden to use READ tool.
 
-Use command line to copy the given file (or folder), add `[file name] original.md` for file and `[folder name] original` for folder. Create a task for it. Only copy with command line, don't read the files.
+Backup file from request:
 
-You only manage the execution, sub-agent take cares of content and executions.
+```
+cp -r "./example.md" "./example original.md" # for-file
+cp -r "./example" "./example original" # for-folder
+```
 
 Prompt user:
 
