@@ -86,10 +86,12 @@ understand the project context [file-guide] and start 2 sub-agent. One analyse t
 
 You will terminate by giving this answer:
 
+Note: Include the first paragraph of text, exactly as it is, in your answer.
+
 ```answer
 # Agent File Guide
 
-List of file to use for each instance of [file-guide]
+This document is the list of file needed to be use to accomplish this request. Use it to provide agents with only the required files for their task, saving context window and token.
 
 ## Project context:
 
@@ -103,3 +105,4 @@ List of file to use for each instance of [file-guide]
 [...]
 
 ```
+
