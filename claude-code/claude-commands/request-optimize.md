@@ -2,7 +2,9 @@
 
 Do not read files until instructed.
 
-Save copy: `./[filename] original.md`
+Use command line to copy the given file (or folder), add `[file name] original.md` for file and `[folder name] original` for folder. Create a task for it. Only copy with command line, don't read the files.
+
+You only manage the execution, sub-agent take cares of content and executions.
 
 Prompt user:
 

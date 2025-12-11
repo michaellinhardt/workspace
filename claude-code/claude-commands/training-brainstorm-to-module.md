@@ -4,69 +4,64 @@ description: Turn a brainstorm file into Module modification for a Course. Read 
 
 # Request
 
-Execute the following task.
-
-Use the task tool.
+Execute task using task tool.
 
 ## Folders & Context
 
-The current folder host the documentation on a training.
-It's divided into Courses with Module.
-We are inside the folder of a Module.
-The folder `../` is the Course of this Module.
-The folder `../../` is the folder with all Courses and templates. 
-You only edit the files in the current `./` folder
+- `./` = Module folder (edit only)
+- `../` = Course folder
+- `../../` = All Courses + templates
 
-The brainstorm is a draft of ideas, note, it's not structured or ordered
-It can contain information on the current Module but also idea/change for others
-The brainstorm does not specify which file to change, this have to be deducted
-Editing `./content`to apply `request brainstorm` is the request purpose
+Brainstorm is unstructured draft containing:
+
+- Ideas for current Module + other Modules
+- No file specification (must deduce)
+- Purpose: Apply to `./content` files
 
 ## Plan Structure
 
-- Start with level 1 header, only one
-- No more than 3 header
-- Don't use decoration character ( bold, etc.. )
-- Keep instruction decoration eg. `./content/` remains
+- 1 level-1 header max
+- Max 3 headers total
+- No decoration (bold, etc.) except instructions (e.g., `./content/`)
 
-   ```markdown
-   # Change plan (brainstorm request)
-   
-   ## Request Summary
-   ## `./[file to change]`
-   ### 1. [change 1]
-   [ plan to change this file]
-   ```
+```markdown
+# Change plan (brainstorm request)
+
+## Request Summary
+## `./[file to change]`
+### 1. [change 1]
+[plan to change this file]
+```
 
 ## Files
 
-1. Context Files:
-    1. `../C0 - 00 Project Context.md`
-    2. `../C0 - 00 Module List & Content summary.md`
-2. Brainstorm
-    1. `./request brainstorm.md`
-    2. `./plan brainstorm.md`
-3. Templates
-    1. `../../00 Template Module Files/`
+1. Context:
+   - `../C0 - 00 Project Context.md`
+   - `../C0 - 00 Module List & Content summary.md`
+2. Brainstorm:
+   - `./request brainstorm.md`
+   - `./plan brainstorm.md`
+3. Templates:
+   - `../../00 Template Module Files/`
 
 ## Task
 
-1. Read context and brainstorm files
+1. Read context + brainstorm files
 2. Map templates ↔ content files
-3. List impacted files by `request brainstorm` in `./content`
-4. Task a sub-agent to generate `./plan brainstorm.md`
-    1. Give it the context, brainstorm, templates and content files list
-    2. Provide it the plan Structure
-    3. The context file should be review too and added if needed
-        1. `../C0 - 00 Project Context.md`
-        2. `../C0 - 00 Module List & Content summary.md`
-5. For each file mentioned in the plan, task a sub-agent to apply it
-    1. Give it the context, brainstorm and content files list
-    2. Assigned file `./content/[assigned file.md]` or the context file
-    3. The corresponding Guide from `00 Template Module Files`
-6. Once all sub-agent are done
-7. Per file changed/created task a sub-agent
-    1. Give it the context, brainstorm and content files list
-    2. Assigned file `./content/[assigned file.md]`
-    3. The sub-agent find potential mistakes and fix it
-8. Done.
+3. List `./content` files impacted by `request brainstorm`
+4. Task sub-agent: generate `./plan brainstorm.md`
+   - Input: context, brainstorm, templates, content files list
+   - Provide plan structure
+   - Include context files if needed:
+     - `../C0 - 00 Project Context.md`
+     - `../C0 - 00 Module List & Content summary.md`
+5. Per plan file: task sub-agent to apply changes
+   - Input: context, brainstorm, content files list
+   - Assigned: `./content/[file.md]` or context file
+   - Guide: corresponding template from `00 Template Module Files`
+6. All sub-agents complete
+7. Per changed/created file: task review sub-agent
+   - Input: context, brainstorm, content files list
+   - Assigned: `./content/[file.md]`
+   - Action: find/fix mistakes
+8. Done

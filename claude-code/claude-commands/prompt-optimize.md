@@ -2,7 +2,9 @@
 
 Do not read any file now, wait to be instructed to do it.
 
-Save a copy of the given file in the request at `./[filename] original.md`
+When provided a folder or multiple files, apply instruction on each files
+
+Save a copy of the given file in the request at `./[filename] original.md`, and every files listed.
 
 Prompt the user with the following
 
@@ -28,9 +30,10 @@ Always Last: agt-seq-file-guide
 
 Run the following loop:
 
-- Run a sub-agent from the list ( by priority )
+- Run a sub-agent from the list, by priority
+  - When multiple files, run multiple sub-agent asynchronously, one per file
 - provide it the request file path
-- Wait for it to finish
-- Run the next sub-agent for the next selected agent
+- Wait for it to finish ( all sub-agent )
+- Run the next sub-agent(s) for the next selected agent
 
 Over.
