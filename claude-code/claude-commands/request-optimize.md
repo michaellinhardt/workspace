@@ -1,40 +1,39 @@
 # Request
 
-Do not read any file now, wait to be instructed to do it.
+Do not read files until instructed.
 
-Prompt the user with the following
+Save copy: `./[filename] original.md`
 
-```prompt
-What agent to use on `./file_path` ?
-[ numerique list of all agent that can work on prompt/workflow ]
-(example:
+Prompt user:
+
+```
+Agent for `./file_path`?
+[Numbered list of compatible agents]
+Example:
 1. agt-seq-file-guide
 2. [...]
 or all.
 ```
 
-Once the user confirm which agent to use, start a sequential execution on the file.
+User confirms agent → start sequential execution.
 
-Below a list of execution priority. Respect this order.
+**Execution Priority:**
 
-```execution-priority
 1. agt-seq-workflow-compactor
 2. agt-seq-prompt-compressor
-[ other agents ]
-Always Last: agt-seq-file-guide 
-```
+3. [other agents]
+4. agt-seq-file-guide (always last)
 
-Run the following loop:
+**Loop:**
+(Skip `agt-seq-file-guide` during loop)
 
-Warning, when `agt-seq-file-guide` is selected, don't execute it during the loop
+- Run sub-agent (by priority)
+- Provide request file path
+- Wait for completion
+- Run next agent
 
-- Run a sub-agent from the list ( by priority )
-- provide it the request file path
-- Wait for it to finish
-- Run the next sub-agent for the next selected agent
+Execute `/compact`
 
-Now execute a /compact
+If selected: give request file to `agt-seq-file-guide` → receive file guide.
 
-If selected give the request file to `agt-seq-file-guide`, take the file guide in return.
-
-Finally, read and execute the file instructions, using the file guide when provided.
+Finally: read and execute file instructions using file guide if provided.
