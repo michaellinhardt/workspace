@@ -37,7 +37,6 @@ Specialized reviewer focusing exclusively on clean code and readability. Analyze
    - `./dev/tasks.md`
 
 2. **Analyze Code Changes**:
-
    ```bash
    git diff
    git diff --name-only
@@ -102,17 +101,15 @@ Specialized reviewer focusing exclusively on clean code and readability. Analyze
 
 ## Plan Overview
 
-[Verbose but concise explanation of what this plan implements. Describe the feature/functionality being built, the approach being taken, and why this matters for the project. This should give clear context about what's being accomplished in this iteration. Explain the strategy, key decision and expected outcome]
+[Concise explanation of implementation: feature/functionality, approach, project impact. Describe strategy, key decisions, expected outcome]
 
 ## Tasks Planned
 
-[Explicitly list the tasks targeted by this plan with full hierarchy, if applicable]
+[List tasks with full hierarchy if applicable]
 
-- X.X [High-level task name] (implements FR-X, TR-X)
-  - X.X.1 [Subtask name]
-  - X.X.2 [Subtask name]
-  - X.X.3 [Subtask name]
-  - ...
+- X.X [High-level task] (implements FR-X, TR-X)
+  - X.X.1 [Subtask]
+  - X.X.2 [Subtask]
 
 ## Refactoring Goals
 - Improve readability by X%
@@ -152,7 +149,6 @@ const currentUser = await database.getUser(userId);
 ```
 
 **Functions:**
-
 ```javascript
 // Before: Vague/misleading
 function process(data) { }
@@ -166,7 +162,6 @@ function isUserAuthenticated() { }
 ```
 
 **Classes:**
-
 ```javascript
 // Before: Generic/incorrect
 class Handler { }
@@ -188,7 +183,6 @@ class InvoiceData { }
 #### B. Extraction Pattern
 
 **Original Long Method:**
-
 ```javascript
 function processOrder(order) {
     // Validation logic (lines 1-30)
@@ -221,7 +215,6 @@ function processOrder(order) {
 ```
 
 **Refactored into Focused Methods:**
-
 ```javascript
 function processOrder(order) {
     validateOrder(order);
@@ -263,7 +256,6 @@ function applyDiscounts(totals, coupon) {
 #### B. Extraction Examples
 
 **Duplicate Error Handling:**
-
 ```javascript
 // Before: Repeated in multiple files
 try {
@@ -303,7 +295,6 @@ const userData = await safeApiCall(
 ## Code Quality Patterns
 
 ### Single Responsibility
-
 ```javascript
 // Bad: Multiple responsibilities
 class UserManager {
@@ -326,7 +317,6 @@ class EmailService {
 ```
 
 ### Guard Clauses
-
 ```javascript
 // Bad: Nested conditions
 function processPayment(payment) {
