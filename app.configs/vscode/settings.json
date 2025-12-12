@@ -94,5 +94,6 @@
     "editor.minimap.enabled": false,
     "workbench.statusBar.visible": false,
     "window.customTitleBarVisibility": "windowed",
-    "claudeCode.preferredLocation": "sidebar"
+    "claudeCode.preferredLocation": "sidebar",
+    "claudeCode.useTerminal": true
 }
