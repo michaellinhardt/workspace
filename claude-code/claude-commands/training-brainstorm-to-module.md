@@ -4,8 +4,6 @@ description: Turn a brainstorm file into Module modification for a Course.
 
 # Instructions
 
-First ! Use sub-agent `agt-seq-file-guide`, in it's prompt you provide the path of the initial request file(s) you received. The agent will build the file-guide `./files.agt.md` based on this request specifically. Read this file.
-
 ## Files & folder
 
 `./Course 0 - Foundations/C0 - 00 Project Context.md`
@@ -24,13 +22,21 @@ Now, Execute the workflow.
 
 # Workflow
 
+Create one task per level-2 header.
+
+Run level-2 header sequentially.
+
+## Setup agt folder
+
 Run: `rm -rf ./agts && mkdir ./agts`
 
-Execute level-2 headers as sequential tasks.
+## Build File-Guide
+
+Use sub-agent `agt-seq-file-guide`, in it's prompt you provide the path of the initial request file(s) you received. The agent will build the file-guide `./files.agt.md` based on this request specifically. Read this file.
 
 ## Generate Plans
 
-Use sub-agent @agt-training-teacher-documentor: Read brainstorm + Context → Generate `./agts/braintorm.plan.agt.md`. A file is impacted by the brainstorm when the changes it instruct will edit the content of this file. The plan, for each file impacted, describe in details all the changes needed. This plan should respect the overall coherence, integrity and harmony of the module. It not only give what to change but how to implement it, what is important (ton, transition with previous sequence, conciseness, importance, etc..)
+Use sub-agent `agt-training-teacher-documentor`: Read brainstorm + Context → Generate `./agts/braintorm.plan.agt.md`. A file is impacted by the brainstorm when the changes it instruct will edit the content of this file. The plan, for each file impacted, describe in details all the changes needed. This plan should respect the overall coherence, integrity and harmony of the module. It not only give what to change but how to implement it, what is important (ton, transition with previous sequence, conciseness, importance, etc..)
 
 ## Apply Changes
 
