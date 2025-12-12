@@ -17,7 +17,7 @@
     "editor.formatOnSave": true,
     "notebook.formatOnSave.enabled": true,
     "debug.console.fontSize": 16,
-    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontSize": 15,
     "kilo-code.allowedCommands": [
         "git log",
         "git diff",
