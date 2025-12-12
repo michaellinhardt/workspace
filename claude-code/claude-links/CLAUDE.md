@@ -28,6 +28,10 @@ Technical requirements of the project.
 
 ### File description in ./dev
 
+#### File description in ./dev/agts
+
+All agents in this project use this folder to save shared informations/reports etc..
+
 #### ./dev/tasks.md
 
 All tasks and sub-tasks related to the projects ( planning, implementation, review, research, etc.. ).

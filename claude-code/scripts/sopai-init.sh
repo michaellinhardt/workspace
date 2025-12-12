@@ -53,7 +53,7 @@ copy_template_if_missing "$CLAUDE_WORKSPACE_TEMPLATES/docs/requirements_function
 copy_template_if_missing "$CLAUDE_WORKSPACE_TEMPLATES/docs/requirements_technical.md" "docs/requirements_technical.md"
 
 ########################################
-# Initialize dev directory and template files
+# Initialize dev directory
 ########################################
 
 # Create dev directory if it doesn't exist
@@ -62,7 +62,7 @@ if [ ! -d "dev" ]; then
   echo "Initialized dev directory."
 fi
 
-# Create dev directory if it doesn't exist
+# Create archived-requests directory if it doesn't exist
 if [ ! -d "./dev/archived-requests" ]; then
   mkdir ./dev/archived-requests
   echo "Initialized dev/archived-requests directory."
@@ -72,6 +72,15 @@ fi
 copy_template_if_missing "$CLAUDE_WORKSPACE_TEMPLATES/dev/agents.md" "dev/agents.md"
 copy_template_if_missing "$CLAUDE_WORKSPACE_TEMPLATES/dev/request.md" "dev/request.md"
 copy_template_if_missing "$CLAUDE_WORKSPACE_TEMPLATES/dev/tasks.md" "dev/tasks.md"
+
+########################################
+# Initialize agts directory
+########################################
+
+if [ ! -d "dev/agts" ]; then
+  mkdir ./dev/agts
+  echo "Initialized dev/agts directory."
+fi
 
 ########################################
 # Initialize plans directory and template files
