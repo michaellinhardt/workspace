@@ -4,66 +4,77 @@ description: Turn a brainstorm file into Module modification for a Course. Read 
 
 # Request
 
-Obtain the file guide and use it.
-
-Create a task for each steps.
-
-## Folders & Context
-
-- `./` = Module folder (edit only)
-- `../` = Course folder
-- `../../` = All Courses + templates
-
-Brainstorm is unstructured draft containing:
-
-- Ideas for Module(s)
-- No file specification (must deduce)
-- Purpose: Apply to `./content` files of the module
-
-## Plan Structure
-
-- 1 level-1 header max
-- Max 3 headers total
-- No decoration (bold, etc.) except instructions (e.g., `./content/`)
-
-```markdown
-# Change plan (brainstorm request)
-
-## Request Summary
-## `./[file to change]`
-### 1. [change 1]
-[plan to change this file]
-```
+Obtain and use the file guide from @agt-seq-file-guide agent.
 
 ## Files
 
-1. Context:
-   - `../C0 - 00 Project Context.md`
-   - `../C0 - 00 Module List & Content summary.md`
-2. Brainstorm:
-   - `./request brainstorm.md`
-   - `./plan brainstorm.md`
-3. Templates:
-   - `../../00 Template Module Files/`
+./00 Template Module Files/*
+./Course 0 - Foundations/*
 
-## Task
+brainstorm file: given in the request
 
-1. Read context + brainstorm files
-2. Map templates ↔ content files
-3. List `./content` files impacted by `request brainstorm`
-4. /compact
-5. Task sub-agent: generate `./plan brainstorm.md`
-   - Provide plan structure
-   - Include context files if needed:
-     - `../C0 - 00 Project Context.md`
-     - `../C0 - 00 Module List & Content summary.md`
-5. Per plan file: task sub-agent to apply changes
-   - Input: context, brainstorm, content files list
-   - Assigned: `./content/[file.md]` or context file
-   - Guide: corresponding template from `00 Template Module Files`
-6. All sub-agents complete
-7. Per changed/created file: task review sub-agent
-   - Input: context, brainstorm, content files list
-   - Assigned: `./content/[file.md]`
-   - Action: find/fix mistakes
-8. Done
+## Constraints
+
+- Don't read files unless instructed
+- Only sub-agents read/edit files
+
+## Workflow
+
+Run: `rm -rf ./agts && mkdir ./agts`
+
+Execute level-2 headers as sequential tasks.
+
+## Brainstorm Mapping
+
+Sub-agent: Read brainstorm → Generate `./agts/braintorm.mapping.agt.md` listing all impacted files (module, course folders, etc.).
+
+Structure:
+```
+# Brainstorm File Mapping
+
+- `./content/C0 - M1 - Script.md`
+[explain changes needed + rationale]
+
+- `./next file/..`
+[...]
+```
+
+## Compress brainstorm mapping
+
+Sub-agent prompt compressor: Compress `./agts/braintorm.mapping.agt.md`
+
+## Compact 1
+
+Execute /compact to compact your context
+
+## List Impacted Files
+
+Sub-agent: Read `./agts/braintorm.mapping.agt.md` → Return only impacted file list.
+
+Example output:
+```
+- `./content/C0 - M1 - Script.md`
+- `./content/C0 - M1 - Slide Deck.md`
+```
+
+## Generate Plans
+
+For each listed file, start sub-agent (async).
+
+Each sub-agent:
+- Assigned one impacted file
+- Reads brainstorm file + brainstorm mapping
+- Generates `./agts/[file name].plan.agt.md`
+
+## Compact 2
+
+Execute /compact to compact your context
+
+## Apply Changes
+
+For each listed file, start sub-agent (async).
+
+Each sub-agent:
+- Assigned one impacted file
+- Reads brainstorm file + plan file for assigned file
+- Applies changes to assigned file

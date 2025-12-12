@@ -4,69 +4,77 @@ description: Turn a brainstorm file into Module modification for a Course. Read 
 
 # Request
 
-Execute the following task.
-
-Use the task tool.
-
-## Folders & Context
-
-The current folder host the documentation on a training.
-It's divided into Courses with Module.
-We are inside the folder of a Module.
-The folder `../` is the Course of this Module.
-The folder `../../` is the folder with all Courses and templates.
-You only edit the files in the current `./` folder
-
-The brainstorm is a draft of ideas, note, it's not structured or ordered
-It can contain information on the current Module but also idea/change for others
-The brainstorm does not specify which file to change, this have to be deducted
-Editing `./content`to apply `request brainstorm` is the request purpose
-
-## Plan Structure
-
-- Start with level 1 header, only one
-- No more than 3 header
-- Don't use decoration character ( bold, etc.. )
-- Keep instruction decoration eg. `./content/` remains
-
-   ```markdown
-   # Change plan (brainstorm request)
-
-   ## Request Summary
-   ## `./[file to change]`
-   ### 1. [change 1]
-   [ plan to change this file]
-   ```
+Obtain and use the file guide.
 
 ## Files
 
-1. Context Files:
-    1. `../C0 - 00 Project Context.md`
-    2. `../C0 - 00 Module List & Content summary.md`
-2. Brainstorm
-    1. `./request brainstorm.md`
-    2. `./plan brainstorm.md`
-3. Templates
-    1. `../../00 Template Module Files/`
+./00 Template Module Files/*
+./Course 0 - Foundations/*
 
-## Task
+## Constraints
 
-1. Read context and brainstorm files
-2. Map templates ↔ content files
-3. List impacted files by `request brainstorm` in `./content`
-4. Task a sub-agent to generate `./plan brainstorm.md`
-    1. Give it the context, brainstorm, templates and content files list
-    2. Provide it the plan Structure
-    3. The context file should be review too and added if needed
-        1. `../C0 - 00 Project Context.md`
-        2. `../C0 - 00 Module List & Content summary.md`
-5. For each file mentioned in the plan, task a sub-agent to apply it
-    1. Give it the context, brainstorm and content files list
-    2. Assigned file `./content/[assigned file.md]` or the context file
-    3. The corresponding Guide from `00 Template Module Files`
-6. Once all sub-agent are done
-7. Per file changed/created task a sub-agent
-    1. Give it the context, brainstorm and content files list
-    2. Assigned file `./content/[assigned file.md]`
-    3. The sub-agent find potential mistakes and fix it
-8. Done.
+- Don't read files unless instructed
+- Only sub-agents read/edit files
+
+## Workflow
+
+run `rm -rf ./agts && mkdir ./agts` now
+
+Execute level-2 headers as sequential tasks.
+
+## Brainstorm Mapping
+
+Task a sub-agent to read the brainstorm and generate a file `./agts/braintorm.mapping.agt.md` where it list all files impacted by the brainstorm. Files impacted in module folder, course folder, etc..
+
+The sub-agent structure the file as follow:
+
+```example
+# Brainstorm File Mapping
+
+- `./content/C0 - M1 - Script.md`
+[ explain what needs to be change and why ]
+
+- `./next file/..`
+  [...]
+```
+
+## Compress brainstorm mapping
+
+Run a sub-agent prompt compressor to compress `./agts/braintorm.mapping.agt.md`
+
+## Compact 1
+
+Execute /compact
+
+## List Impacted Files
+
+Run a sub-agent, ask it to read `./agts/braintorm.mapping.agt.md` and return to you the list of impacted file, nothing else. Example:
+
+```output
+- `./content/C0 - M1 - Script.md`
+- `./content/C0 - M1 - Slide Deck.md`
+```
+
+## Generate Plans
+
+For each file listed, start a sub-agent (all asynchronous).
+
+Assign each sub-agent with one impacted file.
+
+Ask it to read the brainstorm file and the brainstorm mapping.
+
+Then generate the file `./agts/[file name].plan.agt.md`
+
+## Compact 2
+
+Execute /compact
+
+## Apply Changes
+
+For each file listed, start a sub-agent (all asynchronous).
+
+Assign each sub-agent with one impacted file.
+
+Ask it to read the brainstorm file and the plan file for its assigned file.
+
+Then apply the change to the assigned file.
