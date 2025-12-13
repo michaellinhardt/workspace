@@ -2,13 +2,6 @@
 
 Forbidden to use READ tool.
 
-Backup file from request:
-
-```
-cp -r "./example.md" "./example original.md" # for-file
-cp -r "./example" "./example original" # for-folder
-```
-
 Prompt user:
 
 ```
@@ -37,7 +30,7 @@ User confirms agent → start sequential execution.
 - Wait for completion
 - Run next agent
 
-Execute `/compact`
+Use tool or anything to compress your context window, now.
 
 If selected: give request file to `agt-seq-file-guide` → receive file guide.
 

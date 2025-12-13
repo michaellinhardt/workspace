@@ -4,14 +4,9 @@ Do not read any file now, wait to be instructed to do it.
 
 When provided a folder or multiple files, apply instruction on each files
 
-Backup file from request:
+Prompt the user with the following, if no option already provided.
 
-```
-cp -r "./example.md" "./example original.md" # for-file
-cp -r "./example" "./example original" # for-folder
-```
-
-Prompt the user with the following
+If option 1 or 2 is provided, it's the id in priority list
 
 ```prompt
 What agent to use on `./file_path` ?

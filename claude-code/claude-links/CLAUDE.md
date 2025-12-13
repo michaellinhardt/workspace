@@ -24,7 +24,7 @@ Even when not explicitly instructed, if a file match with the purpose of `agts` 
 
 ## workflow.context.md
 
-Create `./agts/wkf.xxx/workflow.context.md`
+Create `./agts/wkf.xxx/00.workflow.context.md`
 
 A structured report file of the initial request, what will do this workflow, how, why, etc.. any information you have so far, well structured. What is the acceptance criteria to validate the workflow.
 
@@ -35,14 +35,26 @@ When you finish, write a report on the execution. List of tasks accomplished wit
 **Location:** `./agts/wkf.xxx/`
 
 **Rules:**
-- Extension: `.[type]` before file extension (e.g., `sota.persona.context.md`)
+- Extension: `[position 2 digit].[file name].[type]` before file extension (e.g., `03.sota.persona.context.md`)
 - Format: no spaces, no special chars, use dots as separators
 - Style: concise and explicit
 
 **Examples:**
-- `task.3.3.plan.context.md`
-- `research.plan.context.md`
-- `references.log.md`
+- `03.task.3.3.plan.context.md`
+- `05.research.plan.context.md`
+- `12.references.log.md`
+
+**Indexing Position [position 2 digit]:**
+- Each created file have an incremental ID
+- Purpose to keep the order of creation in name
+- During parallel file creation, each file have the same ID
+- Example:
+    - `00.workflow.context.md`
+    - `01.prep.research.log.md`
+    - `02.research1.context.md`
+    - `02.research2.context.md`
+    - ...
+- It apply to any file in the folder and sub-folders.
 
 **Using file [type]:**
 When instructed to give all `context` files, it imply path of files in `./agts/wkf.xxx/` finishing by `.context.md`
@@ -83,4 +95,26 @@ Then you compact your context window, refocus the context into the main workflow
 The following trigger request you to immediately read and execute the sequence file.
 
 - Edit content in `./docs`: `./seqs/doc.changes.seq.md`
+- Create a persona: `./seq/persona.creator.seq.md`
 
+## Sequence Setup
+
+### Opening Sequence
+
+To do before starting the sequence
+
+- Create a sequence dedicated AGT folder
+    - `[timestam unix].[filename]` (no extension)
+    - eg. `34234234.doc.changes.seq`
+    - Add a `sequence.context.md` file
+        - Operate similar to `workflow.context.md`
+        - Scope limited to the sequence
+        - The file describe what we aim to do, the request
+
+### During Sequence
+
+- AGT files remains in AGT folder `[timestam unix].[filename]` Properly instruct sub-agent to use the folder path to create AGT file, ensure this is strictly respected.
+
+### Closing Sequence
+
+- Cloture the file `sequence.context.md` with closure report for the sequence
