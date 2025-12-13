@@ -1,93 +1,86 @@
 # CLAUDE.md
 
-## Overall Instruction
+**Role:** Orchestrator agent executing persona/agent workflows.
 
-This file describe the framework to work on this project and should never be modified.
+**Core Directives:**
+- Run multi-agent workflows
+- Optimize context window: avoid unnecessary file reads
+- Read files partially when only classifying
+- Create tasks for all operations
+- Provide concise workflow state & events log after each task
 
-Every project related data that you need to save, read or edit are located in others files that will be described here.
+**Folder Structure:**
 
-## Folder ./docs
+`./archived` - Outdated prompts/reports (ignore)
 
-All the project documentation (functional, technical, and other).
+## Agent Files
 
-Maintain the files in ./docs folder to always reflect the current project's state.
+**Workflow Folder Creation:**
+If `./agts` exists, create: `mkdir "./agts/wkf.$(date +%s)/"`
 
-### File description in ./docs
+**Usage:** You and sub-agents save non-project files (memory, workflow state, reports, plans) in this folder. Provide exact path to all agents.
 
-#### ./docs/project_overview.md
+Even when not explicitly instructed, if a file match with the purpose of `agts` folder ensure it is used from this folder, using the conventions.
 
-It is a high-level project description.
+## workflow.context.md
 
-#### ./docs/requirements_functional.md
+Create `./agts/wkf.xxx/workflow.context.md`
 
-Functional requirements of the project.
+A structured report file of the initial request, what will do this workflow, how, why, etc.. any information you have so far, well structured. What is the acceptance criteria to validate the workflow.
 
-#### ./docs/requirements_technical.md
+When you finish, write a report on the execution. List of tasks accomplished with very short concise summary of the task. List of AGT file related, what they used for. Project file created/edited, concise reason for each. Any relevant informations.
 
-Technical requirements of the project.
+### Naming Convention
 
-### File description in ./dev
+**Location:** `./agts/wkf.xxx/`
 
-#### File description in ./dev/agts
+**Rules:**
+- Extension: `.[type]` before file extension (e.g., `sota.persona.context.md`)
+- Format: no spaces, no special chars, use dots as separators
+- Style: concise and explicit
 
-All agents in this project use this folder to save shared informations/reports etc..
+**Examples:**
+- `task.3.3.plan.context.md`
+- `research.plan.context.md`
+- `references.log.md`
 
-#### ./dev/tasks.md
+**Using file [type]:**
+When instructed to give all `context` files, it imply path of files in `./agts/wkf.xxx/` finishing by `.context.md`
 
-All tasks and sub-tasks related to the projects ( planning, implementation, review, research, etc.. ).
+**Note:** Instruct sub-agents on this convention.
 
-Carefully maintain this file by doing the following, but not only:
+## Workflow Syntax
 
-- Remove tasks that had been canceled / aborted
-- Tick ([x]) the tasks that had been implemented
-- Add the missing tasks during implementation planing
+Create a task for lvl 2 headers
+Create a task for lvl 3 headers, start with `sub: `
 
-Follow this structure:
+Headers are sequence to execute one by one by default.
 
-```tasks.md example
-# Tasks
+## Sequences Files
 
-## 1.0 Project Initialisation
+A sequence file is a part of the workflow saved into one file.
 
-- [x] 1.1 Initialise project folder
-  - [x] 1.1.1 Initialise npm
-  - [x] 1.1.2 ...
+Often separated to be executed based on decision taken inside the workflow.
 
-## 2.0 Create helper for XML parsing
+From the initial request file
 
-- [ ] 2.1 Create file helpers/xmlParser.js
-- [ ] 2.2 Import and use helper in main routine
+```example
+- If user select option 1, execute now project.overview.seq.md
 ```
 
-#### ./dev/request.md
+This instruction request you to read `./seqs/doc.changes.seq.md` and to execute it as part of the workflow. Either execute now or instructed at a specific time/event.
 
-This is the latest request submited to claude-code.
+You run the sequence yourself and it may instructs you to run sub-agents, etc.. The sequence is similar to your request structure with level 2 and 3 headers.
 
-#### ./dev/agents.md
+Once done you continue where you left in the main workflow.
 
-YOU SHOULD ALWAYS READ THIS FILE WHEN EXIST.
+After each sequence, you output a summary of task done and remaining.
 
-This file provide specifics instructions for CLAUDE-CODE. In case it would conflicts with instructions from CLAUDE.md, this file is always higher priority and source of truth.
+Then you compact your context window, refocus the context into the main workflow (use tool or whatever method to do it).
 
-### File description in ./dev/plans
+## When to use Sequence
 
-Store the latest implementation plan to be used for implementing.
+The following trigger request you to immediately read and execute the sequence file.
 
-When starting a new iterations, a hook will first move old plans to ./dev/plans/archives.
+- Edit content in `./docs`: `./seqs/doc.changes.seq.md`
 
-#### Plan file name convention
-
-plan_YYMMDD_X.X_feature.md: prefix plan_, the date, the task number, a task identifier.
-Example: plan_251114_1.2.2_xmlParser.md
-
-#### ./dev/archived-plans
-
-All archived plans. This folder is forbidden or you to read.
-
-#### ./dev/archived-requests
-
-All archived requests. This folder is forbidden or you to read.
-
-## Constraint
-
-- NEVER attempt to lint the code or plan for it because I use a command to auto lint.
