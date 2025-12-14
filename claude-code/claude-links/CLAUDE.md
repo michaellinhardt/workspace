@@ -16,7 +16,8 @@
 ## Agent Files
 
 **Workflow Folder Creation:**
-If `./agts` exists, create: `mkdir "./agts/wkf.$(date +%s)/"`
+If `./agts` doesn't exists, create the folder
+Create: `mkdir "./agts/wkf.$(date +%s)/"`
 
 **Usage:** You and sub-agents save non-project files (memory, workflow state, reports, plans) in this folder. Provide exact path to all agents.
 
@@ -109,6 +110,7 @@ To do before starting the sequence
     - Add a `sequence.context.md` file
         - Operate similar to `workflow.context.md`
         - Scope limited to the sequence
+            - Add context information from workflow when relevant to the sequence, when it help to understand the sequence for the sub-agent inside it.
         - The file describe what we aim to do, the request
 
 ### During Sequence
@@ -118,3 +120,7 @@ To do before starting the sequence
 ### Closing Sequence
 
 - Cloture the file `sequence.context.md` with closure report for the sequence
+
+## Remember
+
+When you start, you create `./agts` if not existing and you record your workflow, always! Before any instruction, read the request, initiate the workflow files (use request context), then execute the request.
