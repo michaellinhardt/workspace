@@ -7,5 +7,7 @@ checkpoint () {
 	cd -
 	cd ~/workspace
     gad -A && gco "checkpoint" && gpu
+	cd ~/dev/sopai
+    gad -A && gco "checkpoint" && gpu
     cd -
 }
