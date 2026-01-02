@@ -5,7 +5,7 @@ zen_on() {
              --set '/space\..*/' drawing=off \
              --set aerospace.mode drawing=off \
              --set '/front_app\..*/' drawing=off \
-             --set '/battery\..*/' drawing=off \
+             --set battery drawing=off \
              --set cpu drawing=off
 }
 
@@ -14,7 +14,7 @@ zen_off() {
              --set '/space\..*/' drawing=on \
              --set aerospace.mode drawing=on \
              --set '/front_app\..*/' drawing=on \
-             --set '/battery\..*/' drawing=on \
+             --set battery drawing=on \
              --set cpu drawing=on
 }
 

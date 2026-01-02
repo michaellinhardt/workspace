@@ -24,5 +24,4 @@ if [[ "$CHARGING" != "" ]]; then
   COLOR=$GREEN
 fi
 
-sketchybar --set battery.icon icon=$ICON icon.color=$COLOR \
-           --set $NAME label="${PERCENTAGE}%"
+sketchybar --set $NAME icon=$ICON icon.color=$COLOR label="${PERCENTAGE}%"
