@@ -52,5 +52,9 @@ export CALENDAR=󰃭
 export WIFI_CONNECTED=󰖩
 export WIFI_DISCONNECTED=󰖪
 
+# Ethernet Icons
+export ETHERNET_CONNECTED=󰈀
+export ETHERNET_DISCONNECTED=󰈂
+
 # Settings Icons
 export SETTINGS=󰒓
