@@ -53,7 +53,7 @@ automatically-unhide-macos-hidden-apps = true
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5"]
+persistent-workspaces = ["1", "2", "3", "4", "5", "6"]
 
 # Assign workspaces to specific monitors
 # Workspaces 1, 2, 3 -> Main monitor
@@ -62,8 +62,9 @@ persistent-workspaces = ["1", "2", "3", "4", "5"]
     1 = 'main'
     2 = 'main'
     3 = 'main'
-    4 = 'secondary'
+    4 = 'main'
     5 = 'secondary'
+    6 = 'secondary'
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -88,7 +89,8 @@ on-mode-changed = []
     inner.vertical =   10
     outer.left =       10
     outer.bottom =     10
-    outer.top =        10
+    # Per-monitor top gap: main=40 (for SketchyBar), secondary=10
+    outer.top =        [{ monitor.main = 40 }, { monitor.secondary = 10 }, 40]
     outer.right =      10
 
 # 'main' binding mode declaration
@@ -175,6 +177,14 @@ on-mode-changed = []
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
+
+    # App launchers (cmd + number) - opens app and moves to workspace
+    cmd-1 = ['exec-and-forget open -a "Brave Browser"', 'workspace 1']
+    cmd-2 = ['exec-and-forget open -a iTerm', 'workspace 2']
+    cmd-3 = ['exec-and-forget open -a "Visual Studio Code"', 'workspace 3']
+    cmd-4 = ['exec-and-forget open -a Obsidian', 'workspace 4']
+    cmd-5 = ['exec-and-forget open -a "Claude"', 'workspace 5']
+    cmd-backtick = ['exec-and-forget open -a Finder', 'workspace 5']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
