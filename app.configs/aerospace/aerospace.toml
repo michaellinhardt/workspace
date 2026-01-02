@@ -13,7 +13,7 @@ config-version = 2
 # Launch JankyBorders with Tokyo Night theme
 after-startup-command = [
     'exec-and-forget sketchybar',
-    'exec-and-forget borders active_color=0xffc0caf5 inactive_color=0xff414868 width=4.0 style=round hidpi=on'
+    'exec-and-forget borders active_color=0xffa6da95 inactive_color=0xff414868 width=3.0 style=round hidpi=on'
 ]
 
 # Notify Sketchybar about workspace change
@@ -94,7 +94,7 @@ on-mode-changed = []
     outer.left =       10
     outer.bottom =     10
     # Per-monitor top gap: main=40 (for SketchyBar), secondary=10
-    outer.top =        [{ monitor.main = 60 }, { monitor.secondary = 30 }, 40]
+    outer.top =        [{ monitor.main = 45 }, { monitor.secondary = 15 }, 10]
     outer.right =      10
 
 # 'main' binding mode declaration

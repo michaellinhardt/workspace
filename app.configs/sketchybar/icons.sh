@@ -44,3 +44,13 @@ export VOLUME_66=󰖀
 export VOLUME_33=󰕿
 export VOLUME_10=󰖁
 export VOLUME_0=󰝟
+
+# Calendar Icons
+export CALENDAR=󰃭
+
+# Wifi Icons
+export WIFI_CONNECTED=󰖩
+export WIFI_DISCONNECTED=󰖪
+
+# Settings Icons
+export SETTINGS=󰒓

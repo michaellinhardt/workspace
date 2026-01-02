@@ -11,7 +11,7 @@ PADDINGS=3
 
 # Setting up the general bar appearance
 bar=(
-  height=39
+  height=29
   color=$BAR_COLOR
   shadow=on
   position=top
@@ -19,7 +19,7 @@ bar=(
   padding_left=10
   padding_right=10
   corner_radius=9
-  y_offset=10
+  y_offset=5
   margin=10
   blur_radius=20
   notch_width=0
@@ -57,7 +57,10 @@ source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/front_app.sh"
 
 # Right Side Items (order matters, right-most first)
+source "$ITEM_DIR/settings.sh"
 source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/cpu.sh"
 
