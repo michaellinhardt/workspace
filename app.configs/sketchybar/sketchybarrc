@@ -60,10 +60,11 @@ source "$ITEM_DIR/front_app.sh"
 source "$ITEM_DIR/settings.sh"
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/vpn.sh"
 source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/ethernet.sh"
-source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/cpu.sh"
 
 # Forcing all item scripts to run (never do this in production)
 sketchybar --update

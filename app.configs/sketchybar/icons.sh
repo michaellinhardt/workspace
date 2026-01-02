@@ -56,5 +56,9 @@ export WIFI_DISCONNECTED=󰖪
 export ETHERNET_CONNECTED=󰈀
 export ETHERNET_DISCONNECTED=󰈂
 
+# VPN Icons
+export VPN_CONNECTED=󰦝
+export VPN_DISCONNECTED=󰦞
+
 # Settings Icons
 export SETTINGS=󰒓
