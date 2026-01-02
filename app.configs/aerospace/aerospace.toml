@@ -94,7 +94,7 @@ on-mode-changed = []
     outer.left =       10
     outer.bottom =     10
     # Per-monitor top gap: main=40 (for SketchyBar), secondary=10
-    outer.top =        [{ monitor.main = 45 }, { monitor.secondary = 15 }, 10]
+    outer.top =        [{ monitor.main = 42 }, { monitor.secondary = 10 }, 10]
     outer.right =      10
 
 # 'main' binding mode declaration
