@@ -1,25 +1,15 @@
 # Request
 
-## Documentation
+In `./app.configs` is located my config for aerospace, jankyborder and sketchybar. Its already linked to my ~/ folder.
 
-3 Sub-Agent
+## Implement Settings
 
-- Go search documentation for [ AeroSpace, SketchyBar, JankyBorder ]
-- Write Report about main features, what it can do, how, official doc links etc.. ( related to AeroSpace integrations ) in `[app].doc.md`
+Go to this post `https://github.com/FelixKratz/SketchyBar/discussions/47?sort=top#discussioncomment-4119308`
 
-## Prepare ui.settings.md
+I want you to implement its exact config !
 
-Sub-Agent to read all `doc` file and take the screenshot `aerospace.png` showing an interfaces made by an user online.
+You start by split the implementation in task, create the tasks
 
-Sub agent write `ui.settings.md`,
-- A list of all feature/settings identifiable on this screenshot
-- For each feature/settings, how to reproduce it
-- A list of all color code and appearance elements identifiable and how to implement it
+Then you start to edit/install whatever needed to have the exact same setup.
 
-## AI Review Settings
-
-task a sub-agent to read `ui.settings.md` and for each settings mentioned, verify online documentaiton to be sure it is properly documented and correct, if not fix it
-
-## Apply Settings
-
-Task a sub agent to apply the settings requested, provide it necessary files
+All config file should remain in the 3 folder of app.configs, if you have to install something else, ensure its located in the appropriate folder and linked.

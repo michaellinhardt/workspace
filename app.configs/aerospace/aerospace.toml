@@ -10,7 +10,11 @@ config-version = 2
 # Run Sketchybar together with AeroSpace
 # sketchybar has built-in detection of already running process,
 # so it won't be run twice on AeroSpace restart
-after-startup-command = ['exec-and-forget sketchybar']
+# Launch JankyBorders with Tokyo Night theme
+after-startup-command = [
+    'exec-and-forget sketchybar',
+    'exec-and-forget borders active_color=0xffc0caf5 inactive_color=0xff414868 width=4.0 style=round hidpi=on'
+]
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = ['/bin/bash', '-c',
@@ -90,7 +94,7 @@ on-mode-changed = []
     outer.left =       10
     outer.bottom =     10
     # Per-monitor top gap: main=40 (for SketchyBar), secondary=10
-    outer.top =        [{ monitor.main = 40 }, { monitor.secondary = 10 }, 40]
+    outer.top =        [{ monitor.main = 60 }, { monitor.secondary = 30 }, 40]
     outer.right =      10
 
 # 'main' binding mode declaration
