@@ -63,5 +63,9 @@ export VPN_DISCONNECTED=󰦞
 # RAM Icon
 export RAM=󰘚
 
+# Headset Icons
+export HEADSET_CONNECTED=󰋋
+export HEADSET_DISCONNECTED=󰟎
+
 # Settings Icons
 export SETTINGS=󰒓
