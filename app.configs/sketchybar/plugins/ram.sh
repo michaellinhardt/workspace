@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$HOME/.config/sketchybar/colors.sh"
+
 # Get memory usage using vm_stat
 PAGESIZE=$(pagesize)
 VM_STAT=$(vm_stat)
@@ -16,10 +18,24 @@ PAGES_COMPRESSED=$(echo "$VM_STAT" | grep "Pages occupied by compressor" | awk '
 USED=$((PAGES_ACTIVE + PAGES_WIRED + PAGES_COMPRESSED))
 TOTAL=$((USED + PAGES_FREE + PAGES_INACTIVE + PAGES_SPECULATIVE))
 
-# Calculate percentage
+# Calculate percentage and set color
 if [ "$TOTAL" -gt 0 ]; then
   PERCENT=$((USED * 100 / TOTAL))
-  sketchybar --set $NAME label="${PERCENT}%"
+
+  # Color by range: green -> yellow -> orange -> red
+  if [ "$PERCENT" -lt 20 ]; then
+    COLOR=$GREEN
+  elif [ "$PERCENT" -lt 40 ]; then
+    COLOR=$GREEN
+  elif [ "$PERCENT" -lt 60 ]; then
+    COLOR=$YELLOW
+  elif [ "$PERCENT" -lt 80 ]; then
+    COLOR=$ORANGE
+  else
+    COLOR=$RED
+  fi
+
+  sketchybar --set $NAME label="${PERCENT}%" icon.color=$COLOR
 else
-  sketchybar --set $NAME label="0%"
+  sketchybar --set $NAME label="0%" icon.color=$GREEN
 fi
