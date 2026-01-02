@@ -45,7 +45,17 @@ automatically-unhide-macos-hidden-apps = true
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "10", "11"]
+persistent-workspaces = ["1", "2", "3", "4", "5"]
+
+# Assign workspaces to specific monitors
+# Workspaces 1, 2, 3 -> Main monitor
+# Workspaces 4, 5 -> Secondary monitor
+[workspace-to-monitor-force-assignment]
+    1 = 'main'
+    2 = 'main'
+    3 = 'main'
+    4 = 'secondary'
+    5 = 'secondary'
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -130,8 +140,8 @@ on-mode-changed = []
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
-    alt-4 = 'workspace 10'
-    alt-5 = 'workspace 11'
+    alt-4 = 'workspace 4'
+    alt-5 = 'workspace 5'
     # alt-6 = 'workspace 6'
     # alt-7 = 'workspace 7'
     # alt-8 = 'workspace 8'
