@@ -69,3 +69,7 @@ export HEADSET_DISCONNECTED=󰟎
 
 # Settings Icons
 export SETTINGS=󰒓
+
+# Network Speed Icons
+export NETWORK_UP=󰁝
+export NETWORK_DOWN=󰁅
