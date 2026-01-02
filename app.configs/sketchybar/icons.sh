@@ -60,5 +60,8 @@ export ETHERNET_DISCONNECTED=󰈂
 export VPN_CONNECTED=󰦝
 export VPN_DISCONNECTED=󰦞
 
+# RAM Icon
+export RAM=󰘚
+
 # Settings Icons
 export SETTINGS=󰒓
