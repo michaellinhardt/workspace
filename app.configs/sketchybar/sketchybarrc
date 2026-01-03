@@ -6,8 +6,8 @@ source "$HOME/.config/sketchybar/icons.sh"
 ITEM_DIR="$HOME/.config/sketchybar/items"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-# CriticalElement style font - use Liga SFMono Nerd Font or fallback
-FONT="Liga SFMono Nerd Font"
+# Font from neutonfoo/dotfiles
+FONT="JetBrainsMono Nerd Font"
 
 # Setting up the general bar appearance - CriticalElement floating style
 bar=(
@@ -29,20 +29,20 @@ sketchybar --bar "${bar[@]}"
 # Setting up default values - CriticalElement pill style
 defaults=(
   updates=when_shown
-  icon.font="$FONT:Normal:14.0"
-  icon.color=$ICON_COLOR
+  icon.font="$FONT:Bold:22.0"
+  icon.color=0xffcf6679
   icon.padding_left=12
   icon.padding_right=4
-  label.font="$FONT:Normal:14.0"
+  label.font="$FONT:Bold:14.0"
   label.color=$LABEL_COLOR
   label.padding_left=4
   label.padding_right=12
   background.color=$DARK_BG
   background.height=30
-  background.corner_radius=15
+  background.corner_radius=10
   background.drawing=on
   background.border_width=3
-  background.padding_left=18
+  background.padding_left=8
   blur_radius=2
   y_offset=0
   popup.background.border_width=2
@@ -60,7 +60,7 @@ source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/front_app.sh"
 
 # Right Side Items (order matters, right-most first)
-source "$ITEM_DIR/settings.sh"
+# source "$ITEM_DIR/settings.sh"
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/headset.sh"

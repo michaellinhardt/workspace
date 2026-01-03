@@ -7,10 +7,10 @@ WIFI_STATUS=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Cu
 
 if echo "$WIFI_STATUS" | grep -q "AirPort: Off"; then
   ICON=$WIFI_DISCONNECTED
-  COLOR=$RED
+  COLOR=$GREY
 elif echo "$WIFI_STATUS" | grep -q " SSID:"; then
   ICON=$WIFI_CONNECTED
-  COLOR=$BLUE
+  COLOR=$PINK
 else
   ICON=$WIFI_DISCONNECTED
   COLOR=$GREY

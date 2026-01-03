@@ -18,24 +18,10 @@ PAGES_COMPRESSED=$(echo "$VM_STAT" | grep "Pages occupied by compressor" | awk '
 USED=$((PAGES_ACTIVE + PAGES_WIRED + PAGES_COMPRESSED))
 TOTAL=$((USED + PAGES_FREE + PAGES_INACTIVE + PAGES_SPECULATIVE))
 
-# Calculate percentage and set color
+# Calculate percentage
 if [ "$TOTAL" -gt 0 ]; then
   PERCENT=$((USED * 100 / TOTAL))
-
-  # Color by range: green -> yellow -> orange -> red
-  if [ "$PERCENT" -lt 20 ]; then
-    COLOR=$GREEN
-  elif [ "$PERCENT" -lt 40 ]; then
-    COLOR=$GREEN
-  elif [ "$PERCENT" -lt 60 ]; then
-    COLOR=$YELLOW
-  elif [ "$PERCENT" -lt 80 ]; then
-    COLOR=$ORANGE
-  else
-    COLOR=$RED
-  fi
-
-  sketchybar --set $NAME label="${PERCENT}%" icon.color=$COLOR
+  sketchybar --set $NAME label="${PERCENT}%" icon.color=$PINK
 else
-  sketchybar --set $NAME label="0%" icon.color=$GREEN
+  sketchybar --set $NAME label="0%" icon.color=$PINK
 fi

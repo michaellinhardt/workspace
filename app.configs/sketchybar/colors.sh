@@ -9,7 +9,7 @@ export BLUE=0xFF1E6E77
 export YELLOW=0xffeed49f
 export ORANGE=0xFFCC7B6E
 export MAGENTA=0xffc6a0f6
-export PINK=0xFFD7448A
+export PINK=0xffcf6679
 export GREY=0xff939ab7
 export TRANSPARENT=0x00000000
 

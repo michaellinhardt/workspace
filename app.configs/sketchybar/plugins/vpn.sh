@@ -18,10 +18,10 @@ fi
 
 if [ -n "$VPN_STATUS" ]; then
   ICON=$VPN_CONNECTED
-  COLOR=$GREEN
+  COLOR=$PINK
 else
   ICON=$VPN_DISCONNECTED
-  COLOR=$RED
+  COLOR=$GREY
 fi
 
 sketchybar --set $NAME icon=$ICON icon.color=$COLOR

@@ -9,7 +9,7 @@ HEADSET_STATUS=$(system_profiler SPBluetoothDataType 2>/dev/null | awk '/Connect
 
 if [ -n "$HEADSET_STATUS" ]; then
   ICON=$HEADSET_CONNECTED
-  COLOR=$MAGENTA
+  COLOR=$PINK
 else
   ICON=$HEADSET_DISCONNECTED
   COLOR=$GREY

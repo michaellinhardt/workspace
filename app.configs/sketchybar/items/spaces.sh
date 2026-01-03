@@ -17,23 +17,23 @@ do
 
   space=(
     icon=${SPACE_ICONS[i]}
-    icon.font="$FONT:Bold:13.0"
-    icon.color=$WHITE
+    icon.font="$FONT:Bold:14.0"
+    icon.color=$PINK
     icon.highlight_color=$WHITE
     icon.align=left
-    icon.padding_left=8
-    icon.padding_right=2
+    icon.padding_left=10
+    icon.padding_right=0
     padding_left=2
     padding_right=2
-    label.font="$FONT:Normal:11.0"
-    label.color=$WHITE
-    label.padding_left=0
-    label.padding_right=6
+    label.font="$FONT:Medium:13.0"
+    label.color=0xaaffffff
+    label.padding_left=6
+    label.padding_right=12
     label.drawing=on
     label=""
     background.color=$TRANSPARENT
-    background.height=24
-    background.corner_radius=12
+    background.height=26
+    background.corner_radius=10
     background.drawing=on
     click_script="aerospace workspace $sid"
     script="$PLUGIN_DIR/aerospace.sh $sid"
@@ -59,11 +59,11 @@ done
 # Bracket for space numbers - CriticalElement pink border pill
 spaces_bracket=(
   background.color=$DARK_BG
-  background.corner_radius=15
+  background.corner_radius=10
   background.border_width=1
   background.border_color=$PINK
   blur_radius=2
-  background.height=30
+  background.height=32
   background.drawing=on
 )
 

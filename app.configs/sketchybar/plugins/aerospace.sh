@@ -79,28 +79,43 @@ if [ -n "$APP_LIST" ]; then
     done <<< "$APP_LIST"
 fi
 
-# Determine highlight color based on monitor
+# Determine highlight color based on monitor - dark red theme
 if [ "$IS_FOCUSED" = true ]; then
-    # Main monitor (focused) - PINK
-    BG_COLOR=$PINK
+    # Main monitor (focused) - rich burgundy highlight
+    BG_COLOR="0xffa33a55"
 elif [ "$IS_VISIBLE" = true ]; then
-    # Secondary/tertiary monitors
+    # Secondary/tertiary monitors - slightly darker
     if [ "$MONITOR_INDEX" -eq 2 ]; then
-        # Second monitor - GREEN
-        BG_COLOR=$GREEN
+        BG_COLOR="0xff8a3048"
     elif [ "$MONITOR_INDEX" -ge 3 ]; then
-        # Third+ monitor - ORANGE
-        BG_COLOR=$ORANGE
+        BG_COLOR="0xff75283d"
     else
-        # Fallback for first non-focused visible (shouldn't happen often)
-        BG_COLOR=$GREEN
+        BG_COLOR="0xff8a3048"
     fi
 else
     # Not visible - transparent
     BG_COLOR=$TRANSPARENT
 fi
 
+# Determine icon color and padding
+# Active: dark color for contrast on colored bg
+# Inactive: muted red/pink
+if [ "$IS_VISIBLE" = true ]; then
+    ICON_COLOR="0xff1a1a2e"
+else
+    ICON_COLOR="0xffcf6679"
+fi
+
+# Add extra padding after number when apps are present
+if [ -n "$APPS" ]; then
+    ICON_PADDING=8
+else
+    ICON_PADDING=0
+fi
+
 # Update the workspace item
 sketchybar --set space.$WORKSPACE_ID \
     background.color=$BG_COLOR \
+    icon.color=$ICON_COLOR \
+    icon.padding_right=$ICON_PADDING \
     label="$APPS"
