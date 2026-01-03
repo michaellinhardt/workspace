@@ -97,13 +97,15 @@ else
     BG_COLOR=$TRANSPARENT
 fi
 
-# Determine icon color and padding
+# Determine icon and label colors
 # Active: dark color for contrast on colored bg
-# Inactive: muted red/pink
+# Inactive: muted red/pink for icon, semi-transparent white for label
 if [ "$IS_VISIBLE" = true ]; then
     ICON_COLOR="0xff1a1a2e"
+    LABEL_COLOR="0xff1a1a2e"
 else
     ICON_COLOR="0xffcf6679"
+    LABEL_COLOR="0xaaffffff"
 fi
 
 # Add extra padding after number when apps are present
@@ -118,4 +120,5 @@ sketchybar --set space.$WORKSPACE_ID \
     background.color=$BG_COLOR \
     icon.color=$ICON_COLOR \
     icon.padding_right=$ICON_PADDING \
-    label="$APPS"
+    label="$APPS" \
+    label.color=$LABEL_COLOR
