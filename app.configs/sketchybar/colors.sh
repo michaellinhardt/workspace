@@ -1,25 +1,28 @@
 #!/bin/bash
 
-# Color Palette (Catppuccin Macchiato)
+# Color Palette (CriticalElement Dotfiles)
 export BLACK=0xff181926
-export WHITE=0xffcad3f5
-export RED=0xffed8796
-export GREEN=0xffa6da95
-export BLUE=0xff8aadf4
+export WHITE=0xFFFFFFFF
+export RED=0xFFCE3A5B
+export GREEN=0xFF638989
+export BLUE=0xFF1E6E77
 export YELLOW=0xffeed49f
-export ORANGE=0xfff5a97f
+export ORANGE=0xFFCC7B6E
 export MAGENTA=0xffc6a0f6
+export PINK=0xFFD7448A
 export GREY=0xff939ab7
 export TRANSPARENT=0x00000000
 
 # General bar colors
-export BAR_COLOR=0xff1e2030
+export BAR_COLOR=0x00000000  # Fully transparent for floating items effect
 export ICON_COLOR=$WHITE
 export LABEL_COLOR=$WHITE
-export BACKGROUND_1=0x603c3e4f
-export BACKGROUND_2=0x6049414d
+export BACKGROUND_1=0xEB1e1e2e
+export BACKGROUND_2=0xEB1e1e2e
+export WARM_GRAY=0xFFD3CDC5
+export DARK_BG=0xEB1e1e2e
 
-export POPUP_BACKGROUND_COLOR=0xff24273a
-export POPUP_BORDER_COLOR=$WHITE
+export POPUP_BACKGROUND_COLOR=0xEB1e1e2e
+export POPUP_BORDER_COLOR=$PINK
 
 export SHADOW_COLOR=$BLACK

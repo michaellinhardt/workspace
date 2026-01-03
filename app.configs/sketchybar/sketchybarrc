@@ -6,44 +6,47 @@ source "$HOME/.config/sketchybar/icons.sh"
 ITEM_DIR="$HOME/.config/sketchybar/items"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-FONT="SF Pro"
-PADDINGS=3
+# CriticalElement style font - use Liga SFMono Nerd Font or fallback
+FONT="Liga SFMono Nerd Font"
 
-# Setting up the general bar appearance
+# Setting up the general bar appearance - CriticalElement floating style
 bar=(
-  height=29
-  color=$BAR_COLOR
-  shadow=on
+  height=58
+  color=$TRANSPARENT
+  shadow=off
   position=top
   sticky=on
-  padding_left=10
-  padding_right=10
-  corner_radius=9
-  y_offset=5
-  margin=10
-  blur_radius=20
+  padding_left=0
+  padding_right=0
+  y_offset=-8
+  margin=6
+  blur_radius=0
   notch_width=0
 )
 
 sketchybar --bar "${bar[@]}"
 
-# Setting up default values
+# Setting up default values - CriticalElement pill style
 defaults=(
   updates=when_shown
-  icon.font="$FONT:Bold:14.0"
+  icon.font="$FONT:Normal:14.0"
   icon.color=$ICON_COLOR
-  icon.padding_left=$PADDINGS
-  icon.padding_right=$PADDINGS
-  label.font="$FONT:Semibold:13.0"
+  icon.padding_left=12
+  icon.padding_right=4
+  label.font="$FONT:Normal:14.0"
   label.color=$LABEL_COLOR
-  label.padding_left=$PADDINGS
-  label.padding_right=$PADDINGS
-  padding_right=$PADDINGS
-  padding_left=$PADDINGS
-  background.height=26
-  background.corner_radius=9
+  label.padding_left=4
+  label.padding_right=12
+  background.color=$DARK_BG
+  background.height=30
+  background.corner_radius=15
+  background.drawing=on
+  background.border_width=3
+  background.padding_left=18
+  blur_radius=2
+  y_offset=0
   popup.background.border_width=2
-  popup.background.corner_radius=9
+  popup.background.corner_radius=15
   popup.background.border_color=$POPUP_BORDER_COLOR
   popup.background.color=$POPUP_BACKGROUND_COLOR
   popup.background.shadow.drawing=on
@@ -52,7 +55,7 @@ defaults=(
 sketchybar --default "${defaults[@]}"
 
 # Left Side Items
-source "$ITEM_DIR/apple.sh"
+# source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/front_app.sh"
 

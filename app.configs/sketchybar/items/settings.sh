@@ -1,12 +1,21 @@
 #!/bin/bash
 
+# CriticalElement style settings - grey accent
 settings=(
   icon=$SETTINGS
-  icon.font="$FONT:Bold:16.0"
+  icon.font="$FONT:Normal:16.0"
   icon.color=$GREY
+  icon.padding_left=12
+  icon.padding_right=12
   label.drawing=off
-  padding_left=8
-  padding_right=8
+  background.color=$DARK_BG
+  background.height=30
+  background.corner_radius=15
+  background.border_width=1
+  background.border_color=$GREY
+  background.padding_left=6
+  background.padding_right=0
+  blur_radius=2
   click_script="open -a 'System Settings'"
 )
 
