@@ -67,6 +67,7 @@
     "claudeCode.allowDangerouslySkipPermissions": true,
     "claudeCode.initialPermissionMode": "bypassPermissions",
     "markdown.preview.linkify": false,
+    "markdown.preview.fontSize": 24,
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.folders.color": "#42a5f5",
     "workbench.settings.applyToAllProfiles": [],
