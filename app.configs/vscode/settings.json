@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 16,
+    "editor.fontSize": 24,
     "workbench.startupEditor": "none",
     "extensions.ignoreRecommendations": true,
     "[javascript]": {
@@ -93,7 +93,9 @@
     },
     "editor.minimap.enabled": false,
     "workbench.statusBar.visible": false,
-    "window.customTitleBarVisibility": "windowed",
     "claudeCode.preferredLocation": "sidebar",
-    "claudeCode.useTerminal": true
+    "claudeCode.useTerminal": true,
+    "workbench.activityBar.location": "hidden",
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never"
 }
