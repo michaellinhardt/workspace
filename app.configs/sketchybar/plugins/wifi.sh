@@ -3,12 +3,10 @@
 source "$HOME/.config/sketchybar/icons.sh"
 source "$HOME/.config/sketchybar/colors.sh"
 
-WIFI_STATUS=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I 2>/dev/null)
+# Check if Wi-Fi interface has an IP address (works on macOS 26+)
+WIFI_IP=$(ipconfig getifaddr en0 2>/dev/null)
 
-if echo "$WIFI_STATUS" | grep -q "AirPort: Off"; then
-  ICON=$WIFI_DISCONNECTED
-  COLOR=$GREY
-elif echo "$WIFI_STATUS" | grep -q " SSID:"; then
+if [ -n "$WIFI_IP" ]; then
   ICON=$WIFI_CONNECTED
   COLOR=$PINK
 else

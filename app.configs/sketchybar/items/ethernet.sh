@@ -3,20 +3,16 @@
 # CriticalElement style ethernet - blue accent
 ethernet=(
   icon=$ETHERNET_CONNECTED
-  icon.font="$FONT:Normal:14.0"
+  icon.font="$FONT:Normal:16.0"
   icon.color=$PINK
-  icon.padding_left=12
-  icon.padding_right=12
+  icon.padding_left=18
+  icon.padding_right=6
   label.drawing=off
-  background.color=$DARK_BG
-  background.height=30
-  background.corner_radius=10
-  background.border_width=1
-  background.border_color=$PINK
-  background.padding_left=8
-  blur_radius=2
+  background.drawing=off
+  padding_left=0
+  padding_right=0
   script="$PLUGIN_DIR/ethernet.sh"
-  update_freq=10
+  update_freq=3
 )
 
 sketchybar --add item ethernet right \
