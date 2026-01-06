@@ -63,6 +63,24 @@ source "$ITEM_DIR/front_app.sh"
 # source "$ITEM_DIR/settings.sh"
 source "$ITEM_DIR/calendar.sh"
 
+# Bracket for calendar group (time + date)
+calendar_bracket=(
+  background.color=$DARK_BG
+  background.corner_radius=10
+  background.border_width=1
+  background.border_color=$PINK
+  blur_radius=2
+  background.height=32
+  background.drawing=on
+  background.padding_left=10
+  background.padding_right=10
+)
+sketchybar --add bracket calendar_group time date \
+           --set calendar_group "${calendar_bracket[@]}"
+
+# Spacer between calendar and audio
+sketchybar --add item spacer0 right --set spacer0 width=10 background.drawing=off icon.drawing=off label.drawing=off
+
 # Audio group: volume + bluetooth headset
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/headset.sh"
