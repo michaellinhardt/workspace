@@ -93,10 +93,9 @@
         "MD034": false
     },
     "editor.minimap.enabled": false,
-    "workbench.statusBar.visible": false,
     "claudeCode.preferredLocation": "sidebar",
     "claudeCode.useTerminal": true,
-    "workbench.activityBar.location": "hidden",
     "window.titleBarStyle": "native",
-    "window.customTitleBarVisibility": "never"
+    "window.customTitleBarVisibility": "never",
+    "workbench.statusBar.visible": false
 }
