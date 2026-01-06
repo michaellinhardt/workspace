@@ -3,7 +3,7 @@
 # CriticalElement style wifi - blue accent
 wifi=(
   icon=$WIFI_CONNECTED
-  icon.font="$FONT:Normal:16.0"
+  icon.font="$FONT:Normal:18.0"
   icon.color=$PINK
   icon.padding_left=6
   icon.padding_right=6
@@ -12,7 +12,7 @@ wifi=(
   padding_left=0
   padding_right=0
   script="$PLUGIN_DIR/wifi.sh"
-  update_freq=3
+  update_freq=5
 )
 
 sketchybar --add item wifi right \

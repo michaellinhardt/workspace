@@ -5,11 +5,11 @@
 # Time item - blue accent (rightmost)
 time_item=(
   icon=󱑎
-  icon.font="$FONT:Normal:14.0"
+  icon.font="$FONT:Normal:16.0"
   icon.color=$PINK
   icon.padding_left=12
   icon.padding_right=4
-  label.font="$FONT:Normal:14.0"
+  label.font="$FONT:Bold:14.0"
   label.padding_left=4
   label.padding_right=12
   label="$(date '+%I:%M %p')"

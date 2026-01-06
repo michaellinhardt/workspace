@@ -3,7 +3,7 @@
 # CriticalElement style headset - grey accent when disconnected
 headset=(
   icon=$HEADSET_DISCONNECTED
-  icon.font="$FONT:Normal:16.0"
+  icon.font="$FONT:Normal:18.0"
   icon.color=$PINK
   icon.padding_left=16
   icon.padding_right=8
@@ -12,7 +12,7 @@ headset=(
   padding_left=0
   padding_right=0
   script="$PLUGIN_DIR/headset.sh"
-  update_freq=3
+  update_freq=5
 )
 
 sketchybar --add item headset right \

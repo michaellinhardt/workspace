@@ -17,7 +17,7 @@ do
 
   space=(
     icon=${SPACE_ICONS[i]}
-    icon.font="$FONT:Bold:14.0"
+    icon.font="$FONT:Bold:16.0"
     icon.color=$PINK
     icon.highlight_color=$WHITE
     icon.align=left
@@ -25,7 +25,7 @@ do
     icon.padding_right=0
     padding_left=2
     padding_right=2
-    label.font="$FONT:Medium:13.0"
+    label.font="$FONT:Bold:13.0"
     label.color=0xaaffffff
     label.padding_left=6
     label.padding_right=12

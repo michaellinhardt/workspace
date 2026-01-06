@@ -3,11 +3,11 @@
 # CriticalElement style volume - yellow accent
 volume=(
   icon=$VOLUME_100
-  icon.font="$FONT:Normal:16.0"
+  icon.font="$FONT:Normal:18.0"
   icon.color=$PINK
   icon.padding_left=8
   icon.padding_right=2
-  label.font="$FONT:Normal:14.0"
+  label.font="$FONT:Bold:14.0"
   label.color=$PINK
   label.padding_left=2
   label.padding_right=16
@@ -15,7 +15,7 @@ volume=(
   padding_left=0
   padding_right=0
   script="$PLUGIN_DIR/volume.sh"
-  update_freq=3
+  update_freq=5
 )
 
 sketchybar --add item volume right \
