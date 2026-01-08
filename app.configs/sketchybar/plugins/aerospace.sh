@@ -98,14 +98,18 @@ else
 fi
 
 # Determine icon and label colors
-# Active: dark color for contrast on colored bg
-# Inactive: muted red/pink for icon, semi-transparent white for label
-if [ "$IS_VISIBLE" = true ]; then
+# Focused: slightly reddish white for the active app visibility
+# Visible (not focused): dark for contrast
+# Inactive: dark red for app names
+if [ "$IS_FOCUSED" = true ]; then
+    ICON_COLOR="0xff1a1a2e"
+    LABEL_COLOR="0xfffff0f3"  # Slightly reddish white
+elif [ "$IS_VISIBLE" = true ]; then
     ICON_COLOR="0xff1a1a2e"
     LABEL_COLOR="0xff1a1a2e"
 else
     ICON_COLOR="0xffcf6679"
-    LABEL_COLOR="0xaaffffff"
+    LABEL_COLOR="0xffb35060"  # Dark red (brighter)
 fi
 
 # Add extra padding after number when apps are present
