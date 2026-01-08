@@ -97,5 +97,6 @@
     "claudeCode.useTerminal": true,
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
-    "workbench.statusBar.visible": false
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.location": "hidden"
 }
