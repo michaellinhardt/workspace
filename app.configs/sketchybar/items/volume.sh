@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CriticalElement style volume - yellow accent
+# CriticalElement style volume - pink accent
 volume=(
   icon=$VOLUME_100
   icon.font="$FONT:Normal:18.0"

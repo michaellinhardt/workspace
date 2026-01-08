@@ -45,19 +45,20 @@ format_speed() {
 # Read current bytes
 read -r BYTES_IN BYTES_OUT <<< "$(get_bytes)"
 
-# Read previous bytes from cache
+# Read previous bytes from cache (use separate files per direction to avoid race condition)
+CACHE_FILE="$CACHE_DIR/prev_bytes_${NAME:-default}"
 PREV_IN=0
 PREV_OUT=0
-if [ -f "$CACHE_DIR/prev_bytes" ]; then
-  read -r PREV_IN PREV_OUT < "$CACHE_DIR/prev_bytes"
+if [ -f "$CACHE_FILE" ]; then
+  read -r PREV_IN PREV_OUT < "$CACHE_FILE"
 fi
 
 # Save current bytes to cache
-echo "$BYTES_IN $BYTES_OUT" > "$CACHE_DIR/prev_bytes"
+echo "$BYTES_IN $BYTES_OUT" > "$CACHE_FILE"
 
-# Calculate speed (bytes per second, update_freq is 2 seconds)
-SPEED_IN=$(( (BYTES_IN - PREV_IN) / 2 ))
-SPEED_OUT=$(( (BYTES_OUT - PREV_OUT) / 2 ))
+# Calculate speed (bytes per second, update_freq is 5 seconds)
+SPEED_IN=$(( (BYTES_IN - PREV_IN) / 5 ))
+SPEED_OUT=$(( (BYTES_OUT - PREV_OUT) / 5 ))
 
 # Handle negative values (interface change or overflow)
 [ "$SPEED_IN" -lt 0 ] && SPEED_IN=0

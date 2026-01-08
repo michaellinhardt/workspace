@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CriticalElement style ram - orange accent
+# CriticalElement style ram - pink accent
 ram=(
   icon=󰘚
   icon.font="$FONT:Normal:18.0"

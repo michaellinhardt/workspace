@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CriticalElement style cpu - magenta accent
+# CriticalElement style cpu - pink accent
 cpu=(
   icon=󰍛
   icon.font="$FONT:Normal:18.0"

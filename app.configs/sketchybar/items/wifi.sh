@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CriticalElement style wifi - blue accent
+# CriticalElement style wifi - pink accent
 wifi=(
   icon=$WIFI_CONNECTED
   icon.font="$FONT:Normal:18.0"

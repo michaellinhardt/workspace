@@ -60,8 +60,8 @@ automatically-unhide-macos-hidden-apps = true
 persistent-workspaces = ["1", "2", "3", "4", "5", "6"]
 
 # Assign workspaces to specific monitors
-# Workspaces 1, 2, 3 -> Main monitor
-# Workspaces 4, 5 -> Secondary monitor
+# Workspaces 1, 2, 3, 4 -> Main monitor
+# Workspaces 5, 6 -> Secondary monitor
 [workspace-to-monitor-force-assignment]
     1 = 'main'
     2 = 'main'

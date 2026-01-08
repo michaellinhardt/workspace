@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CriticalElement style network up - green accent
+# CriticalElement style network up - pink accent
 network_up=(
   icon=$NETWORK_UP
   icon.font="$FONT:Normal:18.0"

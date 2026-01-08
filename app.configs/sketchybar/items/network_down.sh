@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CriticalElement style network down - blue accent
+# CriticalElement style network down - pink accent
 network_down=(
   icon=$NETWORK_DOWN
   icon.font="$FONT:Normal:18.0"
