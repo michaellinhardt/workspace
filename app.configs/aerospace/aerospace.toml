@@ -163,15 +163,16 @@ on-mode-changed = []
     # alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace 1'
-    alt-shift-2 = 'move-node-to-workspace 2'
-    alt-shift-3 = 'move-node-to-workspace 3'
-    alt-shift-4 = 'move-node-to-workspace 4'
-    alt-shift-5 = 'move-node-to-workspace 5'
-    alt-shift-6 = 'move-node-to-workspace 6'
-    alt-shift-7 = 'move-node-to-workspace 7'
-    alt-shift-8 = 'move-node-to-workspace 8'
-    alt-shift-9 = 'move-node-to-workspace 9'
+    # Each move also triggers sketchybar update to refresh workspace app lists
+    alt-shift-1 = ['move-node-to-workspace 1', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    alt-shift-2 = ['move-node-to-workspace 2', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    alt-shift-3 = ['move-node-to-workspace 3', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    alt-shift-4 = ['move-node-to-workspace 4', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    alt-shift-5 = ['move-node-to-workspace 5', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    alt-shift-6 = ['move-node-to-workspace 6', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    alt-shift-7 = ['move-node-to-workspace 7', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    alt-shift-8 = ['move-node-to-workspace 8', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    alt-shift-9 = ['move-node-to-workspace 9', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
     # alt-shift-a = 'move-node-to-workspace A'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -182,13 +183,18 @@ on-mode-changed = []
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
 
-    # App launchers (cmd + number) - opens app and moves to workspace
-    cmd-1 = ['exec-and-forget open -a "Brave Browser"', 'workspace 1']
-    cmd-2 = ['exec-and-forget open -a iTerm', 'workspace 2']
-    cmd-3 = ['exec-and-forget open -a "Visual Studio Code"', 'workspace 3']
-    cmd-4 = ['exec-and-forget open -a Obsidian', 'workspace 4']
-    cmd-5 = ['exec-and-forget open -a "Claude"', 'workspace 5']
-    cmd-backtick = ['exec-and-forget open -a Finder', 'workspace 5']
+    # App launchers (cmd + number) - opens Dock app by position (0-indexed)
+    # Rearrange your Dock to change which app each shortcut opens
+    cmd-backtick = 'exec-and-forget open -a Finder'
+    cmd-1 = 'exec-and-forget ~/workspace/app.configs/aerospace/open-dock-app.sh 0'
+    cmd-2 = 'exec-and-forget ~/workspace/app.configs/aerospace/open-dock-app.sh 1'
+    cmd-3 = 'exec-and-forget ~/workspace/app.configs/aerospace/open-dock-app.sh 2'
+    cmd-4 = 'exec-and-forget ~/workspace/app.configs/aerospace/open-dock-app.sh 3'
+    cmd-5 = 'exec-and-forget ~/workspace/app.configs/aerospace/open-dock-app.sh 4'
+    cmd-6 = 'exec-and-forget ~/workspace/app.configs/aerospace/open-dock-app.sh 5'
+    cmd-7 = 'exec-and-forget ~/workspace/app.configs/aerospace/open-dock-app.sh 6'
+    cmd-8 = 'exec-and-forget ~/workspace/app.configs/aerospace/open-dock-app.sh 7'
+    cmd-9 = 'exec-and-forget ~/workspace/app.configs/aerospace/open-dock-app.sh 8'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
