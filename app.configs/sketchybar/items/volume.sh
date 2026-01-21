@@ -3,7 +3,7 @@
 # CriticalElement style volume - pink accent
 volume=(
   icon=$VOLUME_100
-  icon.font="$FONT:Normal:18.0"
+  icon.font="$FONT:Normal:15.0"
   icon.color=$PINK
   icon.padding_left=8
   icon.padding_right=2

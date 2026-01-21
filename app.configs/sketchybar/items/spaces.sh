@@ -5,7 +5,7 @@
 # - Active workspace on each monitor gets highlighted with distinct colors
 # - Main monitor: PINK, Secondary: GREEN, Third: ORANGE
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9")
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7")
 
 # Register aerospace workspace change event
 sketchybar --add event aerospace_workspace_change
@@ -17,7 +17,7 @@ do
 
   space=(
     icon=${SPACE_ICONS[i]}
-    icon.font="$FONT:Bold:16.0"
+    icon.font="$FONT:Bold:13.0"
     icon.color=$PINK
     icon.highlight_color=$WHITE
     icon.align=left
@@ -42,6 +42,12 @@ do
   sketchybar --add item space.$sid left    \
              --set space.$sid "${space[@]}" \
              --subscribe space.$sid aerospace_workspace_change mouse.clicked
+
+  # Add spacer after space.5 (between main and secondary workspaces)
+  if [ "$sid" -eq 5 ]; then
+    sketchybar --add item spaces_spacer left \
+               --set spaces_spacer width=5 background.drawing=off icon.drawing=off label.drawing=off
+  fi
 done
 
 # Add new space button - CriticalElement style (DISABLED)
@@ -56,8 +62,8 @@ done
 #                                 background.drawing=off      \
 #                                 label.drawing=off
 
-# Bracket for space numbers - CriticalElement pink border pill
-spaces_bracket=(
+# Bracket for main workspaces (1-5) - CriticalElement pink border pill
+spaces_main_bracket=(
   background.color=$DARK_BG
   background.corner_radius=10
   background.border_width=1
@@ -67,5 +73,19 @@ spaces_bracket=(
   background.drawing=on
 )
 
-sketchybar --add bracket spaces '/space\..*/' \
-           --set spaces "${spaces_bracket[@]}"
+sketchybar --add bracket spaces_main space.1 space.2 space.3 space.4 space.5 \
+           --set spaces_main "${spaces_main_bracket[@]}"
+
+# Bracket for secondary workspaces (6-7) - CriticalElement pink border pill
+spaces_secondary_bracket=(
+  background.color=$DARK_BG
+  background.corner_radius=10
+  background.border_width=1
+  background.border_color=$PINK
+  blur_radius=2
+  background.height=32
+  background.drawing=on
+)
+
+sketchybar --add bracket spaces_secondary space.6 space.7 \
+           --set spaces_secondary "${spaces_secondary_bracket[@]}"

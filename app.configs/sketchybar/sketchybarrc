@@ -18,7 +18,7 @@ bar=(
   sticky=on
   padding_left=0
   padding_right=0
-  y_offset=-8
+  y_offset=-6
   margin=6
   blur_radius=0
   notch_width=0
@@ -29,11 +29,11 @@ sketchybar --bar "${bar[@]}"
 # Setting up default values - CriticalElement pill style
 defaults=(
   updates=when_shown
-  icon.font="$FONT:Bold:22.0"
+  icon.font="$FONT:Bold:19.0"
   icon.color=0xffcf6679
   icon.padding_left=12
   icon.padding_right=4
-  label.font="$FONT:Bold:14.0"
+  label.font="$FONT:Bold:12.0"
   label.color=$LABEL_COLOR
   label.padding_left=4
   label.padding_right=12
@@ -44,7 +44,7 @@ defaults=(
   background.border_width=3
   background.padding_left=8
   blur_radius=2
-  y_offset=0
+  y_offset=2
   popup.background.border_width=2
   popup.background.corner_radius=15
   popup.background.border_color=$POPUP_BORDER_COLOR
@@ -78,14 +78,14 @@ sketchybar --add bracket calendar_group time date \
            --set calendar_group "${calendar_bracket[@]}"
 
 # Spacer between calendar and audio
-sketchybar --add item spacer0 right --set spacer0 width=10 background.drawing=off icon.drawing=off label.drawing=off
+sketchybar --add item spacer0 right --set spacer0 width=5 background.drawing=off icon.drawing=off label.drawing=off
 
 # Audio group: volume + bluetooth headset
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/headset.sh"
 
 # Spacer between audio and resources
-sketchybar --add item spacer1 right --set spacer1 width=10 background.drawing=off icon.drawing=off label.drawing=off
+sketchybar --add item spacer1 right --set spacer1 width=5 background.drawing=off icon.drawing=off label.drawing=off
 
 # System resources group: battery + cpu + ram
 source "$ITEM_DIR/ram.sh"
@@ -93,7 +93,7 @@ source "$ITEM_DIR/cpu.sh"
 source "$ITEM_DIR/battery.sh"
 
 # Spacer between resources and connectivity
-sketchybar --add item spacer2 right --set spacer2 width=10 background.drawing=off icon.drawing=off label.drawing=off
+sketchybar --add item spacer2 right --set spacer2 width=5 background.drawing=off icon.drawing=off label.drawing=off
 
 # Network connectivity group: ethernet + wifi + vpn
 source "$ITEM_DIR/vpn.sh"
@@ -101,7 +101,7 @@ source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/ethernet.sh"
 
 # Spacer between connectivity and traffic
-sketchybar --add item spacer3 right --set spacer3 width=10 background.drawing=off icon.drawing=off label.drawing=off
+sketchybar --add item spacer3 right --set spacer3 width=5 background.drawing=off icon.drawing=off label.drawing=off
 
 # Network traffic group: up + down
 source "$ITEM_DIR/network_down.sh"

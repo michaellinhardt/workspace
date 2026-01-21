@@ -3,7 +3,7 @@
 # CriticalElement style vpn - grey accent when disconnected
 vpn=(
   icon=$VPN_DISCONNECTED
-  icon.font="$FONT:Normal:18.0"
+  icon.font="$FONT:Normal:15.0"
   icon.color=$PINK
   icon.padding_left=6
   icon.padding_right=18

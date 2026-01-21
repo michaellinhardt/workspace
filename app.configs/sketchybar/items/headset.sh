@@ -3,7 +3,7 @@
 # CriticalElement style headset - grey accent when disconnected
 headset=(
   icon=$HEADSET_DISCONNECTED
-  icon.font="$FONT:Normal:18.0"
+  icon.font="$FONT:Normal:15.0"
   icon.color=$PINK
   icon.padding_left=16
   icon.padding_right=8

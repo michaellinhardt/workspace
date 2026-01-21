@@ -3,7 +3,7 @@
 # CriticalElement style network up - pink accent
 network_up=(
   icon=$NETWORK_UP
-  icon.font="$FONT:Normal:18.0"
+  icon.font="$FONT:Normal:15.0"
   icon.color=$PINK
   icon.padding_left=16
   icon.padding_right=2

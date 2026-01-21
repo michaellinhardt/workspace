@@ -3,7 +3,7 @@
 # CriticalElement style battery - red accent
 battery=(
   icon=$BATTERY_100
-  icon.font="$FONT:Normal:18.0"
+  icon.font="$FONT:Normal:15.0"
   icon.color=$PINK
   icon.padding_left=18
   icon.padding_right=2

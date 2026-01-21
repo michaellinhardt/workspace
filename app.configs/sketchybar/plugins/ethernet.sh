@@ -3,18 +3,19 @@
 source "$HOME/.config/sketchybar/icons.sh"
 source "$HOME/.config/sketchybar/colors.sh"
 
-# Check ethernet status by looking for active en0 (usually ethernet) or Thunderbolt interfaces
-ETHERNET_STATUS=$(ifconfig en0 2>/dev/null | grep "status: active")
+# Get actual ethernet interfaces (exclude Wi-Fi which is usually en0)
+# Use networksetup to find real ethernet adapters
+ETHERNET_STATUS=""
 
-# Also check for Thunderbolt ethernet adapters (en1-en9)
-if [ -z "$ETHERNET_STATUS" ]; then
-  for i in 1 2 3 4 5 6 7 8 9; do
-    ETHERNET_STATUS=$(ifconfig en$i 2>/dev/null | grep "status: active")
-    if [ -n "$ETHERNET_STATUS" ]; then
+while IFS= read -r line; do
+  if [[ "$line" =~ ^Device:\ (en[0-9]+)$ ]]; then
+    IFACE="${BASH_REMATCH[1]}"
+    if ifconfig "$IFACE" 2>/dev/null | grep -q "status: active"; then
+      ETHERNET_STATUS="active"
       break
     fi
-  done
-fi
+  fi
+done < <(networksetup -listallhardwareports | grep -A1 "Ethernet Adapter\|Thunderbolt Ethernet")
 
 if [ -n "$ETHERNET_STATUS" ]; then
   ICON=$ETHERNET_CONNECTED

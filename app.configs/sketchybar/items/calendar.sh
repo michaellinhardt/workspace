@@ -5,15 +5,15 @@
 # Time item - rightmost in group
 time_item=(
   icon=󱑎
-  icon.font="$FONT:Normal:16.0"
+  icon.font="$FONT:Normal:13.0"
   icon.color=$PINK
   icon.padding_left=4
   icon.padding_right=4
   label.font="$FONT:Bold:14.0"
-  label.color=0xfffff0f3
+  label.color=$PINK
   label.padding_left=4
   label.padding_right=10
-  label="$(date '+%I:%M %p')"
+  label="$(date '+%H:%M')"
   background.drawing=off
   update_freq=1
   script="$PLUGIN_DIR/time.sh"
@@ -22,18 +22,18 @@ time_item=(
 sketchybar --add item time right       \
            --set time "${time_item[@]}"
 
-# Date item - calendar icon with day format 'Tue 13 Jan'
+# Date item - calendar icon with day format 'Wed 21'
 date_item=(
   icon=$CALENDAR
-  icon.font="$FONT:Normal:14.0"
+  icon.font="$FONT:Normal:11.0"
   icon.color=$PINK
   icon.padding_left=10
   icon.padding_right=4
   label.font="$FONT:Normal:14.0"
-  label.color=0xfffff0f3
+  label.color=$PINK
   label.padding_left=4
   label.padding_right=4
-  label="$(date '+%a %d %b')"
+  label="$(date '+%a %d')"
   background.drawing=off
   update_freq=60
   script="$PLUGIN_DIR/date.sh"
