@@ -3,8 +3,11 @@
 ## File List
 
 - ./app.configs/aerospace/aerospace.toml
+- ./app.configs/aerospace/apply-display-profile.sh
+- ./app.configs/aerospace/com.aerospace.display-profile.plist
 - ./app.configs/aerospace/doc.aerospace.md
 - ./app.configs/aerospace/features.aerospace.md
+- ./app.configs/aerospace/open-dock-app.sh
 - ./app.configs/borders/bordersrc
 - ./app.configs/sketchybar/sketchybarrc
 - ./app.configs/sketchybar/colors.sh
@@ -20,15 +23,36 @@
 - Defines keybindings (alt+hjkl=focus, alt+shift+hjkl=move, alt+1-9=workspace)
 - Configures gaps, monitors assignment, startup commands
 - Launches sketchybar+borders on startup
+- App launchers via cmd+1-9 use open-dock-app.sh to open Dock apps by position
 - Edit for: keybindings, workspace layout, monitor assignment, gaps
 
+`./app.configs/aerospace/apply-display-profile.sh`
+- Auto-adjusts AeroSpace outer.top gap based on connected monitor resolutions
+- Uses lookup table for common resolutions (4K, 1440p, 1080p, MacBook Retina)
+- Detects display changes via fingerprint, updates aerospace.toml, reloads config
+- Edit for: gap values per resolution, adding new resolution mappings
+
+`./app.configs/aerospace/com.aerospace.display-profile.plist`
+- LaunchAgent that runs apply-display-profile.sh every 5 seconds
+- Detects monitor connect/disconnect and auto-applies optimal gaps
+- Install to ~/Library/LaunchAgents/ and launchctl load to activate
+- Edit for: check interval timing
+
 `./app.configs/aerospace/doc.aerospace.md`
-- AeroSpace documentation reference
+- AeroSpace + SketchyBar + JankyBorders installation and setup tutorial
+- Step-by-step instructions for AI assistants to configure the full stack
 - Read-only reference, don't edit
 
 `./app.configs/aerospace/features.aerospace.md`
-- AeroSpace features documentation
+- AeroSpace features documentation with keybinding reference
+- Covers tiling, workspaces, layouts, integration features
 - Read-only reference, don't edit
+
+`./app.configs/aerospace/open-dock-app.sh`
+- Opens macOS Dock apps by position index (0-indexed)
+- Called by aerospace.toml cmd+1-9 keybindings
+- Reads persistent-apps from Dock plist, decodes URL, opens app
+- Edit for: changing how app path is resolved
 
 `./app.configs/borders/bordersrc`
 - JankyBorders config (window border styling)
@@ -53,7 +77,7 @@
 
 `./app.configs/sketchybar/icons.sh`
 - Nerd Font icon exports
-- Categories: general, git, spotify, battery, volume, wifi, network
+- Categories: general, git, spotify, aerospace, battery, volume, calendar, wifi, ethernet, vpn, ram, headset, settings, network speed
 - Edit for: adding/changing icons
 
 `./app.configs/sketchybar/items/*.sh`

@@ -15,7 +15,7 @@ while IFS= read -r line; do
       break
     fi
   fi
-done < <(networksetup -listallhardwareports | grep -A1 "Ethernet Adapter\|Thunderbolt Ethernet")
+done < <(networksetup -listallhardwareports | grep -A1 "Ethernet Adapter\|Thunderbolt Ethernet\|USB.*LAN")
 
 if [ -n "$ETHERNET_STATUS" ]; then
   ICON=$ETHERNET_CONNECTED
