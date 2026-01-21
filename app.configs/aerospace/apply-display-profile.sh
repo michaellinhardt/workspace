@@ -32,7 +32,7 @@ calculate_top_gap() {
     if [[ "$is_retina" == "true" ]]; then
         # MacBook built-in displays - typically need smaller gaps
         case "${width}x${height}" in
-            3456x2234) gap=11 ;;  # 16" MacBook Pro
+            3456x2234) gap=15 ;;  # 16" MacBook Pro
             3024x1964) gap=25 ;;  # 14" MacBook Pro
             2880x1800) gap=25 ;;  # 15" MacBook Pro (older)
             2560x1600) gap=25 ;;  # 13" MacBook
@@ -50,6 +50,7 @@ calculate_top_gap() {
             2560x1080) gap=38 ;;  # Ultrawide 1080p
             1920x1200) gap=35 ;;  # 1200p
             1920x1080) gap=35 ;;  # 1080p
+            2048x1152) gap=42 ;;  # HDMI external
             1600x900)  gap=44 ;;  # 900p (portable)
             1366x768)  gap=28 ;;  # 768p
             *)
