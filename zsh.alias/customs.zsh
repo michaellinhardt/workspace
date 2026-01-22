@@ -11,3 +11,8 @@ checkpoint () {
     gad -A && gco "checkpoint" && gpu
     cd -
 }
+
+sprint-runner () {
+    local arg=${1:-1}
+    grimoire && claude --dangerously-skip-permissions "/bmad:bmm:workflows:sprint-runner $arg"
+}
